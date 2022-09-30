@@ -1,15 +1,15 @@
 # MyTodoList
 
-
 ## 2022
 
-- [ ] Refactoring 강의 듣기
+- [x] Refactoring 강의 듣기 (22/09/30)
   - [Link](https://academy.dream-coding.com/courses/take/refactoring)
 - [ ] Voxel Art 강의 듣기
   - [Link](https://www.udemy.com/course/learn-magica-voxel-create-3d-game-models-for-unity3d/)
  - [ ] 내 홈페이지에 복셀 아트 캐릭터 추가해보기
- - [ ] `구글 엔지니어는 이렇게 일한다` 도서 완독
-   - [Link](http://www.yes24.com/Product/Goods/109305490)
+- [ ] `구글 엔지니어는 이렇게 일한다` 도서 완독
+ - [Link](http://www.yes24.com/Product/Goods/109305490)
+- [ ] Google Associate Cloud Engineer 자격증 취득해보기
  
  ## 2023
  
