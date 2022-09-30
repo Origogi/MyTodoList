@@ -1,5 +1,11 @@
 # MyTodoList
 
+## My Daily Good habit
+
+- 영어 타자 연습 30분
+- 만보 걷기
+- Leet Code 하루에 한 문제 풀어보기 (자바스크립트로)
+
 ## 2022
 
 - [x] Refactoring 강의 듣기 (22/09/30)
