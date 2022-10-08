@@ -16,7 +16,8 @@
 - [ ] `구글 엔지니어는 이렇게 일한다` 도서 완독
  - [Link](http://www.yes24.com/Product/Goods/109305490)
 - [ ] Google Associate Cloud Engineer 자격증 취득해보기
- 
+  - [Coursera 강의](http://www.yes24.com/Product/Goods/109305490)
+
  ## 2023
  
  - [ ] Three js 공부해보기
