@@ -1,4 +1,4 @@
-# TIL
+# Origogi's TIL
 
 ![image](https://user-images.githubusercontent.com/35194820/194734615-1c900d04-e7dd-4cd6-b26e-a444b3d237a0.png)
 
