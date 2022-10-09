@@ -10,7 +10,7 @@ Today I Learned
 - 만보 걷기
 - Leet Code 하루에 한 문제 풀어보기 (자바스크립트로)
 
-## 2022년 목표
+## 1. 2022년 목표
 
 - [x] Refactoring 강의 듣기 (22/09/30)
   - [Link](https://academy.dream-coding.com/courses/take/refactoring)
@@ -22,7 +22,7 @@ Today I Learned
 - [ ] Google Associate Cloud Engineer 자격증 취득해보기
   - [Coursera 강의](http://www.yes24.com/Product/Goods/109305490)
 
- ## 2023년 목표
+ ## 2. 2023년 목표
  
  - [ ] Three js 공부해보기
  - [ ] Next js 공부해보기
