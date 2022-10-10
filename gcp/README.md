@@ -92,3 +92,16 @@ IAM에서 권한은 `<service>`,`<resource>`, `<verb>` 형태로 나타난다.
 3. 모바일 어플리케이션
 4. REST API
 
+## 7. Compute Engine
+
+### Compute Engine이란?
+
+GCP 에서 제공하는 가상 머신(VM) 서비스로써 AWS 의 EC2 에 해당하는 서비스이다.
+GCP에서 다양한 인스턴스 구성 및 이미지를 제공하며 임의로 인스턴스 시스템 구성을 설정할 수 있는 커스텀 머신 유형도 제공한다.
+
+### 대표적인 옵션
+
+- 스토리지 : HDD 또는 SSD, SSD는 VM 이 종료되면 데이터는 유실된다.
+- OS : Linux or Windows server
+- CPU 갯수
+- 메모리 
