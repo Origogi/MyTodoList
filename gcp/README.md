@@ -205,7 +205,14 @@ GCP의 대표적인 객체 Repository이다. 이를 이용하면 데이터 양�
 
 ### Container
 
+<img width="427" alt="image" src="https://user-images.githubusercontent.com/35194820/196014504-d425fde3-8db2-474c-8c8c-288afb0833d9.png">
+
 - 소프트웨어를 패키징을 하는 도구이다.
 - 컨테이너의 목적은 PaaS 환경처럼 워크로드의 독립적인 확장성을 제공하고 IaaS 환경처럼 운영체제 및 하드웨어의 추상화 계층을 제공하는 것이다.
 - 컨테이너 이미지의 가장 일반적인 형식은 오픈소스 도구인 `Docker` 에서 정의한 형식이다.
 
+### Kubernetes
+
+<img width="402" alt="image" src="https://user-images.githubusercontent.com/35194820/196014561-c545b6cb-ce9b-4f34-968c-bacea514126f.png">
+
+여러 호스트의 많은 컨테이너를 조정하고 확정하고 새 버전을 출시하고, 문제가 생기면 이전 버전으로 쉽게 롤백하는 작업도 쉽게 만들어 준다.
