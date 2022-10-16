@@ -215,4 +215,13 @@ GCP의 대표적인 객체 Repository이다. 이를 이용하면 데이터 양�
 
 <img width="402" alt="image" src="https://user-images.githubusercontent.com/35194820/196014561-c545b6cb-ce9b-4f34-968c-bacea514126f.png">
 
-여러 호스트의 많은 컨테이너를 조정하고 확정하고 새 버전을 출시하고, 문제가 생기면 이전 버전으로 쉽게 롤백하는 작업도 쉽게 만들어 준다.
+- 애플리케이션을 더 효과적으로 관리하고 확장하기 위한 컨테이너용 오픈소스 조정자이다.
+- 여러 호스트의 많은 컨테이너를 조정하고 확정하고 새 버전을 출시하고, 문제가 생기면 이전 버전으로 쉽게 롤백하는 작업도 쉽게 만들어 준다.
+
+### Cluster & Node
+
+<img width="332" alt="image" src="https://user-images.githubusercontent.com/35194820/196014924-a120d069-06fd-4531-8ed9-650156f2b781.png">
+
+- 쿠버네티스는 `클러스터` 라는 노드의 집합에 컨테이너를 배포할수 있다.
+- `노드` 는 컴퓨팅 인스턴스를 의미한다.
+- 클러스터를 얻기 위해 GCP에서는 `Kubernetes Engine` 을 제공한다. 
