@@ -172,15 +172,63 @@ GCP의 대표적인 객체 Repository이다. 이를 이용하면 데이터 양�
 - 지연시간이 아주 짧은 대량의 데이터를 저장하는 데 적합하다.
 - 사물인터넷, 사용자 분석, 금융데이터 분석을 포함하여 운영 및 분석 애플리케이션에 적합하다.
 
-## 11. Cloud SQL
+## 11. Cloud SQL & Cloud Spanner
+
+### Cloud SQL
 
 - GCP의 관계형 데이터베이스이다.
 - MySQL 또는 PostgreSQL 데이터베이스 엔진을 사용한다.
 - 자동 장애 조치를 통해 여려 영역 간에 데이터를 복제할 수 있도록 지원한다.
 - 온디멘드 또는 예약된 백업을 통해 데이터 백업을 지원한다.
 
+### Cloud Spanner
+
+- GCP의 관계형 데이터베이스이다.
+- 수평 확장성을 제공한다.
+- 관계형 데이터베이스 이상이 필요하고 고성능 처리량을 위해 데이터베이스를 샤딩하며 트랜잭션 일관성, 글로벌 데이터 strong consistency가 필요하거나 데이터베이스를 통합하려는 경우 고려된다.
+- 일반적인 사용 사례로는 금융 애플리케이션과 인벤토리 애플리케이션이 있다.
+
 ## 12. Cloud Datastore
 
 - Bigtable 와 같이 NoSQL 기반이다.
 - 소량의 데이터 읽기, 쓰기 에 적합하다.
 
+## 13. 레포지토리 비교
+
+![image](https://user-images.githubusercontent.com/35194820/195979746-90e1532d-5c3b-42c2-ac8c-4572ec0fee80.png)
+
+## 14. Kubernetes
+
+<img width="477" alt="image" src="https://user-images.githubusercontent.com/35194820/196013971-72b1bc27-e808-4cf1-9275-5dd7461f3540.png">
+
+쿠버네티스는 Iaas 와 Pass 의 특성을 모두 가지고 있다.
+
+### Container
+
+<img width="427" alt="image" src="https://user-images.githubusercontent.com/35194820/196014504-d425fde3-8db2-474c-8c8c-288afb0833d9.png">
+
+- 소프트웨어를 패키징을 하는 도구이다.
+- 컨테이너의 목적은 PaaS 환경처럼 워크로드의 독립적인 확장성을 제공하고 IaaS 환경처럼 운영체제 및 하드웨어의 추상화 계층을 제공하는 것이다.
+- 컨테이너 이미지의 가장 일반적인 형식은 오픈소스 도구인 `Docker` 에서 정의한 형식이다.
+
+### Kubernetes
+
+<img width="402" alt="image" src="https://user-images.githubusercontent.com/35194820/196014561-c545b6cb-ce9b-4f34-968c-bacea514126f.png">
+
+- 애플리케이션을 더 효과적으로 관리하고 확장하기 위한 컨테이너용 오픈소스 조정자이다.
+- 여러 호스트의 많은 컨테이너를 조정하고 확정하고 새 버전을 출시하고, 문제가 생기면 이전 버전으로 쉽게 롤백하는 작업도 쉽게 만들어 준다.
+
+### Cluster & Node
+
+<img width="332" alt="image" src="https://user-images.githubusercontent.com/35194820/196014924-a120d069-06fd-4531-8ed9-650156f2b781.png">
+
+- 쿠버네티스는 `클러스터` 라는 노드의 집합에 컨테이너를 배포할수 있다.
+- `노드` 는 컴퓨팅 인스턴스를 의미한다.
+- 클러스터를 얻기 위해 GCP에서는 `Kubernetes Engine` 을 제공한다. 
+
+### Pod
+
+![image](https://user-images.githubusercontent.com/35194820/196026249-bc51341d-431f-4968-9e4c-1554ed3cebe9.png)
+
+- 쿠버네티스는 포드 단위로 컨테이너를 배포한다.
+- 일반적으로 포드는 하나의 컨테이너만 있지만 상호 의존성이 높은 컨테이너가 여러 개 이쓰면 이들을 하나의 포드로 패키징한다.
