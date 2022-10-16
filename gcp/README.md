@@ -199,6 +199,13 @@ GCP의 대표적인 객체 Repository이다. 이를 이용하면 데이터 양�
 
 ## 14. Kubernetes
 
+<img width="477" alt="image" src="https://user-images.githubusercontent.com/35194820/196013971-72b1bc27-e808-4cf1-9275-5dd7461f3540.png">
+
 쿠버네티스는 Iaas 와 Pass 의 특성을 모두 가지고 있다.
 
+### Container
+
+- 소프트웨어를 패키징을 하는 도구이다.
+- 컨테이너의 목적은 PaaS 환경처럼 워크로드의 독립적인 확장성을 제공하고 IaaS 환경처럼 운영체제 및 하드웨어의 추상화 계층을 제공하는 것이다.
+- 컨테이너 이미지의 가장 일반적인 형식은 오픈소스 도구인 `Docker` 에서 정의한 형식이다.
 
