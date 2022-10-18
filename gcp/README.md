@@ -269,3 +269,19 @@ GCP의 대표적인 객체 Repository이다. 이를 이용하면 데이터 양�
 ![image](https://user-images.githubusercontent.com/35194820/196422907-fc93bb26-99df-413e-b2b7-e6652d4317d3.png)
 
 - 모니터링, 로깅 및 진단을 위한 GCP 도구이다.
+
+## 18. Bigdata Platform
+
+![image](https://user-images.githubusercontent.com/35194820/196430378-8f49ff13-5676-47e9-ba3b-3bc772530f0a.png)
+
+### Dataproc
+
+Hadoop, Spark, Hive, Pig를 관리형으로 쉽고 빠르게 실행 가능하게 한다.
+
+### Dataflow
+
+### BigQuery
+
+### Pub/Sub
+
+### Datalab
