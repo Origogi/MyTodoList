@@ -266,4 +266,6 @@ GCP의 대표적인 객체 Repository이다. 이를 이용하면 데이터 양�
 
 ## 17. Stack Driver
 
-- 
+![image](https://user-images.githubusercontent.com/35194820/196422907-fc93bb26-99df-413e-b2b7-e6652d4317d3.png)
+
+- 모니터링, 로깅 및 진단을 위한 GCP 도구이다.
