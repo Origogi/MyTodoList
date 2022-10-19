@@ -303,3 +303,10 @@ GCP의 대표적인 객체 Repository이다. 이를 이용하면 데이터 양�
 
 - Jupiter notebook 처럼 Python 코드를 대화식으로 실행하고 결과를 볼 수 있다.
 - Google 차트 또는 매트로프롯을 사용하여 데이터 시각화할 수 있다.
+
+## 19. 요약
+
+### Comaparing compute options
+
+![스크린샷 2022-10-19 오후 9 22 38](https://user-images.githubusercontent.com/35194820/196689870-70bb0280-5548-4868-b596-ce443a3bb08a.png)
+
