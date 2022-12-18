@@ -77,6 +77,42 @@ D
 
 GCP 의 Role은 `Viewer`, `Editor`, `Owner` 3 가지이다.
 
+## 5
+
+A VM instance is trying to read from a Cloud Storage bucket. IAM roles assigned to the VM service account allows the VM instance to read from the bucket. But the scopes assigned to the VM deny the reading bucket. What will happen when VM tries to read from the bucket?
+
+- A. The application performing the read will drop the read operation
+- B. The read will not execute as IAM roles and scopes both determine what operations will be performe
+- C. The read will succeed because the most permissive permission is allowed
+- D. The read operation will execute, but a message will be sent to the Stackdriver Logging
+
+### 정답
+
+B
+
+### 풀이
+
+VM 인스턴스가 스토리지 버킷에 Read 가 실패한 경우 권한 문제이다.
+
+## 6
+
+A cloud engineer has been assigned to work on a running project. He wants to know which VMs are running in the project. How could the cloud engineer get the information of the all VMs running in the project?
+
+- A. Execute the command gcloud compute list
+- B. Execute the command gcloud list instances
+- C. Execute the command gcloud instances list
+- D. Execute the command gcloud compute instances list
+
+### 정답
+
+D
+
+### 풀이
+
+현재 실행 중인 VM 의 리스트를 출력하는 명령어를 맞추는 것으로 GCP 명령어는 계층 적으로 구성 된다.
+
+> gloud > compute > instances > list
+
 ## Reference
 
 https://www.whizlabs.com/learn/course/google-cloud-certified-associate-cloud-engineer/ 
