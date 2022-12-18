@@ -2,7 +2,6 @@
 
 ![image](https://user-images.githubusercontent.com/35194820/194704057-52b3e511-7917-4555-a87d-ac97d8e38a12.png)
 
-
 GCP 자격증 획득을 위해 자료 정리
 
 ## 0. GCP란?
