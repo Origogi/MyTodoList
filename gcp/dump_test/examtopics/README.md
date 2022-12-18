@@ -240,7 +240,68 @@ You have a single binary application that you want to run on Google Cloud Platfo
 
 A
 
-오토 스케일링때문에 정답이 A 인것 처럼 보이나 VM을 직접 관리를 하니 A는 답이 아니다. 그래서 정답은 B이다.
+오토 스케일링때문에 정답은 A 또는 B이며 VM을 직접 관리를 하니 A는 답이 아니다. 그래서 정답은 B이다.
+
+## 17
+
+You are analyzing Google Cloud Platform service costs from three separate projects. You want to use this information to create service cost estimates by service type, daily and monthly, for the next six months using standard query syntax. What should you do?
+
+- A. Export your bill to a Cloud Storage bucket, and then import into Cloud Bigtable for analysis.
+- B. Export your bill to a Cloud Storage bucket, and then import into Google Sheets for analysis.
+- C. Export your transactions to a local file, and perform analysis with a desktop tool.
+- D. Export your bill to a BigQuery dataset, and then write time window-based SQL queries for analysis.
+
+### 정답 및 풀이
+
+D
+
+일단 bill 정보를 스토리지 버킷에 한번 옮겨서 작업하는게 비효율적이다. 그래서 A, B는 답이 아니다. 그리고 bill 정보를 로컬에 저장해서 다시 한번 분석 프로그램에 실행하는 것도 비효율이다. 그래서 C 도 아니다.
+
+## 18
+
+You need to set up a policy so that videos stored in a specific Cloud Storage Regional bucket are moved to Coldline after 90 days, and then deleted after one year from their creation. How should you set up the policy?
+
+- A. Use Cloud Storage Object Lifecycle Management using Age conditions with SetStorageClass and Delete actions. Set the SetStorageClass action to 90 days and the Delete action to 275 days (365 ג€" 90)
+- B. Use Cloud Storage Object Lifecycle Management using Age conditions with SetStorageClass and Delete actions. Set the SetStorageClass action to 90 days and the Delete action to 365 days.
+- C. Use gsutil rewrite and set the Delete action to 275 days (365-90).
+- D. Use gsutil rewrite and set the Delete action to 365 days.
+
+### 정답 및 풀이
+
+B
+
+일단 백업 및 삭제 동작은 자동으로 이뤄지기 때문에 A, B 이다.
+그리고 데이터 생성 시점 기준으로 자동으로 90일 후에 콜드라인으로 백업, 그리고 1년 후에 삭제이기 때문에 정답은 B이다.
+
+## 19
+
+You have a Linux VM that must connect to Cloud SQL. You created a service account with the appropriate access rights. You want to make sure that the VM uses this service account instead of the default Compute Engine service account. What should you do?
+
+- A. When creating the VM via the web console, specify the service account under the 'Identity and API Access' section. Most Voted
+- B. Download a JSON Private Key for the service account. On the Project Metadata, add that JSON as the value for the key compute-engine-service- account.
+- C. Download a JSON Private Key for the service account. On the Custom Metadata of the VM, add that JSON as the value for the key compute-engine- service-account.
+- D. Download a JSON Private Key for the service account. After creating the VM, ssh into the VM and save the JSON under ~/.gcloud/compute-engine-service- account.json.
+
+### 정답 및 풀이
+
+A
+
+key 를 다운받거나 전송하는 거는 무조건 오답이다. 그래서 남은 것은 A이다.
+
+## 20
+
+You created an instance of SQL Server 2017 on Compute Engine to test features in the new version. You want to connect to this instance using the fewest number of steps. What should you do?
+
+- A. Install a RDP client on your desktop. Verify that a firewall rule for port 3389 exists.
+- B. Install a RDP client in your desktop. Set a Windows username and password in the GCP Console. Use the credentials to log in to the instance.
+- C. Set a Windows password in the GCP Console. Verify that a firewall rule for port 22 exists. Click the RDP button in the GCP Console and supply the credentials to log in.
+- D. Set a Windows username and password in the GCP Console. Verify that a firewall rule for port 3389 exists. Click the RDP button in the GCP Console, and supply the credentials to log in.
+
+### 정답
+
+A
+
+SQL Server 2017 는 윈도우 기반이기에 GCP 콘솔보다는 RDP 로 확인하는 것을 권장한다.
 
 ## Reference
 
