@@ -171,6 +171,26 @@ C.
 
 App Engine 의 설정은 `app.yaml` 에 있다.
 
+## 10
+
+Which of the following command is used to create buckets in Cloud Storage?
+
+A. gcloud storage buckets mb
+B. gsutil storage buckets create
+C. gsutil mb
+D. gcloud mb
+
+### 정답
+
+C.
+
+### 풀이
+
+Cloud storage에 새로운 버킷을 생성하는 명령어를 찾는 것이다.
+
+gsutil 은 클라우스 스토리지에 수행하는 명령어이며 mb 는 `Make Bucket` 이다.
+
+
 ## Reference
 
 https://www.whizlabs.com/learn/course/google-cloud-certified-associate-cloud-engineer/ 
