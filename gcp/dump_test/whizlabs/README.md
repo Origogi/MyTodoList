@@ -113,6 +113,64 @@ D
 
 > gloud > compute > instances > list
 
+## 7
+
+A cloud engineer wants to create a VM named whiz-server-1 with four CPUs. Which of the following commands would he use to create the VM whiz-server-1?
+
+- A. gcloud compute instances create --machine-type=n1-standard-4 whiz-server-1
+- B. gcloud compute instances create --cpus=4 whiz-server-1
+- C. gcloud compute instances create --machine-type=n1-standard-4 –instancename whiz-server-1wrong
+- D. gcloud compute instances create --machine-type=n1-4-cpu whiz-server-1
+
+### 정답
+
+A
+
+### 풀이
+
+VM 인스턴스를 생성하는 명령어는 아래와 같다.
+
+> gcloud compute instances create --machine-type=n1-standard-4 INSTACE_NAME
+
+## 8
+
+What is the gcloud command to create a cluster named ch09-cluster-10 with four nodes?
+
+- A. gcloud container clusters create ch09-cluster-10 4wrong
+- B. gcloud container clusters create ch09-cluster-10 --num-nodes=4
+- C. gcloud clusters container create ch09-cluster-10 --num-nodes=4
+- D. gcloud container beta clusters create ch09-cluster-10 --nodes-num=4
+
+
+### 정답
+
+B.
+
+### 풀이
+
+노드 4개를 가진 이름을 가진 클러스터를 생성하는 명령어를 맞추는 것이다.
+
+클러스터를 생성하기 위해서는 컨테이터가 존재해야 하기 때문에 다음 명령어를 사용한다.
+
+> gcloud container clusters create NAME --num-nodes=NODE_NUM
+
+## 9
+
+You have deployed a Django 1.5 Python application to App Engine. This version of Django requires Python 3. Due to some issues, App Engine is trying to run the application using Python 2. Which of the following file would you check and modify (if required) to ensure that Python 3 is used with the application?
+
+- A. app.config
+- B. services.yaml
+- C. app.yaml
+- D. cron.yaml
+
+### 정답 
+
+C.
+
+### 풀이
+
+App Engine 의 설정은 `app.yaml` 에 있다.
+
 ## Reference
 
 https://www.whizlabs.com/learn/course/google-cloud-certified-associate-cloud-engineer/ 
