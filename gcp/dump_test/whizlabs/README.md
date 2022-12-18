@@ -190,6 +190,58 @@ Cloud storage에 새로운 버킷을 생성하는 명령어를 찾는 것이다.
 
 gsutil 은 클라우스 스토리지에 수행하는 명령어이며 mb 는 `Make Bucket` 이다.
 
+## 11
+
+Which of the following IP address would you specify to define a CIDR range that will apply to all the destination addresses?
+
+- A. 0.0.0.0/0
+- B. 172.16.0.0/12
+- C. 192.168.0.0/16
+- D. 10.0.0.0/8
+
+### 정답
+
+A.
+
+### 풀이
+
+해당 문제는 [CIDR](https://ko.wikipedia.org/wiki/CIDR) 할당 방식에 대해 이해하고 있어야 한다.
+
+CIDR 의 범위는 모든 어드레스에 대해 허용해야 함으로 답은 A이다.
+
+## 12
+
+You have set a firewall rule that will permit inbound connections to a VM instance named whizserver-2. You want to apply this rule only if there is not another rule that would deny that traffic. What priority would you give to this rule?
+
+- A. 1000
+- B. 1
+- C. 65535
+- D. 0
+
+###  답
+
+C.
+
+### 풀이
+
+문제를 잘 이해하지 못하였다. Firewall Priority 관련된 값은 `65535` 이라고 기억할 것
+
+## 13
+
+You have created a subnet named subnetace1 with 16,382 addresses using 192.168.0.0. Later you realize that you won’t require too many addresses, and so you want to reduce addresses to 254. Which of the following command would you use?
+
+A. gcloud compute networks subnets expand-ip-range subnetace1 --prefix-length=28
+B. gcloud compute networks subnets expand-ip-range subnetace1 --size=248
+C. gcloud compute networks subnets expand-ip-range subnetace1 --prefix-length=-12
+D. There is no command in google cloud to reduce the number of available addresses in a subnet.
+
+### 정답
+
+D.
+
+### 풀이
+
+해당 서브넷의 갯수를 늘이는건 가능하나 줄이는 건 불가능하다.
 
 ## Reference
 
