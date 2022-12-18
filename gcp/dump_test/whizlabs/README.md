@@ -378,11 +378,11 @@ You are working as a System Administrator and have been asked to make sure that 
 
 ### 정답
 
-C
+B
 
 ### 풀이
 
-오래된 VM 이미지를 사용하는 것을 막기 위해서는 해당 이미지를 duplicate 처리해야한다
+오래된 VM 이미지를 사용하는 것을 막기 위해서는 해당 이미지를 obsolete 처리해야한다
 
 ## 22
 
