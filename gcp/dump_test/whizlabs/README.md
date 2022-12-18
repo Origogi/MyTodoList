@@ -8,10 +8,10 @@ whizlabs 연습 문제 25개
 
 You are working on a project named whizlabs-ace, and want to list all the roles assigned to users in the project. Which of the following gcloud command would you use?
 
-A. gcloud iam list whizlabs-ace
-B. gcloud projects list whizlabs-ace
-C. gcloud projects get-iam-policy whizlabs-ace
-D. gcloud iam get-iam-policy whizlabs-ace
+- A. gcloud iam list whizlabs-ace
+- B. gcloud projects list whizlabs-ace
+- C. gcloud projects get-iam-policy whizlabs-ace
+- D. gcloud iam get-iam-policy whizlabs-ace
 
 ### 정답
 
@@ -27,10 +27,10 @@ C.
 
 While working on a project, an application administrator (A) has been given the responsibility of managing all resources. He wants to delegate the responsibility of managing the existing service accounts to another administrator (B). That administrator (B) will also be responsible to manage the other service accounts that will be created. Which of the following is the best way to delegate the privileges required to manage all the service accounts?
 
-A. Granting iam.serviceAccountUser to the administrator at the project levelright
-B. Granting iam.serviceProjectAccountUser to the administrator at the project level
-C. Granting iam.serviceAccountUser to the administrator at the service account level
-D. Granting iam.serviceProjectAccountUser to the administrator at the service account level
+- A. Granting iam.serviceAccountUser to the administrator at the project levelright
+- B. Granting iam.serviceProjectAccountUser to the administrator at the project level
+- C. Granting iam.serviceAccountUser to the administrator at the service account level
+- D. Granting iam.serviceProjectAccountUser to the administrator at the service account level
 
 ### 정답
 
