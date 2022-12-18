@@ -243,6 +243,215 @@ D.
 
 해당 서브넷의 갯수를 늘이는건 가능하나 줄이는 건 불가능하다.
 
+## 14
+
+You have recently joined a startup that is migrating its infrastructure from AWS to Google Cloud. A junior architect was assigned the task of migrating one of their web servers with Amazon Linux OS from AWS to GCP in a public subnet of custom VPC. He was able to migrate the instance successfully but is unable to get SSH access to the migrated instance. What are the possible steps to look for? (Multiple Answer)
+
+- A. Check if he has attached the correct firewall rule with port udp:22 open to the instance.
+- B. Ask if he has added the SSH key to the instance during the launching phase
+- C. Google Cloud does not support Amazon Linux images because of market competition.
+- D. Make sure the firewall is attached to the instance with TCP port 22 open
+
+### 정답
+
+B, D
+
+### 풀이
+
+VM 인스턴스가 ssh 에 접속관련 문제로
+
+- SSH 키가 있어야 접속이 가능
+- SSH TCP port 는 22이다.
+
+## 15
+
+You work for a retail company that has a busy online store. As you are approaching New Year, you find that your e-store is getting more and more traffic. You ensure that your web servers are behind a managed instance group. However, you notice that the web tier is frequently scaling, sometimes multiple times in an hour. You need to keep instance group from scaling up and down so rapidly. Which of the following options would help you to achieve this?
+
+- A. Change the auto scaling metric to use multiple metrics instead of just one metric.
+- B. Reduce the number of maximum instance count.
+- C. Associate a health check with instance group.
+- D. Increase the cool down period.
+
+### 정답
+
+D.
+
+### 풀이
+
+트래픽의 변화량이 폭이 커서 오토스케일이 너무 자주 발생해서 이를 어떻게 해결할지는 묻는 문제이다. (인스턴스 할당/해제 자체가 리소스가 많이드나봄...)
+
+그래서 오토스케일의 쿨다운 시간을 늘려서 해결한다.
+
+## 16
+
+You have been asked to build backend using Clojure and host it on Google Cloud with full freedom of choosing OS, applications, libraries, etc. Which service will you prefer?
+
+- A. Compute Engine
+- B. App Engine Standard
+- C. Cloud Function
+- D. CloudRun
+
+### 정답
+
+A
+
+### 풀이
+
+실행되는 서비스의 운영체제, 라이브러리, 어플리케이션을 자유롭게 설정할수 있어야 함으로 A이다.
+
+## 17
+
+You have been hired as a contractor by one of the travel technology company who is planning to containerize their existing applications in such a way that they can perform a lift and shift very easily in future if they plan to move away from Google Cloud. Which service will best suit this case?
+
+- A. Cloud Function
+- B. App Engine Standard
+- C. Kubernetes Engine
+- D. CloudRun
+
+### 정답
+
+C
+
+### 풀이
+
+실행되는 서비스 자체를 컨테이너화해서 다른 환경에 이동이 자유롭게 하기 위해서는 쿠버네티스를 사용해야한다.
+
+## 18
+
+Which is the correct command to bind an IAM policy to a service account at an organization level?
+
+- A. gcloud organizations add-iam-policy-binding org_id --member serviceAccount:whizlab@whizlabs-prj.iam.gserviceaccount.com --role roles/viewer
+- B. gcloud projects add-iam-policy-binding whizlabs-prj --member serviceAccount:whizlabswhizlabs-prj.iam.gserviceaccount.com --role roles/viewer
+- C. gcloud iam service-accounts keys create whizlabs-prj --iam-account whizlabs@whizlabs-prj.iam.gserviceaccount.com
+- D. gcloud organizations add-iam-policy-binding --member serviceAccount:whizlab@whizlabs-prj.iam.gserviceaccount.com --role roles/viewer
+
+### 정답 
+
+A
+
+### 풀이 
+
+> gcloud organizations add-iam-policy-binding ORGANIZATION --member=PRINCIPAL --role=ROLE
+
+## 19
+
+You are heading the Cloud & DevOps department in a financial company and have been asked to create a custom role for one of your colleague who needs access to deploy an application to App Engine. Which permission will you use?
+
+- A. App Engine Editor
+- B. App Engine Admin
+- C. App Engine Deployer
+- D. App Engine Viewer
+
+### 정답
+
+C
+
+### 풀이
+
+App Engine 을 배포하기 위해서는 `App Engine Deployer` 권한이 필요하다.
+
+## 20
+
+You are about to start working on a micro-service deployment project using Google Kubernetes Engine service. The client needs everything on Google and want you to maintain both frontend and backend code on Google Cloud as well. Which service best suites this case?
+
+- A. Cloud Storage
+- B. Cloud Source Repository
+- C. Google Container Registry
+- D. GitHub
+
+### 정답
+
+B
+
+### 풀이
+
+GCP에서 소스 관리 도구는 `Cloud Source Repository` 이다.
+
+## 21
+
+You are working as a System Administrator and have been asked to make sure that all images are patched up to date and developers are not allowed to use old images that are not up to date as per PCI compliance. How would you achieve this?
+
+- A. Drop a mail to all the developers regarding which image to use whenever you patch images.
+- B. Mark image as deprecated to prevent users from using the old image.
+- C. Mark image as obsolete to prevent users from using the old image.
+- D. None of the above.
+
+### 정답
+
+C
+
+### 풀이
+
+오래된 VM 이미지를 사용하는 것을 막기 위해서는 해당 이미지를 duplicate 처리해야한다
+
+## 22
+
+You are building an architecture for one of your client with a requirement of streaming millions of requests with high availability and durability along with HIPAA compliance. Which managed service will you prefer?
+
+- A. Cloud Function
+- B. Cloud DataProc
+- C. Cloud Pub/Sub
+- D. RabbitMQ
+
+### 정답
+
+B
+
+### 풀이
+
+실시간 메시징 서비스의 처리를 위한 서비스는 `Cloud Pub/Sub` 이다.
+
+## 23
+
+You are planning to build a micro-service application with docker containers and want to host them on Google Cloud as stateless and serverless. Which service will help you serve the need?
+
+- A. Cloud Function
+- B. App Engine Standard
+- C. App Engine Flexible
+- D. CloudRun
+
+### 정답 
+
+D
+
+### 풀이
+
+컨테이너 기반 서버리스, stateless 서비스를 배포할 때에는 `CloudRun`  을 사용한다.
+
+## 24
+
+You have been asked to deploy a highly available Kubernetes cluster using Google Kubernetes Engine by your manager. While spinning up the cluster you realize you do not see option of creating master. What can be the reason?
+
+A. GKE does not use master node to control child nodes.
+B. You need to spin up a compute instance and set it up as master node.
+C. Master node is created automatically by GKE.
+D. None of the above.
+
+### 정답
+
+C
+
+### 풀이
+
+GKE 를 통해 클러스터를 구축하였을 때 마스터 노드를 직접 생성할수 없는 이유는 클러스터를 구축했을 때 마스터 노드는 자동으로 생성되며 또 다른 마스터 노드를 생성할수 없기 때문
+
+## 25
+
+You have been asked to automate the infrastructure deployment using Google Deployment Manager service. Which all formats do Deployment manager template supports?
+
+- A. JSON
+- B. Jinja2
+- C. Powershell
+- D. Python
+
+### 정답
+
+B, D
+
+### 풀이
+
+Google Deployment Manager 에서 템플릿을 작성할 때 사용되는 도구는 `JinJa2`, `Python` 이다.
+
 ## Reference
 
 https://www.whizlabs.com/learn/course/google-cloud-certified-associate-cloud-engineer/ 
