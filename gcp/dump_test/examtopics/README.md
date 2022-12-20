@@ -303,6 +303,91 @@ A
 
 SQL Server 2017 는 윈도우 기반이기에 GCP 콘솔보다는 RDP 로 확인하는 것을 권장한다.
 
+## 21
+
+You have one GCP account running in your default region and zone and another account running in a non-default region and zone. You want to start a new
+Compute Engine instance in these two Google Cloud Platform accounts using the command line interface. What should you do?
+
+- A. Create two configurations using gcloud config configurations create [NAME]. Run gcloud config configurations activate [NAME] to switch between accounts when running the commands to start the Compute Engine instances.
+- B. Create two configurations using gcloud config configurations create [NAME]. Run gcloud configurations list to start the Compute Engine instances.
+- C. Activate two configurations using gcloud configurations activate [NAME]. Run gcloud config list to start the Compute Engine instances.
+- D. Activate two configurations using gcloud configurations activate [NAME]. Run gcloud configurations list to start the Compute Engine instances.
+
+### 정답 및 풀이
+
+A
+
+## 22
+
+You significantly changed a complex Deployment Manager template and want to confirm that the dependencies of all defined resources are properly met before committing it to the project. You want the most rapid feedback on your changes. What should you do?
+
+- A. Use granular logging statements within a Deployment Manager template authored in Python.
+- B. Monitor activity of the Deployment Manager execution on the Stackdriver Logging page of the GCP Console.
+- C. Execute the Deployment Manager template against a separate project with the same configuration, and monitor for failures.
+- D. Execute the Deployment Manager template using the ג€"-preview option in the same project, and observe the state of interdependent resources.
+
+### 정답 및 풀이
+
+D
+
+Deployment Manager 같은 경우 `-preview` 옵션을 통해 미리 변경점에 대해서 체크할수 있다.
+
+~~~
+Preview an updated configuration
+You can preview the update you want to make before committing any changes, with the Google Cloud CLI or the API. The Deployment Manager service previews the configuration by expanding the full configuration and creating "shell" resources.
+
+Deployment Manager does not instantiate any actual resources when you preview a configuration, giving you the opportunity to see the deployment before committing to it.
+
+gcloud
+API
+With the Google Cloud CLI, make an update request with the --preview parameter:
+
+
+gcloud deployment-manager deployments update example-deployment \
+--config configuration-file.yaml \
+--preview
+~~~
+
+## 23
+
+You are building a pipeline to process time-series data. Which Google Cloud Platform services should you put in boxes 1,2,3, and 4?
+
+![](https://www.examtopics.com/assets/media/exam-media/04338/0001200001.jpg)
+
+- A. Cloud Pub/Sub, Cloud Dataflow, Cloud Datastore, BigQuery
+- B. Firebase Messages, Cloud Pub/Sub, Cloud Spanner, BigQuery
+- C. Cloud Pub/Sub, Cloud Storage, BigQuery, Cloud Bigtable
+- D. Cloud Pub/Sub, Cloud Dataflow, Cloud Bigtable, BigQuery
+
+### 정답 및 풀이
+
+D
+
+시계열 데이터(실시간) 를 수집하고 분석할 때 적합한 서비스를 찾는 문제이다.
+
+- Pub/Sub : 빌드 중인 독립 애플리케이션에서 메시지를 보내고 주고 받을수 있다.
+- Dataflow : 광범위한 데이터 처리 패턴을 개발하고 실행할 수 있도록 해준다. 데이터의 크기나 속도를 예츨할수 없을 때 유용하다.
+- Big Table : 지연시간이 아주 짧은 대량의 데이터를 저장하는 데 적합하다. 사물인터넷, 사용자 분석, 금융데이터 분석을 포함하여 운영 및 분석 애플리케이션에 적합하다.
+- Big Query : 대용량 데이터를 분석을 할 때 사용되는 도구이다.
+
+## 24 
+
+You have a project for your App Engine application that serves a development environment. The required testing has succeeded and you want to create a new project to serve as your production environment. What should you do?
+
+- A. Use gcloud to create the new project, and then deploy your application to the new project.
+- B. Use gcloud to create the new project and to copy the deployed application to the new project.
+- C. Create a Deployment Manager configuration file that copies the current App Engine deployment into a new project.
+- D. Deploy your application again using gcloud and specify the project parameter with the new project name to create the new project.
+
+## 정답 및 풀이 
+
+A
+
+- B : gcloud 에는 App engine을 카피하는 명령어가 없다
+- C : Deployment Manager 는 App Engine을 카피하는 명령어는 없지만 App Engine에 필요한 설정을 저장하고 새로운 프로젝트에 배포하는 것은 가능하다.
+- D : gcloud deploy를 할 때 프로젝트를 생성하는 것을 불가능하다.
+
+
 ## Reference
 
 https://www.examtopics.com/exams/google/associate-cloud-engineer/view/
