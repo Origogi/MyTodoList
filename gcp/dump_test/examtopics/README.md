@@ -387,6 +387,37 @@ A
 - C : Deployment Manager 는 App Engine을 카피하는 명령어는 없지만 App Engine에 필요한 설정을 저장하고 새로운 프로젝트에 배포하는 것은 가능하다.
 - D : gcloud deploy를 할 때 프로젝트를 생성하는 것을 불가능하다.
 
+## 25
+
+You need to configure IAM access audit logging in BigQuery for external auditors. You want to follow Google-recommended practices. What should you do?
+- A. Add the auditors group to the 'logging.viewer' and 'bigQuery.dataViewer' predefined IAM roles.
+- B. Add the auditors group to two new custom IAM roles.
+- C. Add the auditor user accounts to the 'logging.viewer' and 'bigQuery.dataViewer' predefined IAM roles.
+- D. Add the auditor user accounts to two new custom IAM roles.
+
+### 정답 및 풀이
+
+A
+
+외부 감시자 계정들의 권한을 한번에 관리하기 위해 그룹를 생성해서 권한을 부여한다.
+
+## 26
+
+You need to set up permissions for a set of Compute Engine instances to enable them to write data into a particular Cloud Storage bucket. You want to follow
+Google-recommended practices. What should you do?
+
+- A. Create a service account with an access scope. Use the access scope 'https://www.googleapis.com/auth/devstorage.write_only'.
+- B. Create a service account with an access scope. Use the access scope 'https://www.googleapis.com/auth/cloud-platform'.
+- C. Create a service account and add it to the IAM role 'storage.objectCreator' for that bucket.
+- D. Create a service account and add it to the IAM role 'storage.objectAdmin' for that bucket.
+
+### 정답 및 풀이
+
+C
+
+버킷에 접근 권한은 IAM role 를 통해서 관리되어야 하며 Admin은 함부러 부여하면 안된다.
+
+## 27
 
 ## Reference
 
