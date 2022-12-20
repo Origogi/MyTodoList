@@ -419,6 +419,220 @@ C
 
 ## 27
 
+You have sensitive data stored in three Cloud Storage buckets and have enabled data access logging. You want to verify activities for a particular user for these buckets, using the fewest possible steps. You need to verify the addition of metadata labels and which files have been viewed from those buckets. What should you do?
+
+- A. Using the GCP Console, filter the Activity log to view the information.
+- B. Using the GCP Console, filter the Stackdriver log to view the information.
+- C. View the bucket in the Storage section of the GCP Console.
+- D. Create a trace in Stackdriver to view the information.
+
+### 정답 및 풀이
+
+A
+
+이 문제는 일단 패스하자....
+
+## 28
+
+You are the project owner of a GCP project and want to delegate control to colleagues to manage buckets and files in Cloud Storage. You want to follow Google- recommended practices. Which IAM roles should you grant your colleagues?
+
+- A. Project Editor
+- B. Storage Admin
+- C. Storage Object Admin
+- D. Storage Object Creator
+
+### 정답 및 풀이
+
+B
+
+- Storage Object Admin (roles/storage.objectAdmin): 객체 나열, 생성, 보기, 삭제 등 객체의 전체 제어 권한
+- Storage Admin (roles/storage.admin) 객체와 버킷을 관리할 수 있는 전체 권한
+
+## 29
+
+You have an object in a Cloud Storage bucket that you want to share with an external company. The object contains sensitive data. You want access to the content to be removed after four hours. The external company does not have a Google account to which you can grant specific user-based access privileges. You want to use the most secure method that requires the fewest steps. What should you do?
+
+- A. Create a signed URL with a four-hour expiration and share the URL with the company.
+- B. Set object access to 'public' and use object lifecycle management to remove the object after four hours.
+- C. Configure the storage bucket as a static website and furnish the object's URL to the company. Delete the object from the storage bucket after four hours.
+- D. Create a new Cloud Storage bucket specifically for the external company to access. Copy the object to that bucket. Delete the bucket after four hours have passed.
+
+### 정답 및 풀이
+
+A
+
+## 30
+
+You are creating a Google Kubernetes Engine (GKE) cluster with a cluster autoscaler feature enabled. You need to make sure that each node of the cluster will run a monitoring pod that sends container metrics to a third-party monitoring solution. What should you do?
+
+- A. Deploy the monitoring pod in a StatefulSet object.
+- B. Deploy the monitoring pod in a DaemonSet object.
+- C. Reference the monitoring pod in a Deployment object.
+- D. Reference the monitoring pod in a cluster initializer at the GKE cluster creation time.
+
+### 정답 및 풀이
+
+B
+
+데몬셋은 아래와 같은 기능을 수행한다.
+
+- 모든 노드에서 클러스터 스토리지 데몬 실행
+- 모든 노드에서 로그 수집 데몬 실행
+- 모든 노드에서 노드 모니터링 데몬 실행
+
+## 31
+
+You want to send and consume Cloud Pub/Sub messages from your App Engine application. The Cloud Pub/Sub API is currently disabled. You will use a service account to authenticate your application to the API. You want to make sure your application can use Cloud Pub/Sub. What should you do?
+
+- A. Enable the Cloud Pub/Sub API in the API Library on the GCP Console.
+- B. Rely on the automatic enablement of the Cloud Pub/Sub API when the Service Account accesses it.
+- C. Use Deployment Manager to deploy your application. Rely on the automatic enablement of all APIs used by the application being deployed.
+- D. Grant the App Engine Default service account the role of Cloud Pub/Sub Admin. Have your application enable the API on the first connection to Cloud Pub/ Sub.
+
+### 정답 및 풀이
+
+A
+
+## 32
+
+You need to monitor resources that are distributed over different projects in Google Cloud Platform. You want to consolidate reporting under the same Stackdriver
+Monitoring dashboard. What should you do?
+
+- A. Use Shared VPC to connect all projects, and link Stackdriver to one of the projects.
+- B. For each project, create a Stackdriver account. In each project, create a service account for that project and grant it the role of Stackdriver Account Editor in all other projects.
+- C. Configure a single Stackdriver account, and link all projects to the same account.
+- D. Configure a single Stackdriver account for one of the projects. In Stackdriver, create a Group and add the other project names as criteria for that Group.
+
+### 정답 및 풀이
+
+C
+
+여러 프로젝트를 하나의 스택드라이버에서 모니터링을 하기 위해서는 하나의 스택드라이버 계정을 생성하고 연결하면 된다.
+
+## 33
+
+You are deploying an application to a Compute Engine VM in a managed instance group. The application must be running at all times, but only a single instance of the VM should run per GCP project. How should you configure the instance group?
+
+- A. Set autoscaling to On, set the minimum number of instances to 1, and then set the maximum number of instances to 1.
+- B. Set autoscaling to Off, set the minimum number of instances to 1, and then set the maximum number of instances to 1.
+- C. Set autoscaling to On, set the minimum number of instances to 1, and then set the maximum number of instances to 2.
+- D. Set autoscaling to Off, set the minimum number of instances to 1, and then set the maximum number of instances to 2.
+
+### 정답 및 풀이
+
+B
+
+인스턴스를 무조건 하나를 실행하기 위해서는 minimum , maximum number 를 1 로 셋팅한다.
+
+## 34 
+
+You want to verify the IAM users and roles assigned within a GCP project named my-project. What should you do?
+
+- A. Run gcloud iam roles list. Review the output section.
+- B. Run gcloud iam service-accounts list. Review the output section.
+- C. Navigate to the project and then to the IAM section in the GCP Console. Review the members and roles.
+- D. Navigate to the project and then to the Roles section in the GCP Console. Review the roles and status.
+
+### 정답 및 풀이
+
+C
+
+프로젝트에 모든 유저의 IAM role 를 조회할수 있는 방법을 찾는 것이다.
+
+- A : 현재 자신의 role 만을 보여준다.
+- B : 서비스 어카운트 정보를 보여준다. 여기서 유저와 서비스 계정은 다르다.
+- D : 서비스에 대한 Role 만 보여준다.
+
+## 35
+
+You need to create a new billing account and then link it with an existing Google Cloud Platform project. What should you do?
+
+- A. Verify that you are Project Billing Manager for the GCP project. Update the existing project to link it to the existing billing account.
+- B. Verify that you are Project Billing Manager for the GCP project. Create a new billing account and link the new billing account to the existing project.
+- C. Verify that you are Billing Administrator for the billing account. Create a new project and link the new project to the existing billing account.
+- D. Verify that you are Billing Administrator for the billing account. Update the existing project to link it to the existing billing account.
+
+### 해답 및 풀이
+
+B
+
+이런 문제는 항상 전체, 프로젝트 단위인지 잘 살펴보자
+
+## 36
+
+You have one project called proj-sa where you manage all your service accounts. You want to be able to use a service account from this project to take snapshots of VMs running in another project called proj-vm. What should you do?
+
+- A. Download the private key from the service account, and add it to each VMs custom metadata.
+- B. Download the private key from the service account, and add the private key to each VM's SSH keys.
+- C. Grant the service account the IAM Role of Compute Storage Admin in the project called proj-vm.
+- D. When creating the VMs, set the service account's API scope for Compute Engine to read/write.
+
+### 정답 및 풀이
+
+C
+
+- Compute Storage Admin(roles/compute.storageAdmin) : Permissions to create, modify, and delete disks, images, and snapshots.
+
+## 37
+
+You created a Google Cloud Platform project with an App Engine application inside the project. You initially configured the application to be served from the us- central region. Now you want the application to be served from the asia-northeast1 region. What should you do?
+
+- A. Change the default region property setting in the existing GCP project to asia-northeast1.
+- B. Change the region property setting in the existing App Engine application from us-central to asia-northeast1.
+- C. Create a second App Engine application in the existing GCP project and specify asia-northeast1 as the region to serve your application.
+- D. Create a new GCP project and create an App Engine application inside this new project. Specify asia-northeast1 as the region to serve your application.
+
+### 정답 및 풀이
+
+D
+
+GCP 의 서비스 리전을 변경하는 것을 불가능하다 무조건 새로 만들어야 한다. App Engine 은 프로젝트 당 하나만 생성이 가능하므로 새로운 프로젝트에 생성해야한다.
+
+## 38
+
+You need to grant access for three users so that they can view and edit table data on a Cloud Spanner instance. What should you do?
+
+- A. Run gcloud iam roles describe roles/spanner.databaseUser. Add the users to the role.
+- B. Run gcloud iam roles describe roles/spanner.databaseUser. Add the users to a new group. Add the group to the role.
+- C. Run gcloud iam roles describe roles/spanner.viewer - -project my-project. Add the users to the role.
+- D. Run gcloud iam roles describe roles/spanner.viewer - -project my-project. Add the users to a new group. Add the group to the role.
+
+### 정답 및 풀이
+
+B
+
+읽기/쓰기 권한이 필요하기에 A 또는 B 가 되며 권한은 그룹단위로 관리하는 것이 좋다.
+
+## 39
+
+You create a new Google Kubernetes Engine (GKE) cluster and want to make sure that it always runs a supported and stable version of Kubernetes. What should you do?
+
+- A. Enable the Node Auto-Repair feature for your GKE cluster.
+- B. Enable the Node Auto-Upgrades feature for your GKE cluster.
+- C. Select the latest available cluster version for your GKE cluster.
+- D. Select ג€Container-Optimized OS (cos)ג€ as a node image for your GKE cluster.
+
+### 정답 및 풀이
+
+B
+
+항상 최신의 GKE 를 유지하기 위해서는 자동 업데이트 기능을 활성화한다.
+
+## 40
+
+You have an instance group that you want to load balance. You want the load balancer to terminate the client SSL session. The instance group is used to serve a public web application over HTTPS. You want to follow Google-recommended practices. What should you do?
+
+- A. Configure an HTTP(S) load balancer.
+- B. Configure an internal TCP load balancer.
+- C. Configure an external SSL proxy load balancer.
+- D. Configure an external TCP proxy load balancer.
+
+### 정답 및 풀이
+
+A
+
+HTTPS 기반 서비스를 위해서 HTTPS 로그밸런서가 필요하다.
+
 ## Reference
 
 https://www.examtopics.com/exams/google/associate-cloud-engineer/view/
