@@ -633,6 +633,127 @@ A
 
 HTTPS 기반 서비스를 위해서 HTTPS 로그밸런서가 필요하다.
 
+## 41
+
+You have 32 GB of data in a single file that you need to upload to a Nearline Storage bucket. The WAN connection you are using is rated at 1 Gbps, and you are the only one on the connection. You want to use as much of the rated 1 Gbps as possible to transfer the file rapidly. How should you upload the file?
+
+- A. Use the GCP Console to transfer the file instead of gsutil.
+- B. Enable parallel composite uploads using gsutil on the file transfer.
+- C. Decrease the TCP window size on the machine initiating the transfer.
+- D. Change the storage class of the bucket from Nearline to Multi-Regional.
+
+### 정답 및 풀이
+
+B
+
+파일 전송을 빠르게 하기 위해 gsutil 을 이용하여 파일을 병렬로 전송가능
+
+## 42
+
+You've deployed a microservice called myapp1 to a Google Kubernetes Engine cluster using the YAML file specified below:
+
+![](https://www.examtopics.com/assets/media/exam-media/04338/0002100001.jpg)
+
+- A. Store the database password inside the Docker image of the container, not in the YAML file.
+- B. Store the database password inside a Secret object. Modify the YAML file to populate the DB_PASSWORD environment variable from the Secret.
+- C. Store the database password inside a ConfigMap object. Modify the YAML file to populate the DB_PASSWORD environment variable from the ConfigMap.
+- D. Store the database password in a file inside a Kubernetes persistent volume, and use a persistent volume claim to mount the volume to the container.
+
+### 정답 및 풀이
+
+GKE 에서 시크릿 정보를 관리할 때에는 Secret Manager/Object에 저장한다.
+
+## 43
+
+You are running an application on multiple virtual machines within a managed instance group and have autoscaling enabled. The autoscaling policy is configured so that additional instances are added to the group if the CPU utilization of instances goes above 80%. VMs are added until the instance group reaches its maximum limit of five VMs or until CPU utilization of instances lowers to 80%. The initial delay for HTTP health checks against the instances is set to 30 seconds.
+The virtual machine instances take around three minutes to become available for users. You observe that when the instance group autoscales, it adds more instances then necessary to support the levels of end-user traffic. You want to properly maintain instance group sizes when autoscaling. What should you do?
+
+- A. Set the maximum number of instances to 1.
+- B. Decrease the maximum number of instances to 3.
+- C. Use a TCP health check instead of an HTTP health check.
+- D. Increase the initial delay of the HTTP health check to 200 seconds.
+
+### 정답 및 풀이 
+
+D
+
+필요 이상으로 인스턴스가 생성됨으로 인스턴스를 생성 할 때 딜레이를 줘서 실제로 추가 인스턴스가 필요한지를 체크한다.
+
+## 44
+
+You need to select and configure compute resources for a set of batch processing jobs. These jobs take around 2 hours to complete and are run nightly. You want to minimize service costs. What should you do?
+
+- A. Select Google Kubernetes Engine. Use a single-node cluster with a small instance type.
+- B. Select Google Kubernetes Engine. Use a three-node cluster with micro instance types.
+- C. Select Compute Engine. Use preemptible VM instances of the appropriate standard machine type.
+- D. Select Compute Engine. Use VM instance types that support micro bursting.
+ 
+### 정답 및 풀이
+
+C
+
+배치 작업은 표준 타입의 선점형 VM이 적합하다
+
+## 45
+
+You recently deployed a new version of an application to App Engine and then discovered a bug in the release. You need to immediately revert to the prior version of the application. What should you do?
+
+- A. Run gcloud app restore.
+- B. On the App Engine page of the GCP Console, select the application that needs to be reverted and click Revert.
+- C. On the App Engine Versions page of the GCP Console, route 100% of the traffic to the previous version.
+- D. Deploy the original version as a separate application. Then go to App Engine settings and split traffic between applications so that the original version serves 100% of the requests.
+
+### 정답 및 풀이
+
+C
+
+App Engine 같은 경우 이전 버전을 유지하고 있기 때문에 만약 새로운 버전을 리버트하고 싶다면 App Engine 의 트래픽을 이전 버전을 100% 할당하면 된다.
+
+## 46
+
+You deployed an App Engine application using gcloud app deploy, but it did not deploy to the intended project. You want to find out why this happened and where the application deployed. What should you do?
+
+- A. Check the app.yaml file for your application and check project settings.
+- B. Check the web-application.xml file for your application and check project settings.
+- C. Go to Deployment Manager and review settings for deployment of applications.
+- D. Go to Cloud Shell and run gcloud config list to review the Google Cloud configuration used for deployment.
+
+### 정답 및 풀이
+
+C
+
+App Engine 은 Deployment Manager를 사용하지 않는다.
+
+## 47
+
+You want to configure 10 Compute Engine instances for availability when maintenance occurs. Your requirements state that these instances should attempt to automatically restart if they crash. Also, the instances should be highly available including during system maintenance. What should you do?
+
+- A. Create an instance template for the instances. Set the 'Automatic Restart' to on. Set the 'On-host maintenance' to Migrate VM instance. Add the instance template to an instance group.
+- B. Create an instance template for the instances. Set 'Automatic Restart' to off. Set 'On-host maintenance' to Terminate VM instances. Add the instance template to an instance group.
+- C. Create an instance group for the instances. Set the 'Autohealing' health check to healthy (HTTP).
+- D. Create an instance group for the instance. Verify that the 'Advanced creation options' setting for 'do not retry machine creation' is set to off.
+
+## 정답 및 풀이
+
+A
+
+Auto healing 과 햇갈릴수 있으나 Auto healing은 인스턴스를 삭제하고 재 생성한다.
+
+## 48
+
+You host a static website on Cloud Storage. Recently, you began to include links to PDF files on this site. Currently, when users click on the links to these PDF files, their browsers prompt them to save the file onto their local system. Instead, you want the clicked PDF files to be displayed within the browser window directly, without prompting the user to save the file locally. What should you do?
+
+- A. Enable Cloud CDN on the website frontend.
+- B. Enable 'Share publicly' on the PDF file objects.
+- C. Set Content-Type metadata to application/pdf on the PDF file objects.
+- D. Add a label to the storage bucket with a key of Content-Type and value of application/pdf.
+
+### 정답 및 풀이
+
+C
+
+cloud storage 에 저장된 파일에 Content-type을 추가하여 파일을 웹브라우저에서 바로 실행이 가능하다.
+
 ## Reference
 
 https://www.examtopics.com/exams/google/associate-cloud-engineer/view/
