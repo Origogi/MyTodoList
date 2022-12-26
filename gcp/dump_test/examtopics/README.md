@@ -754,6 +754,71 @@ C
 
 cloud storage 에 저장된 파일에 Content-type을 추가하여 파일을 웹브라우저에서 바로 실행이 가능하다.
 
+## 49
+
+You have a virtual machine that is currently configured with 2 vCPUs and 4 GB of memory. It is running out of memory. You want to upgrade the virtual machine to have 8 GB of memory. What should you do?
+
+- A. Rely on live migration to move the workload to a machine with more memory.
+- B. Use gcloud to add metadata to the VM. Set the key to required-memory-size and the value to 8 GB.
+- C. Stop the VM, change the machine type to n1-standard-8, and start the VM.
+- D. Stop the VM, increase the memory to 8 GB, and start the VM.
+
+### 정답 및 풀이
+
+D
+
+실행중인 VM의 메모리를 추가할 때는 VM을 stop하고 메모리를 추가해야 한다.
+
+## 50
+
+You have production and test workloads that you want to deploy on Compute Engine. Production VMs need to be in a different subnet than the test VMs. All the
+VMs must be able to reach each other over Internal IP without creating additional routes. You need to set up VPC and the 2 subnets. Which configuration meets these requirements?
+
+- A. Create a single custom VPC with 2 subnets. Create each subnet in a different region and with a different CIDR range.
+- B. Create a single custom VPC with 2 subnets. Create each subnet in the same region and with the same CIDR range.
+- C. Create 2 custom VPCs, each with a single subnet. Create each subnet in a different region and with a different CIDR range.
+- D. Create 2 custom VPCs, each with a single subnet. Create each subnet in the same region and with the same CIDR range.
+
+### 정답 및 풀이
+
+A
+
+서브넷을 두 개로 사용하기 위해서는 서브넷 리전과 CIDR range가 달라야 한다.
+
+## 51
+
+You need to create an autoscaling managed instance group for an HTTPS web application. You want to make sure that unhealthy VMs are recreated. What should you do?
+
+- A. Create a health check on port 443 and use that when creating the Managed Instance Group.
+- B. Select Multi-Zone instead of Single-Zone when creating the Managed Instance Group.
+- C. In the Instance Template, add the label 'health-check'.
+- D. In the Instance Template, add a startup script that sends a heartbeat to the metadata server.
+
+### 정답 및 풀이
+
+A
+
+HTTPS 의 포트번호는 443이며 해당 포트를 이용하여 서비스가 unhealthy한지 체크한다.
+
+## 52
+
+Your company has a Google Cloud Platform project that uses BigQuery for data warehousing. Your data science team changes frequently and has few members.
+You need to allow members of this team to perform queries. You want to follow Google-recommended practices. What should you do?
+
+- A. 1. Create an IAM entry for each data scientist's user account. 2. Assign the BigQuery jobUser role to the group.
+- B. 1. Create an IAM entry for each data scientist's user account. 2. Assign the BigQuery dataViewer user role to the group.
+- C. 1. Create a dedicated Google group in Cloud Identity. 2. Add each data scientist's user account to the group. 3. Assign the BigQuery jobUser role to the group.
+- D. 1. Create a dedicated Google group in Cloud Identity. 2. Add each data scientist's user account to the group. 3. Assign the BigQuery dataViewer user role to the group.
+ 
+### 정답 및 풀이
+
+C
+
+계정 관리는 그룹으로 관리하는게 좋다.
+
+- BigQuery 작업 사용자 (roles/bigquery.jobUser) : 프로젝트 내에서 쿼리 등의 작업을 실행
+- BigQuery 데이터 뷰어 (roles/bigquery.dataViewer): 테이블 또는 뷰에서 데이터와 메타데이터를 읽는 권한
+
 ## Reference
 
 https://www.examtopics.com/exams/google/associate-cloud-engineer/view/
