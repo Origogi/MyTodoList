@@ -819,6 +819,139 @@ C
 - BigQuery 작업 사용자 (roles/bigquery.jobUser) : 프로젝트 내에서 쿼리 등의 작업을 실행
 - BigQuery 데이터 뷰어 (roles/bigquery.dataViewer): 테이블 또는 뷰에서 데이터와 메타데이터를 읽는 권한
 
+## 53
+
+Your company has a 3-tier solution running on Compute Engine. The configuration of the current infrastructure is shown below.
+
+![](https://www.examtopics.com/assets/media/exam-media/04338/0002700001.png)
+
+Each tier has a service account that is associated with all instances within it. You need to enable communication on TCP port 8080 between tiers as follows:
+* Instances in tier #1 must communicate with tier #2.
+* Instances in tier #2 must communicate with tier #3.
+What should you do?
+
+- A. 1. Create an ingress firewall rule with the following settings: ג€¢ Targets: all instances ג€¢ Source filter: IP ranges (with the range set to 10.0.2.0/24) ג€¢ Protocols: allow all 2. Create an ingress firewall rule with the following settings: ג€¢ Targets: all instances ג€¢ Source filter: IP ranges (with the range set to 10.0.1.0/24) ג€¢ Protocols: allow all
+- B. 1. Create an ingress firewall rule with the following settings: ג€¢ Targets: all instances with tier #2 service account ג€¢ Source filter: all instances with tier #1 service account ג€¢ Protocols: allow TCP:8080 2. Create an ingress firewall rule with the following settings: ג€¢ Targets: all instances with tier #3 service account ג€¢ Source filter: all instances with tier #2 service account ג€¢ Protocols: allow TCP: 8080
+- C. 1. Create an ingress firewall rule with the following settings: ג€¢ Targets: all instances with tier #2 service account ג€¢ Source filter: all instances with tier #1 service account ג€¢ Protocols: allow all 2. Create an ingress firewall rule with the following settings: ג€¢ Targets: all instances with tier #3 service account ג€¢ Source filter: all instances with tier #2 service account ג€¢ Protocols: allow all
+- D. 1. Create an egress firewall rule with the following settings: ג€¢ Targets: all instances ג€¢ Source filter: IP ranges (with the range set to 10.0.2.0/24) ג€¢ Protocols: allow TCP: 8080 2. Create an egress firewall rule with the following settings: ג€¢ Targets: all instances ג€¢ Source filter: IP ranges (with the range set to 10.0.1.0/24) ג€¢ Protocols: allow TCP: 8080
+
+### 정답 및 풀이
+
+B
+
+A -> B -> C 로 8080 포트만 이용해서 통신이 가능해야 함으로
+
+- B는 A 의 IP:8080 허용
+- C는 B 의 IP:8080 허용
+
+## 54
+
+You are given a project with a single Virtual Private Cloud (VPC) and a single subnetwork in the us-central1 region. There is a Compute Engine instance hosting an application in this subnetwork. You need to deploy a new instance in the same project in the europe-west1 region. This new instance needs access to the application. You want to follow Google-recommended practices. What should you do?
+
+- A. 1. Create a subnetwork in the same VPC, in europe-west1. 2. Create the new instance in the new subnetwork and use the first instance's private address as the endpoint.
+- B. 1. Create a VPC and a subnetwork in europe-west1. 2. Expose the application with an internal load balancer. 3. Create the new instance in the new subnetwork and use the load balancer's address as the endpoint.
+- C. 1. Create a subnetwork in the same VPC, in europe-west1. 2. Use Cloud VPN to connect the two subnetworks. 3. Create the new instance in the new subnetwork and use the first instance's private address as the endpoint.
+- D. 1. Create a VPC and a subnetwork in europe-west1. 2. Peer the 2 VPCs. 3. Create the new instance in the new subnetwork and use the first instance's private address as the endpoint.
+
+### 정답 및 풀이
+
+C
+
+1. 동일한 VPC에 europe-west1 subnetwork를 생성
+2. 새 subnetwork에 새 인스턴스를 생성하고 첫 번째 인스턴스의 프라이빗 주소를 엔드포인트로 사용
+
+## 55
+
+Your projects incurred more costs than you expected last month. Your research reveals that a development GKE container emitted a huge number of logs, which resulted in higher costs. You want to disable the logs quickly using the minimum number of steps. What should you do?
+
+- A. 1. Go to the Logs ingestion window in Stackdriver Logging, and disable the log source for the GKE container resource.
+- B. 1. Go to the Logs ingestion window in Stackdriver Logging, and disable the log source for the GKE Cluster Operations resource.
+- C. 1. Go to the GKE console, and delete existing clusters. 2. Recreate a new cluster. 3. Clear the option to enable legacy Stackdriver Logging.
+- D. 1. Go to the GKE console, and delete existing clusters. 2. Recreate a new cluster. 3. Clear the option to enable legacy Stackdriver Monitoring.
+
+### 정답 및 풀이
+
+- GKE container 에서 엄청난 로그가 발생했다고 문제에서 언급
+- Stackdriver Logging의 로그 수집 창으로 이동하여 GKE 컨테이너 리소스에 대한 로그 소스를 사용 중지
+
+## 56
+
+You have a website hosted on App Engine standard environment. You want 1% of your users to see a new test version of the website. You want to minimize complexity. What should you do?
+
+- A. Deploy the new version in the same application and use the --migrate option.
+- B. Deploy the new version in the same application and use the --splits option to give a weight of 99 to the current version and a weight of 1 to the new version.
+- C. Create a new App Engine application in the same project. Deploy the new version in that application. Use the App Engine library to proxy 1% of the requests to the new version.
+- D. Create a new App Engine application in the same project. Deploy the new version in that application. Configure your network load balancer to send 1% of the traffic to that new application.
+
+### 정답 및 풀이
+
+B 
+
+앱 엔진을 딱 한개만 생성이 가능하다
+
+## 57
+
+You have a web application deployed as a managed instance group. You have a new version of the application to gradually deploy. Your web application is currently receiving live web traffic. You want to ensure that the available capacity does not decrease during the deployment. What should you do?
+
+- A. Perform a rolling-action start-update with maxSurge set to 0 and maxUnavailable set to 1.
+- B. Perform a rolling-action start-update with maxSurge set to 1 and maxUnavailable set to 0.
+- C. Create a new managed instance group with an updated instance template. Add the group to the backend service for the load balancer. When all instances in the new managed instance group are healthy, delete the old managed instance group.
+- D. Create a new instance template with the new application version. Update the existing managed instance group with the new instance template. Delete the instances in the managed instance group to allow the managed instance group to recreate the instance using the new instance template.
+ 
+### 정답 및 풀이
+
+B
+
+- maxSurge : 자동 업데이트 중에 targetSize 이상으로 만들 수 있는 최대 초과 개수
+- maxUnavailable: 자동 업데이트 중에 언제든지 사용할 수 없는 최대 사용 불가 인스턴스 수
+- maxSurge를 1로 설정하여 새 인스턴스를 만들수 있도록 설정
+- 전역 용량이 그대로 유지되도록 해야 하므로 maxUnavailable을 0으로 설정해야 합니다.
+- C는 더 비싸고 설정하기 더 어려우며
+
+## 58
+
+You are building an application that stores relational data from users. Users across the globe will use this application. Your CTO is concerned about the scaling requirements because the size of the user base is unknown. You need to implement a database solution that can scale with your user growth with minimum configuration changes. Which storage solution should you use?
+
+- A. Cloud SQL
+- B. Cloud Spanner
+- C. Cloud Firestore
+- D. Cloud Datastore
+
+### 정답 및 풀이
+
+B
+
+관계형 DB이면서 사이즈를 예측하지 못할 때 Cloud Spanner 가 좋다
+
+## 59
+
+You are the organization and billing administrator for your company. The engineering team has the Project Creator role on the organization. You do not want the engineering team to be able to link projects to the billing account. Only the finance team should be able to link a project to a billing account, but they should not be able to make any other changes to projects. What should you do?
+
+- A. Assign the finance team only the Billing Account User role on the billing account.
+- B. Assign the engineering team only the Billing Account User role on the billing account.
+- C. Assign the finance team the Billing Account User role on the billing account and the Project Billing Manager role on the organization.
+- D. Assign the engineering team the Billing Account User role on the billing account and the Project Billing Manager role on the organization.
+
+### 정답 및 풀이
+
+C
+
+## 60
+
+You have an application running in Google Kubernetes Engine (GKE) with cluster autoscaling enabled. The application exposes a TCP endpoint. There are several replicas of this application. You have a Compute Engine instance in the same region, but in another Virtual Private Cloud (VPC), called gce-network, that has no overlapping IP ranges with the first VPC. This instance needs to connect to the application on GKE. You want to minimize effort. What should you do?
+
+- A. 1. In GKE, create a Service of type LoadBalancer that uses the application's Pods as backend. 2. Set the service's externalTrafficPolicy to Cluster. 3. Configure the Compute Engine instance to use the address of the load balancer that has been created.
+- B. 1. In GKE, create a Service of type NodePort that uses the application's Pods as backend. 2. Create a Compute Engine instance called proxy with 2 network interfaces, one in each VPC. 3. Use iptables on this instance to forward traffic from gce-network to the GKE nodes. 4. Configure the Compute Engine instance to use the address of proxy in gce-network as endpoint.
+- C. 1. In GKE, create a Service of type LoadBalancer that uses the application's Pods as backend. 2. Add an annotation to this service: cloud.google.com/load-balancer-type: Internal 3. Peer the two VPCs together. 4. Configure the Compute Engine instance to use the address of the load balancer that has been created.
+- D. 1. In GKE, create a Service of type LoadBalancer that uses the application's Pods as backend. 2. Add a Cloud Armor Security Policy to the load balancer that whitelists the internal IPs of the MIG's instances. 3. Configure the Compute Engine instance to use the address of the load balancer that has been created.
+
+### 정답 및 풀이
+
+C
+
+- 문제에서 동일한 지역, 다른 VPC라고 했으므로 다른 VPC는 VPC 네트워크 피어링 필요
+- VPC 네트워크 피어링을 통해 LoadBalancer 네트워크에 연결된 VPC 네트워크의 클라이언트는 서비스에 액세스할 수도 있습니다.
+
 ## Reference
 
 https://www.examtopics.com/exams/google/associate-cloud-engineer/view/
