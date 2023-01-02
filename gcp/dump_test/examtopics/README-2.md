@@ -203,6 +203,27 @@ https://brunch.co.kr/@topasvga/1249
 
 </details>
 
+## 80
+
+You want to add a new auditor to a Google Cloud Platform project. The auditor should be allowed to read, but not modify, all project items.
+How should you configure the auditor's permissions?
+
+- A. Create a custom role with view-only project permissions. Add the user's account to the custom role.
+- B. Create a custom role with view-only service permissions. Add the user's account to the custom role.
+- C. Select the built-in IAM project Viewer role. Add the user's account to this role.
+- D. Select the built-in IAM service Viewer role. Add the user's account to this role.
+
+### 정답 및 풀이
+
+<details markdown="80">
+<summary>보기</summary>
+
+C
+
+정답이 A 또는 C 인데.. 흠..🤔
+
+</details>
+
 ## 링크
 
 https://www.examtopics.com/exams/google/associate-cloud-engineer/view/
