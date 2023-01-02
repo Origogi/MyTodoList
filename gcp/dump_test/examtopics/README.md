@@ -952,6 +952,137 @@ C
 - 문제에서 동일한 지역, 다른 VPC라고 했으므로 다른 VPC는 VPC 네트워크 피어링 필요
 - VPC 네트워크 피어링을 통해 LoadBalancer 네트워크에 연결된 VPC 네트워크의 클라이언트는 서비스에 액세스할 수도 있습니다.
 
+## 61
+
+Your organization is a financial company that needs to store audit log files for 3 years. Your organization has hundreds of Google Cloud projects. You need to implement a cost-effective approach for log file retention. What should you do?
+
+- A. Create an export to the sink that saves logs from Cloud Audit to BigQuery.
+- B. Create an export to the sink that saves logs from Cloud Audit to a Coldline Storage bucket.
+- C. Write a custom script that uses logging API to copy the logs from Stackdriver logs to BigQuery.
+- D. Export these logs to Cloud Pub/Sub and write a Cloud Dataflow pipeline to store logs to Cloud SQL.
+
+### 정답 및 풀이
+
+B
+
+데이터를 장시간 보관하면서 비용을 절감하기 위해서 Cold line storage 가 좋은 선택이다.
+
+## 62
+
+You want to run a single caching HTTP reverse proxy on GCP for a latency-sensitive website. This specific reverse proxy consumes almost no CPU. You want to have a 30-GB in-memory cache, and need an additional 2 GB of memory for the rest of the processes. You want to minimize cost. How should you run this reverse proxy?
+
+- A. Create a Cloud Memorystore for Redis instance with 32-GB capacity.
+- B. Run it on Compute Engine, and choose a custom instance type with 6 vCPUs and 32 GB of memory.
+- C. Package it in a container image, and run it on Kubernetes Engine, using n1-standard-32 instances as nodes.
+- D. Run it on Compute Engine, choose the instance type n1-standard-1, and add an SSD persistent disk of 32 GB.
+
+### 정답 및 풀이
+
+A
+
+메모리 목적이 캐쉬를 위한 것이기 때문에 A 이다.
+
+- Memorystore for Redis : Redis 인메모리 데이터 저장소를 통해 완전 관리형 서비스를 제공하여 밀리초 이하로 데이터에 액세스할 수 있는 애플리케이션 캐시를 빌드합니다.
+- Redis : Remote Dictionary Server의 약자로서, "키-값" 구조의 비정형 데이터를 저장하고 관리하기 위한 오픈 소스 기반의 비관계형 데이터베이스 관리 시스템이다.
+
+## 63
+
+You are hosting an application on bare-metal servers in your own data center. The application needs access to Cloud Storage. However, security policies prevent the servers hosting the application from having public IP addresses or access to the internet. You want to follow Google-recommended practices to provide the application with access to Cloud Storage. What should you do?
+
+- A. 1. Use nslookup to get the IP address for storage.googleapis.com. 2. Negotiate with the security team to be able to give a public IP address to the servers. 3. Only allow egress traffic from those servers to the IP addresses for storage.googleapis.com.
+- B. 1. Using Cloud VPN, create a VPN tunnel to a Virtual Private Cloud (VPC) in Google Cloud. 2. In this VPC, create a Compute Engine instance and install the Squid proxy server on this instance. 3. Configure your servers to use that instance as a proxy to access Cloud Storage.
+- C. 1. Use Migrate for Compute Engine (formerly known as Velostrata) to migrate those servers to Compute Engine. 2. Create an internal load balancer (ILB) that uses storage.googleapis.com as backend. 3. Configure your new instances to use this ILB as proxy.
+- D. 1. Using Cloud VPN or Interconnect, create a tunnel to a VPC in Google Cloud. 2. Use Cloud Router to create a custom route advertisement for 199.36.153.4/30. Announce that network to your on-premises network through the VPN tunnel. 3. In your on-premises network, configure your DNS server to resolve *.googleapis.com as a CNAME to restricted.googleapis.com.
+
+### 정답 및 풀이
+
+D
+
+베어메탈 서버와 하이브리드로 백엔드를 구출할 때 Cloud Interconntect 를 사용한다.
+
+## 64
+
+You want to deploy an application on Cloud Run that processes messages from a Cloud Pub/Sub topic. You want to follow Google-recommended practices. What should you do?
+
+- A. 1. Create a Cloud Function that uses a Cloud Pub/Sub trigger on that topic. 2. Call your application on Cloud Run from the Cloud Function for every message.
+- B. 1. Grant the Pub/Sub Subscriber role to the service account used by Cloud Run. 2. Create a Cloud Pub/Sub subscription for that topic. 3. Make your application pull messages from that subscription.
+- C. 1. Create a service account. 2. Give the Cloud Run Invoker role to that service account for your Cloud Run application. 3. Create a Cloud Pub/Sub subscription that uses that service account and uses your Cloud Run application as the push endpoint.
+- D. 1. Deploy your application on Cloud Run on GKE with the connectivity set to Internal. 2. Create a Cloud Pub/Sub subscription for that topic. 3. In the same Google Kubernetes Engine cluster as your application, deploy a container that takes the messages and sends them to your application.
+
+### 정답 및 풀이
+
+C
+
+서비스 계정에 Cloud Run 을 실행 권한을 주고 서비스 계정에 대해 Pub/Sub 구독을 할수 있게 한다.
+
 ## Reference
+
+## 65
+
+You need to deploy an application, which is packaged in a container image, in a new project. The application exposes an HTTP endpoint and receives very few requests per day. You want to minimize costs. What should you do?
+
+- A. Deploy the container on Cloud Run.
+- B. Deploy the container on Cloud Run on GKE.
+- C. Deploy the container on App Engine Flexible.
+- D. Deploy the container on GKE with cluster autoscaling and horizontal pod autoscaling enabled.
+
+### 정답 및 풀이
+
+A
+
+컨테이너 이미지를 잠깐 쓰면서 비용 절감 측면에서는 Cloud Run 이 좋다.
+
+## 66
+
+Your company has an existing GCP organization with hundreds of projects and a billing account. Your company recently acquired another company that also has hundreds of projects and its own billing account. You would like to consolidate all GCP costs of both GCP organizations onto a single invoice. You would like to consolidate all costs as of tomorrow. What should you do?
+
+- A. Link the acquired company's projects to your company's billing account.
+- B. Configure the acquired company's billing account and your company's billing account to export the billing data into the same BigQuery dataset.
+- C. Migrate the acquired company's projects into your company's GCP organization. Link the migrated projects to your company's billing account.
+- D. Create a new GCP organization and a new billing account. Migrate the acquired company's projects and your company's projects into the new GCP organization and link the projects to the new billing account.
+
+### 정답 및 풀이
+
+A 
+
+다른 회사의 프로젝트를 기존 결제 계정에 연결하여 총 비용을 생성 가능
+
+## 67
+
+You built an application on Google Cloud that uses Cloud Spanner. Your support team needs to monitor the environment but should not have access to table data.
+You need a streamlined solution to grant the correct permissions to your support team, and you want to follow Google-recommended practices. What should you do?
+
+- A. Add the support team group to the roles/monitoring.viewer role
+- B. Add the support team group to the roles/spanner.databaseUser role.
+- C. Add the support team group to the roles/spanner.databaseReader role.
+- D. Add the support team group to the roles/stackdriver.accounts.viewer role.
+
+### 정답 및 풀이
+
+A
+
+데이터에 아예 접근 할수 없으므로 B, C는 해당이 안된다. 최소한의 모니터링 권한만 필요함으로 답은 A이다.
+
+## 68
+
+For analysis purposes, you need to send all the logs from all of your Compute Engine instances to a BigQuery dataset called platform-logs. You have already installed the Cloud Logging agent on all the instances. You want to minimize cost. What should you do?
+
+- A. 1. Give the BigQuery Data Editor role on the platform-logs dataset to the service accounts used by your instances. 2. Update your instances' metadata to add the following value: logs-destination: bq://platform-logs.
+- B. 1. In Cloud Logging, create a logs export with a Cloud Pub/Sub topic called logs as a sink. 2. Create a Cloud Function that is triggered by messages in the logs topic. 3. Configure that Cloud Function to drop logs that are not from Compute Engine and to insert Compute Engine logs in the platform-logs dataset.
+- C. 1. In Cloud Logging, create a filter to view only Compute Engine logs. 2. Click Create Export. 3. Choose BigQuery as Sink Service, and the platform-logs dataset as Sink Destination.
+- D. 1. Create a Cloud Function that has the BigQuery User role on the platform-logs dataset. 2. Configure this Cloud Function to create a BigQuery Job that executes this query: INSERT INTO dataset.platform-logs (timestamp, log) SELECT timestamp, log FROM compute.logs WHERE timestamp > DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY) 3. Use Cloud Scheduler to trigger this Cloud Function once a day.
+
+## 정답 및 풀이
+
+<details markdown="68">
+<summary>보기</summary>
+
+C
+
+Cloud Logging 을 추가 비용없이 Export 를 통해 Big Query와 연동 시키면 된다.
+
+</details>
+
+## 링크
 
 https://www.examtopics.com/exams/google/associate-cloud-engineer/view/
