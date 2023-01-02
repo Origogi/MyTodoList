@@ -1083,6 +1083,47 @@ Cloud Logging 을 추가 비용없이 Export 를 통해 Big Query와 연동 시�
 
 </details>
 
+## 69
+
+You are using Deployment Manager to create a Google Kubernetes Engine cluster. Using the same Deployment Manager deployment, you also want to create a
+DaemonSet in the kube-system namespace of the cluster. You want a solution that uses the fewest possible services. What should you do?
+
+- A. Add the cluster's API as a new Type Provider in Deployment Manager, and use the new type to create the DaemonSet.
+- B. Use the Deployment Manager Runtime Configurator to create a new Config resource that contains the DaemonSet definition.
+- C. With Deployment Manager, create a Compute Engine instance with a startup script that uses kubectl to create the DaemonSet.
+- D. In the cluster's definition in Deployment Manager, add a metadata that has kube-system as key and the DaemonSet manifest as value.
+
+### 정답 및 풀이
+
+<details markdown="69">
+<summary>보기</summary>
+
+A
+
+동일한 Deployment Manager에 새로운 유형의 클러스터를 추가하기 위해서는 Type-Provider 를 사용한다.
+
+</details>
+
+## 70
+
+You are building an application that will run in your data center. The application will use Google Cloud Platform (GCP) services like AutoML. You created a service account that has appropriate access to AutoML. You need to enable authentication to the APIs from your on-premises environment. What should you do?
+
+- A. Use service account credentials in your on-premises application.
+- B. Use gcloud to create a key file for the service account that has appropriate permissions.
+- C. Set up direct interconnect between your data center and Google Cloud Platform to enable authentication for your on-premises applications.
+- D. Go to the IAM & admin console, grant a user account permissions similar to the service account permissions, and use this user account for authentication from your data center.
+
+### 정답 및 풀이
+
+<details markdown="70">
+<summary>보기</summary>
+
+B
+
+GCP 외부에서 GCP 서비스를 사용하기 위해서는 서비스 계정을 만들고 서비스 계정을 사용할수 있는 키를 생성하고 공유한다.
+
+</details>
+
 ## 링크
 
 https://www.examtopics.com/exams/google/associate-cloud-engineer/view/
