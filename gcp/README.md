@@ -110,6 +110,18 @@ GCP에서 다양한 인스턴스 구성 및 이미지를 제공하며 임의로 
 현재 VM의 상태(환경 설정)를 스냅샷으로 저장하여 복제를 하거나 다른 환경에 마이그레이션이 가능하다.
 또한 마켓플레이스에 출시하여 다른 사람이 이용하는 것도 가능하다.
 
+### Preemptible Virtual Machine (PVM)
+
+GCE 에서 제공하는 VM instance 의 한 종류로 AWS 의 spot instance와 매우 비슷한 성격을 가지고 있다.
+
+일반 VM에 비해 80%까지 저렴하게 사용할 수 있는데, 가격이 싼 대신에 몇가지 제약사항이 있다.
+
+- 24 시간 뒤에 자동으로 삭제된다. 
+- 다른쪽에서 해당 리소스를 사용하게 될 경우 내 PVM이 자동 종료될 수도 있다. (Preemptible -선점가능한) 
+- auto restart 불가능하고 live-migration 작업도 불가능하다
+
+위와 같은 제약사항때문에 PVM은 테스트 작업이나 단시간에 실행되는 __batch process job__, __fault tolerant__ 한 application에 사용하기 적합하다.
+
 ## 8. VPC
 
 VPC(Virtual Private cloud)는 GCP 리소스를 위한 관리형 네트워킹 기능을 제공한다.
@@ -231,6 +243,16 @@ GCP의 대표적인 객체 Repository이다. 이를 이용하면 데이터 양�
 
 - 쿠버네티스는 포드 단위로 컨테이너를 배포한다.
 - 일반적으로 포드는 하나의 컨테이너만 있지만 상호 의존성이 높은 컨테이너가 여러 개 이쓰면 이들을 하나의 포드로 패키징한다.
+
+### DemonSet
+
+__클러스터 전체__ 에 pod 을 띄울 때 사용한다.
+
+<img width="629" alt="image" src="https://user-images.githubusercontent.com/35194820/210364179-9145c0de-6e02-496f-8476-01620e52965b.png">
+
+### Kubernetis Secret
+
+Kubernetes Secrets를 사용하면 비밀번호, OAuth 토큰 및 SSH 키와 같은 민감한 정보를 저장하고 관리할 수 있음
 
 ## 15. App Engine
 
