@@ -107,8 +107,10 @@ GCP에서 다양한 인스턴스 구성 및 이미지를 제공하며 임의로 
 
 ### 스냅샷
 
-현재 VM의 상태(환경 설정)를 스냅샷으로 저장하여 복제를 하거나 다른 환경에 마이그레이션이 가능하다.
+- 현재 VM의 상태(환경 설정)를 스냅샷으로 저장하여 복제를 하거나 다른 환경에 마이그레이션이 가능하다.
 또한 마켓플레이스에 출시하여 다른 사람이 이용하는 것도 가능하다.
+- 스냅샷 스케쥴을 통해서 스냅샷을 백업이 가능하다.
+
 
 ### Preemptible Virtual Machine (PVM)
 
@@ -325,7 +327,22 @@ Kubernetes Secrets를 사용하면 비밀번호, OAuth 토큰 및 SSH 키와 같
 - Jupiter notebook 처럼 Python 코드를 대화식으로 실행하고 결과를 볼 수 있다.
 - Google 차트 또는 매트로프롯을 사용하여 데이터 시각화할 수 있다.
 
-## 19. 요약
+## 19. Transfer Appliance
+
+On Premise 환경에서 GCP로 데이터를 안전하고 빠르게 전송할 때 사용하는 서비스
+
+## 20. Cloud Foundation Toolkit
+
+## 21. Teraform
+
+## 22. Autopilot
+
+## 23. On Premise 와 GCP 연결 방법
+
+- Cloud Interconnect
+- VPN 을 만들고 VPC와 연결 : 이 방법이 저렴하다.
+
+## 23. 요약
 
 ### Comaparing compute options
 
