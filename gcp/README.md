@@ -256,6 +256,10 @@ __클러스터 전체__ 에 pod 을 띄울 때 사용한다.
 
 Kubernetes Secrets를 사용하면 비밀번호, OAuth 토큰 및 SSH 키와 같은 민감한 정보를 저장하고 관리할 수 있음
 
+### Autopliot
+
+GKE Autopilot은 Google에서 노드, 확장, 보안, 기타 사전 구성된 설정을 포함한 클러스터 구성을 관리하는 GKE의 작동 모드입니다. Autopilot 클러스터는 대부분의 프로덕션 워크로드를 실행하고 Kubernetes 매니페스트에 따라 컴퓨팅 리소스를 프로비저닝하도록 최적화되어 있습니다. 간소화된 구성은 클러스터 및 워크로드 설정, 확장성, 보안에 대한 GKE 권장사항을 따릅니다.
+
 ## 15. App Engine
 
 - 인프라에 대해 전혀 신경 쓰고 싶지 않고 코드에만 집중하고 싶을 때 사용한다.
@@ -333,16 +337,48 @@ On Premise 환경에서 GCP로 데이터를 안전하고 빠르게 전송할 때
 
 ## 20. Cloud Foundation Toolkit
 
-## 21. Teraform
+온프레미즈에서 GCP 로 마이그레이션을 할 때 빠르고 쉽게 배포할수 있도록 해주는 권장사항 템플릿이다.
+해당 템플릿은 테라폼이나 Deployment Manager 으로 변환이 가능하다.
 
-## 22. Autopilot
+### Terraform
 
-## 23. On Premise 와 GCP 연결 방법
+테라폼은 하시코프에서 오픈소스로 개발중인 클라우드 인프라스트럭처 자동화를 지향하는 코드로서의 인프라스트럭처(Infrastructure as Code, IaC) 도구입니다. IaC는 코드로 인프라스트럭처를 관리한다는 개념으로 테라폼에서는 하시코프 설정 언어HCL, Hashicorp Configuration Language을 사용해 클라우드 리소스를 선언합니다
+
+## 21. Cloud Deployment Manager
+
+> Google Cloud 리소스의 생성 및 관리를 자동화하는 인프라 배포 서비스.
+
+### 특징
+
+- Repeatable deployment process : 동일한 결과를 내는 반복적인 배포가 가능하며 하나의 명령이나 클릭으로 전체 배포를 삭제할 수 있다.
+- Declarative language
+- Focus on the application : 각각의 리소스를 따로 배포하는 대신에, 어플리케이션이나 서비스를 구성하는 여러 리소스의 집합을 지정할 수 있다.
+
+### 리소스의 종류
+
+- Instances
+- Instance templates and groups to VPC networks
+- Firewall rules
+- VPN tunnels
+- Cloud routers, and Load balancers
+
+### 구성
+
+생성하려는 각 리소스와 해당 리소스 속성이 나열된 YAML 구문으로 작성된 파일이다
+
+## 22. On Premise 와 GCP 연결 방법
 
 - Cloud Interconnect
 - VPN 을 만들고 VPC와 연결 : 이 방법이 저렴하다.
 
-## 23. 요약
+## 23. Cloud Interconnect
+
+온프레미즈 환경과 GCP를 연결해주는 서비스이다. 종류는 Partner와 Dedicated 두 종류가 있다.
+
+![image](https://user-images.githubusercontent.com/35194820/210913299-1d13750a-2dc9-46c4-9f62-07a8d61f2219.png)
+
+
+## 24. 요약
 
 ### Comaparing compute options
 
