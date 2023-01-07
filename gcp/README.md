@@ -124,6 +124,13 @@ GCE 에서 제공하는 VM instance 의 한 종류로 AWS 의 spot instance와 �
 
 위와 같은 제약사항때문에 PVM은 테스트 작업이나 단시간에 실행되는 __batch process job__, __fault tolerant__ 한 application에 사용하기 적합하다.
 
+### Managed Instance Group (관리형 인스턴스 그룹)
+
+인스턴스 그룹은 단일 항목으로 관리할 수 있는 가상 머신 (VM) 인스턴스 모음이다. Compute Engine은 관리형 및 비관리형이라는 두 가지 VM 인스턴스 그룹을 제공한다.
+
+- 관리형 인스턴스 그룹(MIG)을 사용하면 동일한 여러 VM에서 앱을 운영할 수 있다. __자동 확장__, __자동 복구__, __리전(멀티 영역) 배포__, __자동 업데이트__ 등의 자동화된 MIG 서비스를 활용하여 워크로드의 확장성 및 가용성을 높일 수 있다.
+- 비관리형 인스턴스 그룹을 사용하면 직접 관리하는 여러 VM에서 부하 분산을 수행할 수 있다.
+
 ## 8. VPC
 
 VPC(Virtual Private cloud)는 GCP 리소스를 위한 관리형 네트워킹 기능을 제공한다.
