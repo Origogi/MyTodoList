@@ -131,6 +131,10 @@ GCE 에서 제공하는 VM instance 의 한 종류로 AWS 의 spot instance와 �
 - 관리형 인스턴스 그룹(MIG)을 사용하면 동일한 여러 VM에서 앱을 운영할 수 있다. __자동 확장__, __자동 복구__, __리전(멀티 영역) 배포__, __자동 업데이트__ 등의 자동화된 MIG 서비스를 활용하여 워크로드의 확장성 및 가용성을 높일 수 있다.
 - 비관리형 인스턴스 그룹을 사용하면 직접 관리하는 여러 VM에서 부하 분산을 수행할 수 있다.
 
+### Configurations
+
+VM 을 생성할 때 필요한 리소스를 정의한 configuration 파일을 생성하고 activate [config file] 을 통해서 VM을 빠르게 생성이 가능하다.
+
 ## 8. VPC
 
 VPC(Virtual Private cloud)는 GCP 리소스를 위한 관리형 네트워킹 기능을 제공한다.
@@ -185,6 +189,11 @@ GCP의 대표적인 객체 Repository이다. 이를 이용하면 데이터 양�
 - `Muliti-Regional Storage` : 데이터를 다양한 리전에 중복해서 저장할 수 있다. 자주 엑세스하는 데이터를 저장하는 데 적합하다. 예를 들어 웹사이트 컨텐츠, 게임 데이터
 - `Nearline Storage` : 자주 액세스하지 않은 데이터를 저장하는 데 적합, 주로 한달에 한번정도 액세스할 때 적합
 - `Coldline Storage` : 1년에 한번 꼴로 액세스할 때 주로 사용, 주로 데이터 백업용
+
+### Cloud Storage Object Lifecycle Management 
+
+스토리지의 데이터 저장/삭제를 자동으로 관리해주는 도구이다.
+예를 들어 30일 이 후에 Regional Storage에서 Coldline Storage 으로 백업하고 1년 후에 Coldline Storage 의 데이터를 자동으로 삭제가 가능하다.
 
 ## 10. Google Cloud Bigtable
 
@@ -384,6 +393,9 @@ On Premise 환경에서 GCP로 데이터를 안전하고 빠르게 전송할 때
 
 ![image](https://user-images.githubusercontent.com/35194820/210913299-1d13750a-2dc9-46c4-9f62-07a8d61f2219.png)
 
+## 25. IAP
+
+외부에서 Cloud Resource 를 접근하기 위해서는 Cloud resource 는 public IP를 가져서 외부에 노출해야 하는데 DB 같이 public IP 를 가지지 않으면서 외부에서 접근하기 위해서는 IAP를 사용한다.
 
 ## 24. 요약
 
