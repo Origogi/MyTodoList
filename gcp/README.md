@@ -268,6 +268,17 @@ __클러스터 전체__ 에 pod 을 띄울 때 사용한다.
 
 <img width="629" alt="image" src="https://user-images.githubusercontent.com/35194820/210364179-9145c0de-6e02-496f-8476-01620e52965b.png">
 
+### StalefulSet
+
+Pod이 삭제하고 다시 시작했을 때 이전의 상태를 계속 유지하고 싶을 때 사용한다.
+
+대표적인 UseCase는 다음과 같다.
+
+- 안정적이고 고유한 네트워크 식별자가 필요한 경우
+- 안정적이고 지속적인 스토리지를 사용해야 하는 경우
+- 질서 정연한 포드의 배치와 확장을 원하는 경우
+- 포드의 자동 롤링업데이트를 사용하기 원하는 경우
+
 ### Kubernetis Secret
 
 Kubernetes Secrets를 사용하면 비밀번호, OAuth 토큰 및 SSH 키와 같은 민감한 정보를 저장하고 관리할 수 있음
