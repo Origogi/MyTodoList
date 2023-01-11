@@ -82,6 +82,10 @@ IAM에서 권한은 `<service>`,`<resource>`, `<verb>` 형태로 나타난다.
 - Editor : 리소스를 Read 뿐 만 아니라 수정도 가능하다.
 - Owner : 리소스를  Read 뿐 만 아니라 수정도 가능하며 리소스에 대한 역할 및 권한을 관리할 수 있다.
 
+### gcloud 명령어
+
+![image](https://user-images.githubusercontent.com/35194820/211735421-de8940cd-d7b9-47d8-931b-ef4927b6537d.png)
+
 ## 6. GCP 접근 방식
 
 <img width="950" alt="image" src="https://user-images.githubusercontent.com/35194820/194733019-872b6040-0df5-49ab-8ed1-0cb39ccecec7.png">
