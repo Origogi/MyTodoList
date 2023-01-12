@@ -366,7 +366,11 @@ GKE Autopilot은 Google에서 노드, 확장, 보안, 기타 사전 구성된 �
 
 On Premise 환경에서 GCP로 데이터를 안전하고 빠르게 전송할 때 사용하는 서비스
 
-## 20. Cloud Foundation Toolkit
+## 20. Storage Transfer Service 
+
+서로 다른 GCP Storage 데이터를 옮길 때 사용한다.
+
+## 22. Cloud Foundation Toolkit
 
 온프레미즈에서 GCP 로 마이그레이션을 할 때 빠르고 쉽게 배포할수 있도록 해주는 권장사항 템플릿이다.
 해당 템플릿은 테라폼이나 Deployment Manager 으로 변환이 가능하다.
@@ -397,12 +401,12 @@ On Premise 환경에서 GCP로 데이터를 안전하고 빠르게 전송할 때
 
 생성하려는 각 리소스와 해당 리소스 속성이 나열된 YAML 구문으로 작성된 파일이다
 
-## 22. On Premise 와 GCP 연결 방법
+## 23. On Premise 와 GCP 연결 방법
 
 - Cloud Interconnect
 - VPN 을 만들고 VPC와 연결 : 이 방법이 저렴하다.
 
-## 23. Cloud Interconnect
+## 24. Cloud Interconnect
 
 온프레미즈 환경과 GCP를 연결해주는 서비스이다. 종류는 Partner와 Dedicated 두 종류가 있다.
 
