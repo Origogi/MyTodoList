@@ -266,11 +266,20 @@ GCP의 대표적인 객체 Repository이다. 이를 이용하면 데이터 양�
 - 쿠버네티스는 포드 단위로 컨테이너를 배포한다.
 - 일반적으로 포드는 하나의 컨테이너만 있지만 상호 의존성이 높은 컨테이너가 여러 개 이쓰면 이들을 하나의 포드로 패키징한다.
 
+### Node Pool
+
+- 클러스터 내에서 같은 Configuration 을 사용하는 노드의 집합이다.
+- 노드는 한개 또는 그 이상이 될 수 있다.
+
 ### DemonSet
 
-__클러스터 전체__ 에 pod 을 띄울 때 사용한다.
+__노드 전체__ 에 pod 을 띄울 때 사용한다.
 
 <img width="629" alt="image" src="https://user-images.githubusercontent.com/35194820/210364179-9145c0de-6e02-496f-8476-01620e52965b.png">
+
+### ReplicaSet
+
+명시된 동일 Pod 의 갯수를 항상 유지시키 위해 사용된다.
 
 ### StalefulSet
 
@@ -282,6 +291,10 @@ Pod이 삭제하고 다시 시작했을 때 이전의 상태를 계속 유지하
 - 안정적이고 지속적인 스토리지를 사용해야 하는 경우
 - 질서 정연한 포드의 배치와 확장을 원하는 경우
 - 포드의 자동 롤링업데이트를 사용하기 원하는 경우
+
+### Horizontal Pod Autoscaling
+
+부하 증가에 대해 Pod 를 더 배치하는 것이다.
 
 ### Kubernetis Secret
 
@@ -416,7 +429,21 @@ On Premise 환경에서 GCP로 데이터를 안전하고 빠르게 전송할 때
 
 외부에서 Cloud Resource 를 접근하기 위해서는 Cloud resource 는 public IP를 가져서 외부에 노출해야 하는데 DB 같이 public IP 를 가지지 않으면서 외부에서 접근하기 위해서는 IAP를 사용한다.
 
-## 24. 요약
+## 27. Load Balancer
+
+- 유저 트래픽을 여러개의 인스턴스에 분산하는 것
+- Single Point to multiple backend
+- Health check 를 통해 Auto Scaling
+- External 과 Internal 타입이 있다.
+
+### HTTP(S) Load Balancer
+
+- 지역별, 또는 컨텐트 베이스로 부하를 분산할수 있다.
+
+![image](https://user-images.githubusercontent.com/35194820/212017324-22e0fb93-c1e7-4379-95c0-2ed532bbef2a.png)
+
+
+## 26. 요약
 
 ### Comaparing compute options
 
