@@ -2,12 +2,17 @@ var shopping_cart = [];
 var shopping_cart_total = [];
 
 function add_item_to_cart(name, price) {
-  shopping_cart.push({
+  shopping_cart = add_item(shopping_cart, name, price);
+  calc_cart_total();
+}
+
+function add_item(cart, name, price) {
+  var new_cart = cart.slice();
+  new_cart.push({
     name: name,
     price: price,
   });
-
-  calc_cart_total();
+  return new_cart;
 }
 
 function update_shipping_icons() {
@@ -17,7 +22,7 @@ function update_shipping_icons() {
     var button = buy_buttons[i];
     var item = button.item;
 
-    if (item.price + shopping_cart_total >= 20) {
+    if (gets_free_shipping(item.price, shopping_cart_total) >= 20) {
       button.show_free_shipping_icon();
     } else {
       button.hide_free_shipping_icon();
@@ -25,8 +30,16 @@ function update_shipping_icons() {
   }
 }
 
+function gets_free_shipping(item_price, total) {
+  return item_price + total >= 20;
+}
+
 function update_tax_dom() {
-    set_tax_dom(shopping_cart_total * 0.1);
+  set_tax_dom(calc_tax(shopping_cart_total));
+}
+
+function calc_tax(amount) {
+  return amount * 0.1;
 }
 
 function calc_cart_total() {
