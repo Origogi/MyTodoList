@@ -3,19 +3,23 @@ var shopping_cart_total = [];
 
 function add_item_to_cart(name, price) {
   shopping_cart = add_item(shopping_cart, name, price);
-  
+
   var total = calc_total(shopping_cart);
   set_cart_total_dom(total);
   update_shipping_icons(total);
   update_tax_dom(total);
 }
 
-function add_item(cart, name, price) {
-  var new_cart = cart.slice();
-  new_cart.push({
+function make_cart_item(name, price) {
+  return {
     name: name,
     price: price,
-  });
+  };
+}
+
+function add_item(cart, item) {
+  var new_cart = cart.slice();
+  new_cart.push(item);
   return new_cart;
 }
 
@@ -25,7 +29,7 @@ function update_shipping_icons(cart) {
   for (var i = 0; i < buy_buttons.length; i++) {
     var button = buy_buttons[i];
     var item = button.item;
-    var new_cart = add_item(cart, item.name, item.price);
+    var new_cart = add_item(cart, make_cart_item('shoes', 3.45));
 
     if (gets_free_shipping(new_cart) >= 20) {
       button.show_free_shipping_icon();
