@@ -17,10 +17,10 @@ function make_cart_item(name, price) {
   };
 }
 
-function add_item(cart, item) {
-  var new_cart = cart.slice();
-  new_cart.push(item);
-  return new_cart;
+function add_item(array, elem) {
+  var new_array = array.slice();
+  new_array.push(elem);
+  return new_array;
 }
 
 function update_shipping_icons(cart) {
