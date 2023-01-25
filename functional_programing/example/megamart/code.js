@@ -33,14 +33,25 @@ function update_shipping_icons(cart) {
 
   for (var i = 0; i < buy_buttons.length; i++) {
     var button = buy_buttons[i];
-    var new_cart = add_item(cart, make_cart_item('shoes', 3.45));
+    var item = button.item;
 
-    if (gets_free_shipping(new_cart) >= 20) {
-      button.show_free_shipping_icon();
-    } else {
-      button.hide_free_shipping_icon();
-    }
+    var hasFreeShipping = gets_free_shipping_with_item(cart, item);
+
+    set_free_shipping_icon(button, hasFreeShipping);
   }
+}
+
+function set_free_shipping_icon(button, isShown) {
+  if (isShown) {
+    button.show_free_shipping_icon();
+  } else {
+    button.hide_free_shipping_icon();
+  }
+}
+
+function gets_free_shipping_with_item(cart, item) {
+  var new_cart = add_item(cart, item);
+  return gets_free_shipping(new_cart);
 }
 
 function gets_free_shipping(cart) {
