@@ -15,3 +15,10 @@ function submit_form_handler(event) {
   var email = form.elements['email'].value;
   mailing_list = add_contact(mailing_list, email);
 }
+
+
+function arraySet(array, idx, value) {
+  var copyArray = array.slice();
+  copyArray[idx] = value;
+  return copyArray;
+}
