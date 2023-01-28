@@ -16,9 +16,24 @@ function submit_form_handler(event) {
   mailing_list = add_contact(mailing_list, email);
 }
 
-
 function arraySet(array, idx, value) {
   var copyArray = array.slice();
   copyArray[idx] = value;
   return copyArray;
+}
+
+function objectSet(object, key, value) {
+  var copy = Object.assign({}, object);
+  copy[key] = value;
+  return copy;
+}
+
+function setPrice(item, new_price) {
+  return objectSet(item, 'price', new_price);
+}
+
+function objectDelete(object, key) {
+  var copy = Object.assign({}, object);
+  delete copy[key];
+  return copy;
 }

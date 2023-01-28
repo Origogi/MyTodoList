@@ -9,6 +9,18 @@ function add_item_to_cart(name, price) {
   set_cart_total_dom(total);
   update_shipping_icons(total);
   update_tax_dom(total);
+
+  shopping_cart = black_friday_promotion_safe(shopping_cart);
+}
+
+function black_friday_promotion_safe(cart) {
+  var cart_copy = deep_copy(cart);
+  black_friday_promotion(cart_copy);
+  return deep_copy(cart_copy);
+}
+
+function black_friday_promotion(cart) {
+  /* Legacy code */
 }
 
 function make_cart_item(name, price) {
@@ -95,4 +107,33 @@ function removeItems(array, idx, count) {
   return copy;
 }
 
+function setPriceByName(cart, name, price) {
+  var cartCopy = cart.slice();
 
+  for (var i = 0; i < cartCopy.length; i++) {
+    if (cartCopy[i].name === name) {
+      cartCopy = setPrice(cartCopy[i], price);
+    }
+  }
+  return cartCopy;
+}
+
+function setQuantityByName(cart, name, quantity) {
+  var copyCart = cart.slice();
+  for (var i = 0; i < copyCart.length; i++) {
+    if (cartCopy[i].name === name) {
+      copyCart[i] = objectSet(copyCart[i], 'quantity', quantity);
+    }
+  }
+  return copyCart;
+}
+
+function payrollCalc(employees) {
+  return payrollChecks;
+}
+
+function payrollCalcSafe(employees) {
+  var copy = deep_copy(employees);
+  payrollCalc(copy);
+  return deep_copy(copy);
+}
