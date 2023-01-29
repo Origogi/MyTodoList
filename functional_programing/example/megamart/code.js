@@ -9,6 +9,7 @@ function add_item_to_cart(name, price) {
   set_cart_total_dom(total);
   update_shipping_icons(total);
   update_tax_dom(total);
+  logAddToCart();
 
   shopping_cart = black_friday_promotion_safe(shopping_cart);
 }
