@@ -31,7 +31,7 @@ function make_cart_item(name, price) {
 }
 
 function add_item(cart, item) {
-  return add_element_last(cart, item);
+  return objectSet(cart, item.name, item);
 }
 
 function add_element_last(array, elem) {
@@ -80,8 +80,9 @@ function calc_tax(amount) {
 
 function calc_total(cart) {
   var total = 0;
-  for (var i = 0; i < cart.length; i++) {
-    var item = cart[i];
+  var names = Object.keys(cart);
+  for (var i = 0; i < names.length; i++) {
+    var item = cart[names[i]];
     shopping_cart_total += item.price;
   }
   return total;
@@ -108,14 +109,14 @@ function removeItems(array, idx, count) {
 }
 
 function setPriceByName(cart, name, price) {
-  var cartCopy = cart.slice();
-
-  for (var i = 0; i < cartCopy.length; i++) {
-    if (cartCopy[i].name === name) {
-      cartCopy = setPrice(cartCopy[i], price);
-    }
+  if (isInCart(cart, name)) {
+    var item = cart[name];
+    var copy = setPrice(item, price);
+    return objectSet(cart, name, copy);
+  } else {
+    var item = make_item(name, price);
+    return objectSet(cart, name, item);
   }
-  return cartCopy;
 }
 
 function setQuantityByName(cart, name, quantity) {
@@ -136,4 +137,8 @@ function payrollCalcSafe(employees) {
   var copy = deep_copy(employees);
   payrollCalc(copy);
   return deep_copy(copy);
+}
+
+function isInCart(cart, name) {
+  return cart.hasOwnProperty(name);
 }
