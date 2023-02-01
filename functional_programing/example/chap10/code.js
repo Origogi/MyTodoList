@@ -27,19 +27,24 @@ function incrementFieldByName(cart, name, field) {
   return newCart;
 }
 
-function cookAndEatArray(array) {
+function forEach(array, f) {
   for (var i = 0; i < array.length; i++) {
     var item = array[i];
-    cook(item);
-    eat(item);
+    f(item);
   }
 }
 
-function cleanArray() {
-  for (var i = 0; i < array.length; i++) {
-    var item = array[i];
-    washDish(item);
-    dryDish(item);
-    putAway(item);
-  }
+function cookAndEat(food) {
+  cook(food);
+  eat(food);
 }
+
+forEach(foods, cookAndEat);
+
+function clean(dish) {
+  washDish(dish);
+  dryDish(dish);
+  putAway(dish);
+}
+
+forEach(dishes, clean);
