@@ -39,12 +39,19 @@ function cookAndEat(food) {
   eat(food);
 }
 
-forEach(foods, cookAndEat);
-
 function clean(dish) {
   washDish(dish);
   dryDish(dish);
   putAway(dish);
 }
 
-forEach(dishes, clean);
+forEach(foods, function (food) {
+  cook(food);
+  eat(food);
+});
+
+forEach(dishes, function (dish) {
+  washDish(dish);
+  dryDish(dish);
+  putAway(dish);
+});
