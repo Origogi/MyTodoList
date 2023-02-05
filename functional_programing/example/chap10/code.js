@@ -103,3 +103,39 @@ function withObjectCopy(object, modify) {
   modify(copy);
   return copy;
 }
+
+function fetchProductWithLogging(productId) {
+  try {
+    fetchProductNoLogging(productId);
+  } catch (error) {
+    logToSnapError(error);
+  }
+}
+
+function wrapLogging(f) {
+  return function (arg) {
+    try {
+      f(arg);
+    } catch (error) {
+      logToSnapError();
+    }
+  };
+}
+
+var saveUserDataWithLogging = wrapLogging(saveUserDataNoLogging);
+
+function wrapIgnoreErrors(f) {
+  return function(a1, a2, a3) {
+    try {
+      f(a1, a2, a3);
+    } catch (error){
+      return null;
+    }
+  }
+}
+
+function makeAdder() {
+  return function(value) {
+    return value + 1;
+  }
+}
