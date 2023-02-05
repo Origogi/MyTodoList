@@ -19,7 +19,7 @@ Today I Learned
 - [ ] 내 홈페이지에 복셀 아트 캐릭터 추가해보기
 - [x] `구글 엔지니어는 이렇게 일한다` 도서 완독
  - [Link](http://www.yes24.com/Product/Goods/109305490)
-- [ ] Google Associate Cloud Engineer 자격증 취득해보기
+- [x] Google Associate Cloud Engineer 자격증 취득해보기
   - [Coursera 강의](http://www.yes24.com/Product/Goods/109305490)
 
 ### 2022 년 회고
@@ -35,6 +35,10 @@ Today I Learned
 - [x] GCP - ACE 자격증 획득 (1월에 시험 예정)
   - [x] 1/13 Pass
 - [ ] GCP - PCE 자격증 획득
+- [ ] gitub webhook 을 이용하여 slack 명령어로 github actions 동작 시키기
+- 독서
+  - [ ] 조엘 온 소프트웨어
+  - [ ] 함수형 코딩
 
 
  
