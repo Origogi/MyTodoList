@@ -35,7 +35,7 @@ Today I Learned
 - [x] GCP - ACE 자격증 획득 (1월에 시험 예정)
   - [x] 1/13 Pass
 - [ ] GCP - PCE 자격증 획득
-- [ ] gitub webhook 을 이용하여 slack 명령어로 github actions 동작 시키기
+- [ ] github webhook 을 이용하여 slack 명령어로 github actions 동작 시키기
 - 독서
   - [ ] 조엘 온 소프트웨어
   - [ ] 함수형 코딩
