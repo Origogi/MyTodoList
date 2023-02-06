@@ -36,9 +36,11 @@ Today I Learned
   - [x] 1/13 Pass
 - [ ] GCP - PCE 자격증 획득
 - [ ] github webhook 을 이용하여 slack 명령어로 github actions 동작 시키기
+- [ ] Fastlane match
 - 독서
   - [ ] 조엘 온 소프트웨어
   - [ ] 함수형 코딩
+
 
 
  
