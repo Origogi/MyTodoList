@@ -45,8 +45,27 @@ function countAllPurchase(customers) {
   });
 }
 
-
 // 문자열 합치기
 reduce(strings, '', function (accum, string) {
   return accum + string;
 });
+
+// sum
+
+function sum(numbers) {
+  return reduce(numbers, 0, function (total, number) {
+    return total + number;
+  });
+}
+
+function min(numbers) {
+  return reduce(numbers, Number.MAX_VALUE, function (m, n) {
+    return m > n ? n : m;
+  });
+}
+
+function max(numbers) {
+  return reduce(numbers, Number.MIN_VALUE, function (m, n) {
+    return m > n ? m : n;
+  });
+}
