@@ -1,15 +1,23 @@
 function biggestPurchaseBestCustomers(customers) {
-  var bestCustomers = filter(customers, function (customer) {
+  var bestCustomers = selectBestCustomers(customers);
+  var biggerPurchases = getBiggestPurchases(bestCustomers);
+  return biggerPurchases;
+}
+
+function selectBestCustomers(customers) {
+  return filter(customers, function (customer) {
     return customer.purchases.length > 3;
   });
+}
 
-  var biggerPurchases = map(bestCustomers, function (customer) {
-    return maxKey(customer.purchases, { total: 0 }, function (purchase) {
-      return purchase.total;
-    });
+function getBiggestPurchases(customers) {
+  return map(customers, getBiggestPurchase);
+}
+
+function getBiggestPurchase(customer) {
+  return maxKey(customer.purchases, { total: 0 }, function (purchase) {
+    return purchase.total;
   });
-
-  return biggerPurchases;
 }
 
 function maxKey(array, init, f) {
