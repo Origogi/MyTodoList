@@ -71,18 +71,18 @@ function reduce(array, init, f) {
   return result;
 }
 
-const input = [1, 2, 3, 4, 5];
-const window = 5;
+// const input = [1, 2, 3, 4, 5];
+// const window = 5;
 
-console.log(sampleCode(input, window));
-console.log(sampleCode2(input, window));
+// console.log(sampleCode(input, window));
+// console.log(sampleCode2(input, window));
 
 function shoesAndSocksInventoryBefore(products) {
   var inventory = 0;
   for (var p = 0; p < products.length; p++) {
     var product = products[p];
 
-    if (product.type === 'shoes' || product.type === 'socks') {
+    if (product.type === "shoes" || product.type === "socks") {
       inventory += product.numberInventory;
     }
   }
@@ -91,7 +91,7 @@ function shoesAndSocksInventoryBefore(products) {
 
 function shoesAndSocksInventory(products) {
   var shoesAndSocks = filter(products, function (product) {
-    return product.type === 'shoes' || product.type === 'socks';
+    return product.type === "shoes" || product.type === "socks";
   });
 
   var inventories = map(shoesAndSocks, function (product) {
@@ -101,7 +101,20 @@ function shoesAndSocksInventory(products) {
   return reduce(inventories, 0, plus);
 }
 
-var shoppingCart = reduce(itemAdded, {}, addOne);
+itemAdded = ["shirt", "shoes", "socks", "hat", "shirt"];
+
+var shoppingCart = reduce(itemAdded, {}, function (cart, itemOp) {
+  var op = itemOp[0];
+  var item = itemOp[1];
+  if (op === "add") {
+    return addOne(cart, item);
+  }
+  if (op === "remove") {
+    return removeOne(cart, item);
+  }
+});
+
+console.log(shoppingCart);
 
 function addOne(cart, item) {
   if (!cart[item]) {
@@ -112,6 +125,47 @@ function addOne(cart, item) {
     });
   } else {
     var qunatity = cart[item].qunatity;
-    return setFieldByName(cart, item, 'qunatity', qunatity + 1);
+    return setFieldByName(cart, item, "qunatity", qunatity + 1);
   }
 }
+
+function removeOne(cart, item) {
+  if (!cart[item]) {
+    return cart;
+  } else {
+    var qunatity = cart[item].qunatity;
+    if (qunatity === 1) {
+      return remove_item_by_name(cart, item);
+    } else {
+      return setFieldByName(cart, item, "qunatity", qunatity - 1);
+    }
+  }
+}
+
+
+var employeeNames = [];
+
+var recommendations = map(employeeNames, function (name) {
+  return {
+    name: name,
+    position: recommendPostition(name),
+  };
+});
+
+var evaluations = map(recommendations, function (rec) {
+  return objectSet(rec, "score", scorePlayer(rec.name, rec.position));
+});
+
+var best = sortBy(employeeNames, function(a, b) {
+  return a.score - b.score;
+});
+
+var worst = reverse(best);
+
+var roster = reduce(best, {}, function (roster, eval) {
+  var position = eval.position;
+  if (roster[position]) {
+    return roster;
+  }
+  return objectSet(roster, position, eval.name);
+});
