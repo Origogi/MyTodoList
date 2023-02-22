@@ -25,6 +25,21 @@ function ValueCell(initialValue) {
   };
 }
 
+function FormulaCell(upstreamCell, f) {
+  var myCell = ValueCell(f(upstreamCell.val()));
+
+  upstreamCell.addWatcher(function (newUpStreamValue) {
+    myCell.update(function (currentValue) {
+      return f(newUpStreamValue);
+    });
+  });
+
+  return {
+    val: myCell.val,
+    addWatcher: myCell.addWatcher,
+  };
+}
+
 var shopping_cart = ValueCell([]);
 
 function add_item_to_cart(name, price) {
