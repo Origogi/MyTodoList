@@ -36,10 +36,14 @@ Today I Learned
   - [x] 1/13 Pass
 - [ ] GCP - PCE 자격증 획득
 - [ ] github webhook 을 이용하여 slack 명령어로 github actions 동작 시키기
-- [ ] Fastlane match
+- [x] Fastlane match
+
 - 독서
-  - [ ] 조엘 온 소프트웨어
-  - [ ] 함수형 코딩
+  - [x] 조엘 온 소프트웨어
+  - [x] 함수형 코딩
+  - [x] 개발자 원칙
+  - [ ] 심리학이 이렇게 쓸모 있을 줄이야
+  - [ ] 자바스크립트 코딩의 기술
 
 
 
