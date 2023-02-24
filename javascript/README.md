@@ -20,3 +20,13 @@ const 는 블록의 문맥 내에서 재할당할 수 없는 변수 선언이다
 const titles = ['Moby Dick', 'White teeth'];
 const moreTitles = [...titles, 'The Conscious Mind'];
 ```
+
+## Spread 연산자로 정렬에 의한 혼란을 피하라
+
+`sort()` 메소드는 정렬을 하는 메소드이나 문제는 배열의 원본이 변경이 된다.
+따라서 아래와 같이 배열을 카피 한 후 정렬을 하는 것이 안전하다.
+
+```js
+const arry = [ /* ... */];
+[...arry].sort();
+```
