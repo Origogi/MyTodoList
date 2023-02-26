@@ -69,3 +69,14 @@ const update = {
 
 - 키-값이 자주 추가가 되거나 삭제되는 경우
 - 키가 문자열이 아닌 경우
+
+## 맵과 Spread 연산자로 키-값 데이터를 순회하라
+
+```js
+function checkFilters(filters) {
+    for (const entry of filters) {
+        console.log(entry);
+    }   
+}
+```
+
