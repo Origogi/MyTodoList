@@ -30,3 +30,42 @@ const moreTitles = [...titles, 'The Conscious Mind'];
 const arry = [ /* ... */];
 [...arry].sort();
 ```
+
+## 객체 Spread 연산자로 정보를 갱신하라.
+
+### data 추가
+
+```js
+const book = {
+    title : 'Reasons and Persons',
+    author : 'Derk Parfit',
+}
+
+const update = {
+    ...book,
+    year: 1984
+};
+```
+
+### data 업데이트
+
+```js
+const book = {
+    title : 'Reasons and Persons',
+    author : 'Derk Parfit',
+}
+
+const update = {
+    ...book,
+    title: 'Harry potter'
+};
+```
+
+## 맵으로 명확하게 키-값 데이터를 갱신하라.
+
+맵은 기존 객체를 대체하기 위한 컬랙션이다.
+
+객체 대신 맵을 사용해야 할 경우는 다음과 같습니다.
+
+- 키-값이 자주 추가가 되거나 삭제되는 경우
+- 키가 문자열이 아닌 경우
