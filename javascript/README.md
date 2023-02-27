@@ -80,3 +80,17 @@ function checkFilters(filters) {
 }
 ```
 
+## 맵 생성시 부수효과를 제거하라
+
+아래 코드는 두 개의 맵을 병합하는 코드이다.
+
+```js
+
+function applyDefaults(map, defaults) {
+    return new Map([...defaults, ...map]);
+}
+
+```
+
+주의할 점은 위 두 개의 맵에서 같은 키가 존재한다면 뒤에 있는 맵의 값으로 적용된다.
+즉 순서가 중요하다.

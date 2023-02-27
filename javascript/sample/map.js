@@ -47,3 +47,19 @@ function getSortedAppliedFilter(filters, sortByKey) {
 }
 
 console.log(getSortedAppliedFilter(filters, (a, b) => a[0] > b[0] ? 1: -1));
+
+const defaults  = new Map([
+    ["색상", "검정색"],
+]);
+
+filters = new Map([
+    ["견종", "레브라도레트리버"],
+    ["색상", "브라운"],
+    ["나이", "1살"],
+]);
+
+function applyDefaults(map, defaults) {
+    return new Map([...defaults, ...map]);
+}
+
+console.log(applyDefaults(filters, defaults));
