@@ -94,3 +94,11 @@ function applyDefaults(map, defaults) {
 
 주의할 점은 위 두 개의 맵에서 같은 키가 존재한다면 뒤에 있는 맵의 값으로 적용된다.
 즉 순서가 중요하다.
+
+## 세트를 이용해 고윳값을 관리하라
+
+```js
+function getUnique(attributes) {
+    return [...new Set(attributes)];
+}
+```
