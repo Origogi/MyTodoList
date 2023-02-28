@@ -102,3 +102,11 @@ function getUnique(attributes) {
     return [...new Set(attributes)];
 }
 ```
+
+## 삼항 연산자로 빠르게 데이터를 확인하라
+
+```js
+const permissions = title === '과장' ? ['근로시간', '수당'] : ['근로시간'];
+```
+
+다만 삼항 연산자는 코드를 단순화할 수 있을 경우에만 사용하고, 삼항 연산자로 인해 지나치게 코드가 모호해진다면 일반적인 if 문으로 돌아가는 것이 바람직하다.
