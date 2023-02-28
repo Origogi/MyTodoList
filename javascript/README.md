@@ -1,8 +1,6 @@
 # 자바스크립트 코딩의 기술
 
-
 [책 링크](http://www.yes24.com/Product/Goods/85019231)
-
 
 ## const 로 변하지 않는 값을 표현하라.
 
@@ -10,9 +8,9 @@ const 는 블록의 문맥 내에서 재할당할 수 없는 변수 선언이다
 
 ## let과 const로 유효 범위 충돌을 줄여라
 
-- var 은 어휘적 유효 범위를 따르는 반면, let은 불록 유효 범위를 따른다. 
-- 변수를 선언할 때는 var 보다는 let를 사용하도록 하자
-- let 과 const 는 같은 이름을 다시 선언할수 없기 때문에 안전하다.
+-   var 은 어휘적 유효 범위를 따르는 반면, let은 불록 유효 범위를 따른다.
+-   변수를 선언할 때는 var 보다는 let를 사용하도록 하자
+-   let 과 const 는 같은 이름을 다시 선언할수 없기 때문에 안전하다.
 
 ## push() 메서드 대신 spread 연산자로 원본 변경을 피하라
 
@@ -27,7 +25,9 @@ const moreTitles = [...titles, 'The Conscious Mind'];
 따라서 아래와 같이 배열을 카피 한 후 정렬을 하는 것이 안전하다.
 
 ```js
-const arry = [ /* ... */];
+const arry = [
+    /* ... */
+];
 [...arry].sort();
 ```
 
@@ -37,13 +37,13 @@ const arry = [ /* ... */];
 
 ```js
 const book = {
-    title : 'Reasons and Persons',
-    author : 'Derk Parfit',
-}
+    title: 'Reasons and Persons',
+    author: 'Derk Parfit',
+};
 
 const update = {
     ...book,
-    year: 1984
+    year: 1984,
 };
 ```
 
@@ -51,13 +51,13 @@ const update = {
 
 ```js
 const book = {
-    title : 'Reasons and Persons',
-    author : 'Derk Parfit',
-}
+    title: 'Reasons and Persons',
+    author: 'Derk Parfit',
+};
 
 const update = {
     ...book,
-    title: 'Harry potter'
+    title: 'Harry potter',
 };
 ```
 
@@ -67,8 +67,8 @@ const update = {
 
 객체 대신 맵을 사용해야 할 경우는 다음과 같습니다.
 
-- 키-값이 자주 추가가 되거나 삭제되는 경우
-- 키가 문자열이 아닌 경우
+-   키-값이 자주 추가가 되거나 삭제되는 경우
+-   키가 문자열이 아닌 경우
 
 ## 맵과 Spread 연산자로 키-값 데이터를 순회하라
 
@@ -76,7 +76,7 @@ const update = {
 function checkFilters(filters) {
     for (const entry of filters) {
         console.log(entry);
-    }   
+    }
 }
 ```
 
@@ -85,11 +85,9 @@ function checkFilters(filters) {
 아래 코드는 두 개의 맵을 병합하는 코드이다.
 
 ```js
-
 function applyDefaults(map, defaults) {
     return new Map([...defaults, ...map]);
 }
-
 ```
 
 주의할 점은 위 두 개의 맵에서 같은 키가 존재한다면 뒤에 있는 맵의 값으로 적용된다.
