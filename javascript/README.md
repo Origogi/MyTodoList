@@ -121,3 +121,36 @@ const permissions = title === '과장' ? ['근로시간', '수당'] : ['근로�
 - 인수를 감싸는 괄호
 - return 키워드
 - 중괄호
+
+```js
+const capital = name => name[0].toUpperCase() + name.slice(1);
+
+capital('hello world'); // Hello world
+
+const greeting = (first, last) => `Hello ${first} ${last}`;
+
+console.log(greeting('John', 'Doe'));
+
+```
+
+## 배열 메소드로 반복문을 짧게 작성하라
+
+배열 메서드는 불필요한 데이터를 배제한, 간결하고 예측 가능한 코드를 만드는 것이다.
+
+- map() : 배열의 각 요소에 함수를 적용한 결과를 모아 새로운 배열을 반환한다.
+- sort() : 배열의 요소를 정렬한다.
+- filter() : 배열의 요소를 테스트하는 함수를 만족하는 요소만 모아 새로운 배열을 반환한다.
+- find() : 배열의 요소를 테스트하는 함수를 만족하는 첫 번째 요소를 반환한다.
+- forEach() : 배열의 각 요소에 함수를 적용한다.
+- reduce() : 배열의 각 요소에 함수를 적용하여 하나의 값을 반환한다.
+
+```js
+const formattedPrices = prices.map(price => parseFloat(price)).filter(price => price);
+console.log(formattedPrices); // [1, 2.15]
+```
+
+## map() 메소드로 비슷한 길이의 배열을 생성하라
+
+## forEach() 로 동일한 동작을 적용하라
+
+forEach() 에서 처리하는 동작은 모두 함수 외부에 영향을 준다. 함수의 유효 범위 밖에 있는 무언가를 변경하는 것을 부수 효과라고 한다. 부수 효과가 잘못된 건 아니지만 주의할 필요가 있다.

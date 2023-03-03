@@ -63,3 +63,13 @@ function applyDefaults(map, defaults) {
 }
 
 console.log(applyDefaults(filters, defaults));
+
+const band = [
+    { name: "corbet", instrument: "기타" },
+    { name: "evan", instrument: "베이스" },
+    { name: "sean", instrument: "보컬" },
+    { name: "brett", instrument: "드럼" },
+]
+
+const instruments = band.map(member => member.instrument);
+console.log(instruments);
