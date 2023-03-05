@@ -172,3 +172,67 @@ sailors
 ## reduce() 로 배열 데이터를 변환하라
 
 reduce() 의 가장 중요한 특징은 배열의 길이와 데이터 형태를 모두 또는 각각 변경할 수 있고, 또한, 반드시 배열을 반환할 필요도 없다.
+
+## for ... in 문과 for ... of 문으로 반복문을 정리하라
+
+## 매개변수 기본값을 생성하라
+
+```js
+function convertWeight(weight, ounces, roundTo = 2) {
+    const oz = ounces ? ounces / 16 : 0;
+    const total = weight + oz;
+    const conversion = total / 2.2;
+    return roundToDecimalPlace(conversion, roundTo);
+}
+```
+
+## 해체 할당으로 객체 속성에 접근하애라
+
+아래와 같이 해체 할당을 하면서 디폴트 값도 지정할수 있다.
+
+```js
+
+const landScape = {
+    photographer : 'Nathan'
+}
+
+const { photographer, title = 'hello', size} = landScape;
+
+console.log(photographer);  // Nathan
+console.log(title);         // hello
+console.log(size);          // undefined
+```
+
+아래와 같이 사용함으로써 객체를 두 개로 나눌수 있다.
+
+```js
+const landScape = {
+    photographer : 'Nathan',
+    equipment : 'Canon',
+    format :' digital'
+};
+
+
+
+const {
+    photographer,
+    ...additional
+} = landScape;
+
+console.log(photographer);      // Nathan
+console.log(additional);        // {  equipment : 'Canon', format :' digital'}
+```
+
+아래와 같이 사용함으로써 해제 연산자를 사용하면서 키 값을 변경할수 있다.
+
+```js
+const landScape = {
+    src : '/landscape-nm.jpg'
+};
+
+const { src : url} = landScape;
+
+console.log(url); // /landscape-nm.jpg
+```
+
+
