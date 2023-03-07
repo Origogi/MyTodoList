@@ -212,8 +212,6 @@ const landScape = {
     format :' digital'
 };
 
-
-
 const {
     photographer,
     ...additional
@@ -235,4 +233,14 @@ const { src : url} = landScape;
 console.log(url); // /landscape-nm.jpg
 ```
 
+```js
+const landScape = {
+    location : [32.712222, -103.1405556]
+};
+
+const { location : [lat, lon] } = landScape;
+
+console.log(lat);   // 32.712222
+console.log(lon);   // -103.1405556
+```
 
