@@ -244,3 +244,45 @@ console.log(lat);   // 32.712222
 console.log(lon);   // -103.1405556
 ```
 
+## 키-값 할당을 단순화하라
+
+아래 코드는 location을 제거함과 동시에 city와 state를 추가한 코드이다.
+
+```js
+function setRegion({ location, ...details }) {
+    const { city, state} = dtermineCitiAndState(location);
+    
+    return {
+        city,
+        state,
+        ...details
+    };
+};
+```
+
+## 나머지 매개변수로 여러 개의 인수를 변수로 전달하라
+
+... 연산자를 통해서 하나의 함수로 여러개의 인자를 넘길수 있다.
+
+따라서 여러개의 인자를 넘기기 위해서 콜랙션에 담아서 넘기거나 여러개 의 함수를 만들 필요가 없다.
+
+```js
+function validateCharacterCount(max, ...items) {
+    return items.every(item => item.length < max);
+}
+
+console.log(validateCharacterCount(10, 'hello', ));
+console.log(validateCharacterCount(10, 'hello', 'world'));
+console.log(validateCharacterCount(10, 'hello', 'world', 'this is a long string'));
+
+```
+
+## 테스트하기 쉬운 함구를 작성하라
+
+테스트를 작성하면 코드를 쉽게 리팩터링할 수 있고, 오래된 코드를 훨씬 쉽게 이해할 수 있습니다. 그리고 테스트를 작성하면 일반적으로 더 명확하고 버그가 적은 애플리케이션을 만들수 있다.
+
+대표적은 테스트 프레임워크는 아래와 같다.
+
+- Mocha
+- Jest
+- Jasmine
