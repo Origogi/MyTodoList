@@ -286,3 +286,19 @@ console.log(validateCharacterCount(10, 'hello', 'world', 'this is a long string'
 - Mocha
 - Jest
 - Jasmine
+
+## 화살표 함수로 복잡도를 낮춰라
+
+```js
+const comic = {
+    first: 'Peter',
+    last: 'Parker',
+    city: 'New York',
+    state: 'Washington'
+}
+const getName = ({first, last}) => `${first} ${last}`;
+
+console.log(getName(comic));
+```
+
+## 부분 적용 함수로 단일 책임 매개변수를 관리하자
