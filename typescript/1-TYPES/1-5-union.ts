@@ -24,7 +24,7 @@
 
   type LoginState = SuccessState | FailState;
 
-  function login(): LoginState {
+  function login_(): LoginState {
     return {
       response: {
         body: 'logged in!',
@@ -32,7 +32,7 @@
     };
   }
 
-  function printLoginState(state: LoginState) {
+  function printLoginState_(state: LoginState) {
     if ('response' in state) {
       console.log(`🎉 ${state.response.body}`);
     } else {
