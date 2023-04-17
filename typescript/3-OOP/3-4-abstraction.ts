@@ -4,14 +4,19 @@
     hasMilk: boolean;
   };
 
-
   interface CoffeeMaker {
-      makeCoffee(shots : number) : CoffeeCup
+    makeCoffee(shots: number): CoffeeCup;
+  }
+
+  interface CommercialCoffeeMaker {
+    makeCoffee(shots: number): CoffeeCup;
+    fillCoffeeBeans(beans: number): void;
+    clean(): void;
   }
   // public
   // private
   // protected
-  class CoffeeMachine implements CoffeeMaker{
+  class CoffeeMachine implements CoffeeMaker, CommercialCoffeeMaker {
     private static BEANS_GRAM_PER_SHOT = 7; // class level
     private coffeeBeans: number = 0; // instance level
 
@@ -56,12 +61,31 @@
       this.preheat();
       return this.extract(shots);
     }
+
+    clean(): void {
+      console.log("cleaning the machine...");
+    }
   }
 
-  // const maker = CoffeeMachine.makeMachine(12);
-  // maker.fillCoffeeBeans(34);
-  // const coffee = maker.makeCoffee(2);
-  // console.log(maker);
-  // console.log(coffee);
-    const coffeeMaker : CoffeeMaker = CoffeeMachine.makeMachine(32);
+  class AmateurUser {
+    constructor(private machine: CoffeeMaker) {}
+    makeCoffee() {
+      const coffee = this.machine.makeCoffee(2);
+    }
+  }
+
+  class ProBarista {
+    constructor(private machine: CommercialCoffeeMaker) {}
+
+    makeCoffee() {
+      const coffee = this.machine.makeCoffee(2);
+      this.machine.fillCoffeeBeans(30);
+      this.machine.clean();
+    }
+  }
+  const maker : CoffeeMachine = CoffeeMachine.makeMachine(32);
+  const amateurUser = new AmateurUser(maker);
+  const pro = new ProBarista(maker);
+  // amateurUser.makeCoffee();
+  pro.makeCoffee();
 }
