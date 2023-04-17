@@ -1,12 +1,12 @@
 {
-  type Direction = 'left' | 'right' | 'up' | 'down';
+  // type Direction = 'left' | 'right' | 'up' | 'down';
 
-  function move(direction: Direction) {
-    console.log(direction);
-  }
+  // function move(direction: Direction) {
+  //   console.log(direction);
+  // }
 
-  move('down');
-  move('left');
+  // move('down');
+  // move('left');
 
   type TileSize = 8 | 16 | 32;
   const tile: TileSize = 16;
