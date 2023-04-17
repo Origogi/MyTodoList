@@ -8,7 +8,7 @@
     Saturday,
     Sunday,
   }
-  let day: Days = 0; // 에러가 발생하지 않는다.
+  let day: Days = 6; // 에러가 발생하지 않는다.
   day = Days.Friday;
   // day = 14;  // 에러가 발생하지 않는다.
   console.log(Days.Friday);
