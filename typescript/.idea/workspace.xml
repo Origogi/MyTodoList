@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b5b9dc3-c127-45d2-acdd-d830b8dbe12c" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/7-API/7-1-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/8-exception/8-1-exception.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8-exception/8-2-handling.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8-exception/8-3-state.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/9-1-advanced/9-1-interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/9-1-advanced/9-2-index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/9-1-advanced/9-3-map.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5-generic-project/stack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/6-generic-project/stack.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,14 +47,14 @@
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/gimjeongtae/Desktop/TIL/typescript",
+    "last_opened_file_path": "/Users/gimjeongtae/Desktop/TIL/typescript/8-exception",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/Users/gimjeongtae/Desktop/TIL/typescript/node_modules/prettier",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "show.migrate.to.gradle.popup": "false",
     "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
@@ -59,6 +62,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/8-exception" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/3-OOP" />
     </key>
@@ -74,7 +78,7 @@
       <workItem from="1681363426357" duration="66000" />
       <workItem from="1681707354720" duration="11564000" />
       <workItem from="1681783989220" duration="8693000" />
-      <workItem from="1681811109575" duration="12835000" />
+      <workItem from="1681811109575" duration="19383000" />
     </task>
     <servers />
   </component>
@@ -89,5 +93,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/8-exception/8-3-state.ts</url>
+          <line>8</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

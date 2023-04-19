@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "prettier": "2.8.7"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }
