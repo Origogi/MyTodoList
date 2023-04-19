@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b5b9dc3-c127-45d2-acdd-d830b8dbe12c" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/5-generic-project/stack.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7-API/7-1-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8-exception/8-1-exception.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5-generic-project/stack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/6-generic-project/stack.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +74,7 @@
       <workItem from="1681363426357" duration="66000" />
       <workItem from="1681707354720" duration="11564000" />
       <workItem from="1681783989220" duration="8693000" />
-      <workItem from="1681811109575" duration="8739000" />
+      <workItem from="1681811109575" duration="12835000" />
     </task>
     <servers />
   </component>
