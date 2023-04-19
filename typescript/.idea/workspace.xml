@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b5b9dc3-c127-45d2-acdd-d830b8dbe12c" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/8-exception/8-2-handling.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/8-exception/8-3-state.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/9-1-advanced/9-1-interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/9-1-advanced/9-2-index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/9-1-advanced/9-3-map.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/9-1-advanced/9-4-readonly.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/9-1-advanced/9-5-condition.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/9-1-advanced/9-6-partial.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +75,7 @@
       <workItem from="1681363426357" duration="66000" />
       <workItem from="1681707354720" duration="11564000" />
       <workItem from="1681783989220" duration="8693000" />
-      <workItem from="1681811109575" duration="19383000" />
+      <workItem from="1681811109575" duration="21766000" />
     </task>
     <servers />
   </component>
