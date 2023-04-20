@@ -8,3 +8,5 @@ const nav: Record<Page, PageInfo> = {
   about: { title: 'About' },
   contract: { title: 'Contact' },
 };
+
+type Product = 'cat' | 'dog'
