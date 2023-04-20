@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b5b9dc3-c127-45d2-acdd-d830b8dbe12c" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/9-1-advanced/9-7-picks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/9-1-advanced/9-8-omit.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/9-1-advanced/9-9-record.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +42,7 @@
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/gimjeongtae/Desktop/TIL/typescript/8-exception",
+    "last_opened_file_path": "/Users/gimjeongtae/Desktop/TIL/typescript/9-1-advanced",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,6 +57,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/9-1-advanced" />
       <recent name="$PROJECT_DIR$/8-exception" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/3-OOP" />
@@ -73,7 +74,7 @@
       <workItem from="1681363426357" duration="66000" />
       <workItem from="1681707354720" duration="11564000" />
       <workItem from="1681783989220" duration="8693000" />
-      <workItem from="1681811109575" duration="23389000" />
+      <workItem from="1681811109575" duration="23797000" />
     </task>
     <servers />
   </component>
