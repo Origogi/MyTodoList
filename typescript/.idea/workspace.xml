@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b5b9dc3-c127-45d2-acdd-d830b8dbe12c" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/10-javascript/10-1-proto.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10-javascript/10-1-proto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10-javascript/10-2-this.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10-javascript/10-2-this.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/9-1-advanced/9-9-record.ts" beforeDir="false" afterPath="$PROJECT_DIR$/9-1-advanced/9-9-record.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10-javascript/10-1-proto.js" beforeDir="false" afterPath="$PROJECT_DIR$/10-javascript/10-1-proto.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -80,7 +80,7 @@
       <workItem from="1681707354720" duration="11564000" />
       <workItem from="1681783989220" duration="8693000" />
       <workItem from="1681811109575" duration="25467000" />
-      <workItem from="1681954025831" duration="1499000" />
+      <workItem from="1681954025831" duration="3416000" />
     </task>
     <servers />
   </component>
