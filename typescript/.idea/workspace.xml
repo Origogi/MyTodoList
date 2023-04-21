@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b5b9dc3-c127-45d2-acdd-d830b8dbe12c" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="1b5b9dc3-c127-45d2-acdd-d830b8dbe12c" name="변경" comment="update">
+      <change afterPath="$PROJECT_DIR$/12-motion-project/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,8 +85,16 @@
       <workItem from="1681811109575" duration="25467000" />
       <workItem from="1681954025831" duration="5688000" />
       <workItem from="1681987756210" duration="2759000" />
-      <workItem from="1682036963201" duration="598000" />
+      <workItem from="1682036963201" duration="1309000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1682037583726</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682037583726</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +108,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
