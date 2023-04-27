@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b5b9dc3-c127-45d2-acdd-d830b8dbe12c" name="변경" comment="update">
-      <change afterPath="$PROJECT_DIR$/12-motion-project/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/11-config/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/11-config/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +86,8 @@
       <workItem from="1681811109575" duration="25467000" />
       <workItem from="1681954025831" duration="5688000" />
       <workItem from="1681987756210" duration="2759000" />
-      <workItem from="1682036963201" duration="1309000" />
+      <workItem from="1682036963201" duration="4509000" />
+      <workItem from="1682210059401" duration="488000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1682037583726</created>
