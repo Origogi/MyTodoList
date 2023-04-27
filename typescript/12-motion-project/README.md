@@ -6,7 +6,7 @@
 
 https://academy.dream-coding.com/courses/player/typescript/lessons/562
 
-![img.png](img.png)
+![img.png](assets/img.png)
 
 ## 2. CSS
 
