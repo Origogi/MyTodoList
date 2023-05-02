@@ -1,5 +1,7 @@
 export interface Component {
-    attachTo(parent : HTMLElement, position? : InsertPosition) : void;
+    attachTo(parent: HTMLElement, position?: InsertPosition): void;
+
+    removeFrom(parent: HTMLElement): void;
 }
 
 /**
@@ -7,13 +9,20 @@ export interface Component {
  */
 
 export class BaseComponent<T extends HTMLElement> implements Component {
-    protected readonly element : T
+    protected readonly element: T
 
-    constructor(htmlString : string) {
+    constructor(htmlString: string) {
 
         const template = document.createElement('template')
         template.innerHTML = htmlString;
         this.element = template.content.firstElementChild! as T;
+    }
+
+    removeFrom(parent: HTMLElement): void {
+        if (parent !== this.element.parentElement) {
+            throw new Error('Parent mismatch!');
+        }
+        parent.removeChild(this.element);
     }
 
     attachTo(parent: HTMLElement, position: InsertPosition = 'afterbegin') {
