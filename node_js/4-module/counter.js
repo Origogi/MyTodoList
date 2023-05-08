@@ -1,11 +1,10 @@
 let count = 0;
-function increase() {
+export function increase() {
     count++;
 }
 
-function getCount() {
+export function getCount() {
     return count;
 }
 
-exports.getCount = getCount;
-exports.increase = increase;
+
