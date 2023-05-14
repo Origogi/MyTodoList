@@ -2,7 +2,11 @@ const fs = require('fs');
 const path = require('path');
 
 
-run('./test');
+const args = process.argv.slice(2); // 처음 두 개 요소(실행 파일 경로, 스크립트 파일 경로)를 제외한 나머지 인자들을 배열로 가져옵니다.
+const target = args[0]; // 첫 번째 인자를 파라미터로 사용합니다.
+
+
+run(`./${target}`);
 
 function hasEditFile(files, file) {
     const fileName = file.split('.')[0];
