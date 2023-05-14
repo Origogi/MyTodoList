@@ -44,11 +44,7 @@ async function run(folder) {
 }
 
 async function createFolder(folder) {
-    if (fs.existsSync(folder)) {
-        return;
-    }
-    // 폴더 생성
-    fs.mkdirSync(folder);
+    !fs.existsSync(folder) && fs.mkdirSync(folder);
 }
 
 async function moveFile(src, dest, file) {
