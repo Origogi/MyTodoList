@@ -1,9 +1,6 @@
 import express from 'express';
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Welcome to my homepage!');
-});
 
 app.get('/sky/:id',(req, res, next) => {
     console.log(req.params);
@@ -12,7 +9,8 @@ app.get('/sky/:id',(req, res, next) => {
     console.log(req.query);
     console.log(req.query.keyword);
 
-    res.send('hi');
+    res.setHeader('key', 'value');
+    res.status(201).send('Hello');
 });
 
 app.listen(8080);
