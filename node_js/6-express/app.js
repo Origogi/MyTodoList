@@ -5,7 +5,9 @@ import 'express-async-errors'
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json());  // REST Api, JSON 형태로 데이터 주고 받음
+app.use(express.urlencoded({ extended : false })); // HTML Form -> Body
+app.use(express.static('public')); // 정적 파일 제공
 
 app.get('/file', (req, res) =>{
     fs.readFile('/file1.txt', (err, data) => {
