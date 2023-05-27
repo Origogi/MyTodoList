@@ -24,11 +24,15 @@ app.get('/file1', (req, res) => {
 });
 
 app.get('/file2', (req, res) => {
-   fsAsync
+    return fsAsync
        .readFile('/file2.txt')
-       .then(data => res.send(data))
-       .catch(() => res.sendStatus(404));
+       .then(data => res.send(data));
 
+});
+
+app.get('/file3', async (req, res) => {
+    const data = await fsAsync.readFile('/file3.txt');
+    res.send(data);
 });
 
 app.use((error, req, res, next) => {
