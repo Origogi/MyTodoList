@@ -1,7 +1,6 @@
 import express from 'express';
 import fs from 'fs';
 import fsAsync from 'fs/promises';
-import 'express-async-errors'
 
 const app = express();
 
@@ -24,10 +23,11 @@ app.get('/file1', (req, res) => {
     }
 });
 
-app.get('/file2', async (req, res) =>  {
-    return fsAsync
+app.get('/file2', (req, res) => {
+   fsAsync
        .readFile('/file2.txt')
        .then(data => res.send(data))
+       .catch(() => res.sendStatus(404));
 
 });
 
