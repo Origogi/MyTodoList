@@ -1,21 +1,6 @@
 import express from "express";
 import 'express-async-errors';
-
-let tweets = [{
-    id: '1',
-    text: 'Hello Bob!',
-    createdAt: new Date(),
-    name: 'Bob',
-    username: 'bob',
-    url: "https://pbs.twimg.com/profile_images/1377594486683955203/LWhdzk2f_400x400.jpg"
-}, {
-    id: '2',
-    text: 'Hello Origogi!',
-    createdAt: new Date(),
-    name: 'Origogi',
-    username: 'origogi',
-    url: "https://pbs.twimg.com/profile_images/1377594486683955203/LWhdzk2f_400x400.jpg"
-}];
+import * as tweetRepository from '../data/tweet.js';
 
 const router = express.Router();
 
@@ -26,36 +11,29 @@ router.get('/', (req, res, next) => {
     console.log(userName);
 
     const data = userName ?
-        tweets.filter(t => t.username === userName) :
-        tweets;
+        tweetRepository.getAllByUsername(userName) :
+        tweetRepository.getAll();
 
     res.status(200).json(data);
 });
 
 // GET /tweets/:id
 router.get('/:id', (req, res, next) => {
-    const param = req.params.id;
-    if (param) {
-        const data = tweets.find(t => t.id === param);
+    const id = req.params.id;
+    if (id) {
+        const data = tweetRepository.getById(id);
         if (data) {
             res.status(200).json(data);
             return;
         }
     }
-    res.status(404).json({ message: `Tweet id(${param}) not found` });
+    res.status(404).json({ message: `Tweet id(${id}) not found` });
 });
 
 // POST /tweets
 router.post('/', (req, res, next) => {
     const { text, name, username } = req.body;
-    const tweet = {
-        id: Date.now().toString(),
-        createdAt: new Date(),
-        text,
-        name,
-        username,
-    }
-    tweets = [tweet, ...tweets];
+    const tweet = tweetRepository.createTweet(text, name, username);
     res.status(201).json(tweet);
 });
 
@@ -63,7 +41,7 @@ router.post('/', (req, res, next) => {
 router.put('/:id', (req, res, next) => {
     const id = req.params.id ?? '';
 
-    const tweet = tweets.find(t => t.id === id);
+    const tweet = tweetRepository.update(id, req.body.text);
 
    if (tweet) {
         tweet.text = req.body.text;
@@ -76,14 +54,12 @@ router.put('/:id', (req, res, next) => {
 // DELETE /tweets/:id
 
 router.delete('/:id', (req, res, next) => {
-    const param = req.params.id;
-    if (param) {
-        const filteredTweets = tweets.filter(t => t.id !== param);
-        if (filteredTweets.length !== tweets.length) {
-            tweets = filteredTweets;
+    const id = req.params.id;
+    if (id) {
+        if (tweetRepository.remove(id)) {
             res.sendStatus(204);
         } else {
-            res.status(404).json({ message: `Tweet id(${param}) not found` });
+            res.status(404).json({ message: `Tweet id(${id}) not found` });
         }
     }
 });
