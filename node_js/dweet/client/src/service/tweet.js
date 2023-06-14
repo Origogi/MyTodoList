@@ -1,43 +1,59 @@
 export default class TweetService {
-  constructor(baseURL) {
-    this.baseURL = baseURL;
-  }
-
-  async getTweets(username) {
-    let query = username ? `?username=${username}` : '';
-    const response = await fetch(`${this.baseURL}/tweets${query}`, {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-    });
-    const data = await response.json();
-    if (response.status !== 200) {
-      throw new Error(data.message);
+    constructor(baseURL) {
+        this.baseURL = baseURL;
     }
-    return data;
-  }
 
-  async postTweet(text) {
-    const tweet = {
-      id: Date.now(),
-      createdAt: new Date(),
-      name: 'Ellie',
-      username: 'ellie',
-      text,
-    };
-    this.tweets.push(tweet);
-    return tweet;
-  }
-
-  async deleteTweet(tweetId) {
-    this.tweets = this.tweets.filter((tweet) => tweet.id !== tweetId);
-  }
-
-  async updateTweet(tweetId, text) {
-    const tweet = this.tweets.find((tweet) => tweet.id === tweetId);
-    if (!tweet) {
-      throw new Error('tweet not found!');
+    async getTweets(username) {
+        let query = username ? `?username=${username}` : '';
+        const response = await fetch(`${this.baseURL}/tweets${query}`, {
+            method: 'GET',
+            headers: {'Content-Type': 'application/json'},
+        });
+        const data = await response.json();
+        if (response.status !== 200) {
+            throw new Error(data.message);
+        }
+        return data;
     }
-    tweet.text = text;
-    return tweet;
-  }
+
+    async postTweet(text) {
+        const response = await fetch(`${this.baseURL}/tweets`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                text,
+                username: 'origogi',
+                name: 'origogi'
+            })
+        });
+        const data = await response.json();
+        if (response.status !== 201) {
+            throw new Error(data.message);
+        }
+        return data;
+    }
+
+    async deleteTweet(tweetId) {
+        const response = await fetch(`${this.baseURL}/tweets/${tweetId}`, {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'},
+        });
+        if (response.status !== 204) {
+            throw new Error();
+        }
+    }
+
+    async updateTweet(tweetId, text) {
+        const response = await fetch(`${this.baseURL}/tweets/${tweetId}`, {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({text})
+        });
+
+        const data = await response.json();
+        if (response.status !== 200) {
+            throw new Error();
+        }
+        return data;
+    }
 }
