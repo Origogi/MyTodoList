@@ -1,6 +1,9 @@
 import express from "express";
+import "express-async-errors";
+
 import { body } from "express-validator";
 import { validate } from "../middleware/validator.js";
+import * as authController from '../controller/auth.js';
 
 const router = express.Router();
 
@@ -26,9 +29,10 @@ const validateSignup = [
     .withMessage("invalid URL")
     .optional({ checkFalsy: true, nullable: true }),
     validate,
+
 ];
 
-router.post("/signup", validateSignup, authController.signup);
+router.post('/signup', validateSignup, authController.signup);
 router.post("/login", validateCredential, authController.login);
 
 export default router;
