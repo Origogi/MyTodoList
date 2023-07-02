@@ -1,37 +1,49 @@
 export default class TweetService {
-    constructor(http) {
-        this.http = http;
-    }
+  constructor(http, tokenStorage) {
+    this.http = http;
+    this.tokenStorage = tokenStorage;
+  }
 
-    async getTweets(username) {
-        const query = username ? `?username=${username}` : '';
-        return await this.http.fetch(`/tweets${query}`, {
-            method: 'GET',
-        });
+  async getTweets(username) {
+    const query = username ? `?username=${username}` : "";
+    return await this.http.fetch(`/tweets${query}`, {
+      method: "GET",
+      headers: this.getHeaders(),
+    });
+  }
 
-    }
+  async postTweet(text) {
+    return await this.http.fetch(`/tweets`, {
+      method: "POST",
+      headers: this.getHeaders(),
 
-    async postTweet(text) {
-        return await this.http.fetch(`/tweets`, {
-            method: 'POST',
-            body: JSON.stringify({
-                text,
-                username: 'origogi',
-                name: 'origogi'
-            })
-        });
-    }
+      body: JSON.stringify({
+        text,
+        username: "origogi",
+        name: "origogi",
+      }),
+    });
+  }
 
-    async deleteTweet(tweetId) {
-        return await this.http.fetch(`/tweets/${tweetId}`, {
-            method: 'DELETE',
-        });
-    }
+  async deleteTweet(tweetId) {
+    return await this.http.fetch(`/tweets/${tweetId}`, {
+      method: "DELETE",
+      headers: this.getHeaders(),
+    });
+  }
 
-    async updateTweet(tweetId, text) {
-        return await this.http.fetch(`/tweets/${tweetId}`, {
-            method: 'PUT',
-            body: JSON.stringify({text})
-        });
-    }
+  async updateTweet(tweetId, text) {
+    return await this.http.fetch(`/tweets/${tweetId}`, {
+      method: "PUT",
+      headers: this.getHeaders(),
+      body: JSON.stringify({ text }),
+    });
+  }
+
+  getHeaders() {
+    const token = this.tokenStorage.getToken();
+    return {
+      Authorization: `Bearer ${token}`,
+    };
+  }
 }

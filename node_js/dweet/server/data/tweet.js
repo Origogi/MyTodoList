@@ -10,11 +10,17 @@ let tweets = [
 ];
 
 export async function create(text, userId) {
+  const user = await userRepository.findById(userId);
+
   const tweet = {
     id: Date.now().toString(),
     text,
     createdAt: new Date().toString(),
-    userId,
+    userId: user.id,
+    url : user.url,
+    username : user.username,
+    name : user.name,
+    email : user.email,
   };
   tweets = [tweet, ...tweets];
   console.log(`Created ${tweets.length}`);
@@ -27,11 +33,12 @@ export async function getAll() {
   return Promise.all(
     tweets.map(async (tweet) => {
       const user = await userRepository.findById(tweet.userId);
-      console.log(user);
+
       return {
         ...tweet,
         username : user.username,
         name : user.name,
+        email : user.email,
         url : user.url,
       };
     })

@@ -2,7 +2,6 @@ import * as tweetRepository from "../data/tweet.js";
 
 export async function getTweets(req, res) {
   const userName = req.query.username;
-  console.log(userName);
 
   const data = await (userName
     ? tweetRepository.getAllByUsername(userName)
@@ -26,7 +25,7 @@ export async function getTweet(req, res) {
 
 export async function createTweet(req, res) {
   const { text } = req.body;
-  console.log(req.userId);
+  console.log(`user id : ${req.userId}`);
   const tweet = await tweetRepository.create(text, req.userId);
   res.status(201).json(tweet);
 }

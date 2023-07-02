@@ -20,5 +20,7 @@ export async function findByUsername(username) {
 export async function createUser(user) {
   const created = { ...user, id: Date.now().toString() };
   users = [...users, created];
+  console.log(`Created user: ${user.username}`);
+
   return created.id;
 }
