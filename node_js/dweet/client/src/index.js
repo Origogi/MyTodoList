@@ -12,7 +12,7 @@ import TokenStorage from './db/token';
 
 const baseURL = process.env.REACT_APP_BASE_URL;
 const authErrorEventBus = new AuthErrorEventBus();
-const httpClient = new HttpClient(baseURL);
+const httpClient = new HttpClient(baseURL, authErrorEventBus);
 const tokenStorage = new TokenStorage();
 
 const authService = new AuthService(httpClient, tokenStorage);
