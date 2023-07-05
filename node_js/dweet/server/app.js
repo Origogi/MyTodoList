@@ -5,6 +5,7 @@ import helmet from "helmet";
 import "express-async-errors";
 import tweetRouter from "./router/tweets.js";
 import authRouter from "./router/auth.js";
+import { config } from "./config.js";
 
 const app = express();
 app.use(express.json());
@@ -13,7 +14,7 @@ app.use(cors());
 app.use(morgan("tiny"));
 
 app.use("/tweets", tweetRouter);
-app.use('/auth', authRouter);
+app.use("/auth", authRouter);
 
 app.use((req, res, next) => {
   console.log("Not found");
@@ -22,7 +23,7 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
   console.error(err);
-  res.sendStatus(500);
+  return res.sendStatus(500);
 });
 
-app.listen(8080);
+app.listen(config.host.port);
