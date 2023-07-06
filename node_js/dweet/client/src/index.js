@@ -1,14 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import AuthService from './service/auth';
-import TweetService from './service/tweet';
-import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import { AuthErrorEventBus } from './context/AuthContext';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import AuthService from "./service/auth";
+import TweetService from "./service/tweet";
+import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+import { AuthErrorEventBus } from "./context/AuthContext";
 import HttpClient from "./network/http";
-import TokenStorage from './db/token';
+import TokenStorage from "./db/token";
+import socket, { io } from "socket.io-client";
 
 const baseURL = process.env.REACT_APP_BASE_URL;
 const authErrorEventBus = new AuthErrorEventBus();
@@ -17,6 +18,15 @@ const tokenStorage = new TokenStorage();
 
 const authService = new AuthService(httpClient, tokenStorage);
 const tweetService = new TweetService(httpClient, tokenStorage);
+
+const socketIO = socket(baseURL);
+socketIO.on("connect_error", (error) => {
+  console.error(error);
+});
+
+socketIO.on("dwitter", (data) => {
+  console.log(data);
+});
 
 ReactDOM.render(
   <React.StrictMode>
@@ -29,5 +39,5 @@ ReactDOM.render(
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
