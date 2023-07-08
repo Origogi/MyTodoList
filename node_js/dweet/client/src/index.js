@@ -10,6 +10,7 @@ import { AuthErrorEventBus } from "./context/AuthContext";
 import HttpClient from "./network/http";
 import TokenStorage from "./db/token";
 import socket, { io } from "socket.io-client";
+import Socket from "./network/socket";
 
 const baseURL = process.env.REACT_APP_BASE_URL;
 const authErrorEventBus = new AuthErrorEventBus();
@@ -17,7 +18,8 @@ const httpClient = new HttpClient(baseURL, authErrorEventBus);
 const tokenStorage = new TokenStorage();
 
 const authService = new AuthService(httpClient, tokenStorage);
-const tweetService = new TweetService(httpClient, tokenStorage);
+const socketClient = new Socket(baseURL, () => tokenStorage.getToken());
+const tweetService = new TweetService(httpClient, tokenStorage, socketClient);
 
 const socketIO = socket(baseURL);
 socketIO.on("connect_error", (error) => {
