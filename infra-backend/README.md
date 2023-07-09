@@ -33,3 +33,47 @@
 
 - password hashing function
 - 아이디와 패스워드를 안전하게 보관
+
+## SQL
+
+- 컬럼, 로우로 이루어진 테이블 형태의 데이터베이스
+- 데이터베이스의 스키마를 미리 정의해야 한다.
+- 각 행마다 데이터 타입 및 속성(Not Null, Auto Increase)을 정의한다.
+- 테이블 간의 관계를 정의한다.
+
+### Data Intergity
+
+- 데이터의 정확성과 일관성을 유지하고 보증하는 것(스키마를 이용해서)
+
+### Primary Key
+
+- 테이블에서 각 행을 고유하게 식별할 수 있는 컬럼
+- 검색 최적화
+
+### Foreign Key
+
+- 두 가지 다른 테이블의 관계를 지정
+- 다른 테이블의 Primary Key 를 참조하는 컬럼
+
+### SQL Query
+
+- SELECT : 어떤 행을 가져올건 지
+- FROM : 어떤 테이블에서 가져올건지
+- WHERE : 어떤 조건을 만족하는지 (Predicate)
+
+## NoSQL
+
+- Object 자체를 저장하기 위한 DB
+- 서로 관계가 없다. (Isolated), 따라서 분산해서 저장이 용이하다.
+- GCP Bigtable, AWS DynamoDB, MongoDB, Redis 등이 있다.
+- 스키마가 없다.
+- 데이터 중복이 발생할수 있다.
+
+### Type
+
+- Key-Value
+- Document
+  - document : 데이터를 저장하는 단위
+  - collection : document 의 집합
+- Wide Column
+- Graph
