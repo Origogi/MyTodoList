@@ -6,7 +6,8 @@ import "express-async-errors";
 import tweetRouter from "./router/tweets.js";
 import authRouter from "./router/auth.js";
 import { config } from "./config.js";
-import {initSocket} from './connection/socket.js';
+import { initSocket } from "./connection/socket.js";
+import { db } from "./db/database.js";
 
 const app = express();
 app.use(express.json());
@@ -25,6 +26,10 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   console.error(err);
   return res.sendStatus(500);
+});
+
+db.getConnection().then((connection) => {
+  console.log(connection);
 });
 
 const server = app.listen(config.host.port);
