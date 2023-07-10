@@ -1,26 +1,27 @@
-let users = [
-  {
-    id: "1",
-    username: "bob",
-    password: "$2b$12",
-    name: "Bob",
-    email: "bob@gmail.com",
-    url: "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-4.png",
-  },
-];
+import {db} from '../db/database.js';
 
 export async function findById(id) {
-  return users.find((user) => user.id === id);
+  return db.execute('SELECT * FROM users WHERE id = ?', [id]).then((result) => {
+    console.log(result);
+    return result[0][0];
+  });
 }
 
 export async function findByUsername(username) {
-  return users.find((user) => user.username === username);
+  return db.execute('SELECT * FROM users WHERE username = ?', [username]).then((result) => {
+    console.log(result);
+    return result[0][0];
+  });
 }
 
 export async function createUser(user) {
-  const created = { ...user, id: Date.now().toString() };
-  users = [...users, created];
-  console.log(`Created user: ${user.username}`);
+  return db.execute(
+    'INSERT INTO users (username, password, name, email, url) VALUES (?, ?, ?, ?, ?)',
+    [user.username, user.password, user.name, user.email, user.url]
+  ).then((result) => {
+    console.log(result);
+    return result;
+  });
 
-  return created.id;
+
 }
