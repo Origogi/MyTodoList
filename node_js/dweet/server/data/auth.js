@@ -19,7 +19,7 @@ export async function createUser(user) {
     'INSERT INTO users (username, password, name, email, url) VALUES (?, ?, ?, ?, ?)',
     [user.username, user.password, user.name, user.email, user.url]
   ).then((result) => {
-    console.log(result);
+    console.log(result[0].insertId);
     return result;
   });
 
