@@ -1,3 +1,4 @@
+import MongoDb from "mongodb";
 import { config } from "../config.js";
 import SQ from "sequelize";
 
@@ -7,3 +8,9 @@ export const sequelize = new SQ.Sequelize(database, user, password, {
   dialect: "mysql",
 });
 
+
+export async function connectDB() {
+  return MongoDb.MongoClient.connect(config.db.host).then((client) => {
+    return client.db();
+  });
+}
