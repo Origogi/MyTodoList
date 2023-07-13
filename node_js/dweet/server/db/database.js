@@ -8,9 +8,17 @@ export const sequelize = new SQ.Sequelize(database, user, password, {
   dialect: "mysql",
 });
 
-
+let db;
 export async function connectDB() {
   return MongoDb.MongoClient.connect(config.db.host).then((client) => {
-    return client.db();
+    db = client.db();
   });
+}
+
+export function getUsers() {
+  return db.collection("users");
+}
+
+export function getTweets() {
+  return db.collection("tweets");
 }

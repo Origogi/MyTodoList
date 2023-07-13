@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import * as userRepository from "../data/auth.js";
+import * as userRepository from "../data/auth_mongo.js";
 import { config } from "../config.js";
 
 export async function signup(req, res) {
@@ -44,9 +44,10 @@ function createJwtToken(id) {
 }
 
 export async function me(req, res, next) {
+  console.log('user id : ',req.userId);
   const user = await userRepository.findById(req.userId);
   if (!user) {
-    return res.status(404).json({ message: "User not found" });
+    return res.status(404).json({ message: 'User not found' });
   }
   res.status(200).json({ token: req.token, username: user.username });
 }

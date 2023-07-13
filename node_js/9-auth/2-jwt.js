@@ -7,7 +7,7 @@ const token = jwt.sign({
     id: 'tony.origogi',
     isAdmin: true,
 }, secret, {
-    expiresIn: 2,  // expire in 2 seconds
+    expiresIn: 10,  // expire in 2 seconds
 });
 
 setTimeout(() => {
