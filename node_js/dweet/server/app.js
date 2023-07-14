@@ -30,8 +30,8 @@ app.use((err, req, res, next) => {
 });
 
 connectDB()
-  .then((db) => {
-    console.log("init!", db);
+  .then(() => {
+    console.log("init!");
     const server = app.listen(config.host.port);
     initSocket(server);
   })

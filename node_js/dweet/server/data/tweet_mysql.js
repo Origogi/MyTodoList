@@ -5,7 +5,7 @@ import { User } from "./auth_mysql.js";
 const DataTypes = SQ.DataTypes;
 const Sequelize = SQ.Sequelize;
 
-const Tweet = sequelize.define("tweet", {
+const Tweet_mysql = sequelize.define("tweet", {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -17,7 +17,7 @@ const Tweet = sequelize.define("tweet", {
     allowNull: false,
   },
 });
-Tweet.belongsTo(User);
+Tweet_mysql.belongsTo(User);
 
 const INCLUDE_USER = {
   attributes: [
@@ -40,7 +40,7 @@ const ORDER_DESC = {
 };
 
 export async function create(text, userId) {
-  return Tweet.create({
+  return Tweet_mysql.create({
     text,
     userId,
   }).then((data) => {
@@ -49,14 +49,14 @@ export async function create(text, userId) {
 }
 
 export async function getAll() {
-  return Tweet.findAll({
+  return Tweet_mysql.findAll({
     ...INCLUDE_USER,
     ...ORDER_DESC,
   });
 }
 
 export async function getAllByUsername(username) {
-  return Tweet.findAll({
+  return Tweet_mysql.findAll({
     ...INCLUDE_USER,
     ...ORDER_DESC,
     include: {
@@ -69,20 +69,20 @@ export async function getAllByUsername(username) {
 }
 
 export async function getById(id) {
-  return Tweet.findOne({
+  return Tweet_mysql.findOne({
     where: { id },
     ...INCLUDE_USER,
   });
 }
 
 export async function remove(id) {
-  return Tweet.findByPk(id).then((tweet) => {
+  return Tweet_mysql.findByPk(id).then((tweet) => {
     return tweet.destroy();
   });
 }
 
 export async function update(id, text) {
-  return Tweet.findByPk(id, INCLUDE_USER).then((tweet) => {
+  return Tweet_mysql.findByPk(id, INCLUDE_USER).then((tweet) => {
     tweet.text = text;
     return tweet.save();
   });
