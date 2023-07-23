@@ -10,6 +10,9 @@ import { initSocket } from "./connection/socket.js";
 import { connectDB } from "./db/database.js";
 // import { sequelize } from "./db/database.js";
 
+import yaml from "yamljs";
+import swaggerUI from "swagger-ui-express";
+
 const app = express();
 
 const corsOption = {
@@ -17,11 +20,14 @@ const corsOption = {
   optionSuccessStatus: 200,
 }
 
+const openAPIDoc = yaml.load("./api/openapi.yaml");
 app.use(express.json());
 app.use(helmet());
 app.use(cors(corsOption));
 app.use(morgan("tiny"));
 
+
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(openAPIDoc));
 app.use("/tweets", tweetRouter);
 app.use("/auth", authRouter);
 
@@ -34,6 +40,7 @@ app.use((err, req, res, next) => {
   console.error(err);
   return res.sendStatus(500);
 });
+
 
 connectDB()
   .then(() => {
