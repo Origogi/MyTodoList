@@ -17,9 +17,6 @@ const validateTweet = [
     .withMessage("text should be at least 3 characters"),
   validate,
 ];
-// GET /tweets
-// GET /tweets?username=:username
-router.get("/", isAuth, tweetController.getTweets);
 
 // GET /tweets/:id
 router.get("/:id", isAuth, tweetController.getTweet);
