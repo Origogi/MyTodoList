@@ -13,6 +13,7 @@ import yaml from "yamljs";
 import swaggerUI from "swagger-ui-express";
 import * as OpenAPIValidator from "express-openapi-validator";
 import * as apis from "./controller/index.js";
+import {authHandler} from './middleware/auth.js';
 
 const app = express();
 
@@ -34,11 +35,16 @@ app.use("/auth", authRouter);
 app.use(
   OpenAPIValidator.middleware({
     apiSpec: "./api/openapi.yaml",
-    validateResponses: true,
+    // validateResponses: true,
 
     operationHandlers: {
       resolver: modulePathResolver,
     },
+    // validateSecurity: {
+    //   handlers: {
+    //     jwt_auth: authHandler
+    //   }
+    // }
   })
 );
 
