@@ -23,11 +23,22 @@ describe('Calculator', () => {
     expect(cal.value).toBe(0);
   });
 
-  it('add', function () {
+  it('add (1)', function () {
     cal.set(10);
     cal.add(10);
     expect(cal.value).toBe(20);
   });
+
+  it('add should throw error when value is greater than 100', () => {
+    cal.set(100);
+    expect(() => cal.add(1)).toThrow();
+  });
+
+  // it('add (2)', function () {
+  //   cal.set(10);
+  //   cal.add(1000);
+  //   expect(cal.value).toBe(1020);
+  // });
 
   it('subtract', function () {
     cal.set(10);

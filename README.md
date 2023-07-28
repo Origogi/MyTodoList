@@ -43,16 +43,17 @@ Node 에 대해서 공부를 하면서 TDD 에 대해서도 학습을 할 것 �
 - [ ] GCP - PCE 자격증 획득
 - [ ] github webhook 을 이용하여 slack 명령어로 github actions 동작 시키기
 - [x] Fastlane match
-- [ ] TypeScript 인강
+- [x] TypeScript 인강
 - [ ] Flutter Animation 인강
-- [ ] Node 인강
+- [x] Node 인강
 - [ ] Node 와 TDD 인강
 
 - 독서
   - [x] 조엘 온 소프트웨어
   - [x] 함수형 코딩
   - [x] 개발자 원칙
-  - [ ] 데일 카네기의 인간 관계론
+  - [x] 데일 카네기의 인간 관계론
+  - [ ] Gof 디자인 패턴
 
 
 
