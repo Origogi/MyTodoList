@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1692963959682" clover="3.2.0">
-  <project timestamp="1692963959682" name="All files">
-    <metrics statements="177" coveredstatements="133" conditionals="18" coveredconditionals="17" methods="13" coveredmethods="6" elements="208" coveredelements="156" complexity="0" loc="177" ncloc="177" packages="5" files="6" classes="6"/>
+<coverage generated="1692965471094" clover="3.2.0">
+  <project timestamp="1692965471094" name="All files">
+    <metrics statements="177" coveredstatements="146" conditionals="21" coveredconditionals="20" methods="13" coveredmethods="8" elements="211" coveredelements="174" complexity="0" loc="177" ncloc="177" packages="5" files="6" classes="6"/>
     <package name="6-2-dwitter-server">
       <metrics statements="30" coveredstatements="28" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="config.js" path="/Users/gimjeongtae/Desktop/TIL/TDD/6-2-dwitter-server/config.js">
@@ -39,14 +39,14 @@
       </file>
     </package>
     <package name="6-2-dwitter-server.controller">
-      <metrics statements="58" coveredstatements="22" conditionals="5" coveredconditionals="5" methods="7" coveredmethods="3"/>
+      <metrics statements="58" coveredstatements="35" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="5"/>
       <file name="tweet.js" path="/Users/gimjeongtae/Desktop/TIL/TDD/6-2-dwitter-server/controller/tweet.js">
-        <metrics statements="58" coveredstatements="22" conditionals="5" coveredconditionals="5" methods="7" coveredmethods="3"/>
+        <metrics statements="58" coveredstatements="35" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="8" count="2" type="stmt"/>
@@ -55,25 +55,25 @@
         <line num="11" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="12" count="2" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="2" type="stmt"/>
-        <line num="25" count="2" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="25" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="5" type="stmt"/>
+        <line num="32" count="5" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
@@ -86,8 +86,8 @@
         <line num="42" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
-        <line num="45" count="2" type="stmt"/>
-        <line num="46" count="2" type="stmt"/>
+        <line num="45" count="5" type="stmt"/>
+        <line num="46" count="5" type="stmt"/>
         <line num="47" count="0" type="stmt"/>
         <line num="48" count="0" type="stmt"/>
         <line num="49" count="0" type="stmt"/>
