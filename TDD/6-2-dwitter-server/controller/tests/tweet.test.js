@@ -137,6 +137,144 @@ describe("TweetController", () => {
         });
         expect(tweetRepository.create).toHaveBeenCalledWith(newTweet, authorId);
       });
+
+      it("should send an event to a websocket server", async () => {
+        tweetRepository.create = jest.fn((text, userId) => ({
+          text,
+          userId,
+        }));
+
+        await tweetController.createTweet(request, response);
+
+        expect(mockedSocket.emit).toHaveBeenCalledWith("tweets", {
+          text: newTweet,
+          userId: authorId,
+        });
+      });
+    });
+
+    describe("updateTweet", () => {
+      let tweetId;
+      let updatedText;
+      let request;
+      let response;
+      let authorId;
+
+      beforeEach(() => {
+        tweetId = faker.string.alphanumeric(16);
+        updatedText = faker.word.words(3);
+        authorId = faker.string.alphanumeric(16);
+        request = httpMocks.createRequest({
+          params: {
+            id: tweetId,
+          },
+          body: {
+            text: updatedText,
+          },
+          userId: authorId,
+        });
+        response = httpMocks.createResponse();
+      });
+
+      it("updates the repository and return 200", async () => {
+        tweetRepository.getById = jest.fn(() => ({
+          userId: authorId,
+        }));
+        tweetRepository.update = jest.fn(() => ({
+          text: updatedText,
+          userId: authorId,
+        }));
+
+        await tweetController.updateTweet(request, response);
+
+        expect(response._getStatusCode()).toBe(200);
+        expect(response._getJSONData()).toStrictEqual({
+          text: updatedText,
+          userId: authorId,
+        });
+        expect(tweetRepository.update).toHaveBeenCalledWith(
+          tweetId,
+          updatedText
+        );
+      });
+
+      it("returns 403 and should not update repository if tweet does not belong ", async () => {
+        tweetRepository.getById = jest.fn(() => ({
+          text: faker.word.words(3),
+          userId: faker.string.alphanumeric(16),
+        }));
+
+        tweetRepository.update = jest.fn();
+
+        await tweetController.updateTweet(request, response);
+        expect(response._getStatusCode()).toBe(403);
+      });
+
+      it("returns 404 and should not update the repository if the tweet does not exist", async () => {
+        tweetRepository.getById = jest.fn(() => undefined);
+        tweetRepository.update = jest.fn();
+
+        await tweetController.updateTweet(request, response);
+        expect(response._getStatusCode()).toBe(404);
+        expect(response._getJSONData()).toMatchObject({
+          message: `Tweet not found: ${tweetId}`,
+        });
+      });
+    });
+  });
+
+  describe("deleteTweet", () => {
+    let tweetId;
+    let request;
+    let response;
+    let authorId;
+    beforeEach(() => {
+      tweetId = faker.string.alphanumeric(16);
+      authorId = faker.string.alphanumeric(16);
+      request = httpMocks.createRequest({
+        params: {
+          id: tweetId,
+        },
+        userId: authorId,
+      });
+      response = httpMocks.createResponse();
+    });
+
+    it("deletes the tweet and return 204", async () => {
+      tweetRepository.getById = jest.fn(() => ({
+        userId: authorId,
+      }));
+      tweetRepository.remove = jest.fn();
+
+      await tweetController.deleteTweet(request, response);
+
+      expect(response._getStatusCode()).toBe(204);
+      expect(tweetRepository.remove).toHaveBeenCalledWith(tweetId);
+    });
+
+    it("returns 403 and should not delete the repository if tweet does not belong to the user", async () => {
+      tweetRepository.getById = jest.fn(() => ({
+        userId: faker.string.alphanumeric(16),
+      }));
+      tweetRepository.remove = jest.fn();
+
+      await tweetController.deleteTweet(request, response);
+
+      expect(response._getStatusCode()).toBe(403);
+      expect(tweetRepository.remove).not.toHaveBeenCalled();
+    });
+
+    it("returns 404 and should not delete the repository if the tweet does not exist", async () => {
+      tweetRepository.getById = jest.fn(() => undefined);
+      tweetRepository.remove = jest.fn();
+
+      await tweetController.deleteTweet(request, response);
+
+      expect(response._getStatusCode()).toBe(404);
+      expect(response._getJSONData()).toMatchObject({
+        message: `Tweet not found: ${tweetId}`,
+      });
+      expect(tweetRepository.remove).not.toHaveBeenCalled();
     });
   });
 });
