@@ -48,7 +48,6 @@ export async function startServer() {
 
 export async function stopServer(server) {
   return new Promise((resolve, reject) => {
-    console.log("Server is stopping...");
     server.close(async () => {
       try {
         await sequelize.close();
