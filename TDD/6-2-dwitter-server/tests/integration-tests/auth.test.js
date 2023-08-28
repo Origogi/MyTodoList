@@ -1,14 +1,13 @@
-import { startServer, stopServer } from "../../app.js";
-import axios from "axios";
-import { sequelize } from "../../db/database.js";
+import axios from 'axios';
+import { startServer, stopServer } from '../../app.js';
+import { sequelize } from '../../db/database.js';
 import { faker } from "@faker-js/faker";
 
-describe("Auth APIs", () => {
+describe('Auth APIs', () => {
   let server;
   let request;
-
-  beforeAll(() => {
-    server = startServer();
+  beforeAll(async () => {
+    server = await startServer();
     request = axios.create({
       baseURL: 'http://localhost:8080',
       validateStatus: null,
@@ -16,23 +15,23 @@ describe("Auth APIs", () => {
   });
 
   afterAll(async () => {
-    await sequelize.close();
+    await sequelize.drop();
     await stopServer(server);
   });
 
-  describe("POST /auth/signup", () => {
-    it("return 201 and authorization token when user details are valid", async () => {
+  describe('POST to /auth/signup', () => {
+    it('returns 201 and auth token when user details are valid', async () => {
       const user = {
-        name: faker.person.fullName(),
+        name: faker.internet.displayName(),
         username: faker.internet.userName(),
         email: faker.internet.email(),
         password: faker.internet.password(),
       };
 
-      const response = await request.post("/auth/signup", user);
+      const res = await request.post('/auth/signup', user);
 
-      expect(response.status).toBe(201);
-      expect(response.data.token.length).toBeGreaterThan(0);
+      expect(res.status).toBe(201);
+      expect(res.data.token.length).toBeGreaterThan(0);
     });
   });
 });

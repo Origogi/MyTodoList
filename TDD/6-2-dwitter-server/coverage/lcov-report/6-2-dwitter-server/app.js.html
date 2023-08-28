@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85% </span>
+                <span class="strong">91.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>51/60</span>
+                <span class='fraction'>55/60</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85% </span>
+                <span class="strong">91.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>51/60</span>
+                <span class='fraction'>55/60</span>
             </div>
         
             
@@ -122,7 +122,8 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -173,26 +174,27 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import express from "express";
-import "express-async-errors";
-import cors from "cors";
-import morgan from "morgan";
-import helmet from "helmet";
-import tweetsRouter from "./router/tweets.js";
-import authRouter from "./router/auth.js";
-import { config } from "./config.js";
-import { initSocket, getSocketIO } from "./connection/socket.js";
-import { TweetController } from "./controller/tweet.js";
-import * as tweetRepository from "./data/tweet.js";
-import { sequelize } from "./db/database.js";
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import express from 'express';
+import 'express-async-errors';
+import cors from 'cors';
+import morgan from 'morgan';
+import helmet from 'helmet';
+import tweetsRouter from './router/tweets.js';
+import authRouter from './router/auth.js';
+import { config } from './config.js';
+import { initSocket, getSocketIO } from './connection/socket.js';
+import { sequelize } from './db/database.js';
+import { TweetController } from './controller/tweet.js';
+import * as tweetRepository from './data/tweet.js';
 &nbsp;
 const corsOption = {
   origin: config.cors.allowedOrigin,
@@ -204,13 +206,13 @@ export async function startServer() {
   app.use(express.json());
   app.use(helmet());
   app.use(cors(corsOption));
-  app.use(morgan("tiny"));
+  app.use(morgan('tiny'));
 &nbsp;
   app.use(
-    "/tweets",
+    '/tweets',
     tweetsRouter(new TweetController(tweetRepository, getSocketIO))
   );
-  app.use("/auth", authRouter);
+  app.use('/auth', authRouter);
 &nbsp;
   app.use((req, res, next) =&gt; {
 <span class="cstat-no" title="statement not covered" >    res.sendStatus(404);</span>
@@ -223,7 +225,7 @@ export async function startServer() {
 &nbsp;
   await sequelize.sync();
 &nbsp;
-  console.log("Server is started....");
+  console.log('Server is started....');
   const server = app.listen(config.port);
   initSocket(server);
   return server;
@@ -232,22 +234,23 @@ export async function startServer() {
 export async function stopServer(server) {
   return new Promise((resolve, reject) =&gt; {
     server.close(async () =&gt; {
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        await sequelize.close();</span>
-<span class="cstat-no" title="statement not covered" >        resolve();</span>
-<span class="cstat-no" title="statement not covered" >      } catch (error) {</span>
+      try {
+        await sequelize.close();
+        resolve();
+      } <span class="branch-0 cbranch-no" title="branch not covered" >catch (error) {</span>
 <span class="cstat-no" title="statement not covered" >        reject(error);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
     });
   });
-}</pre></td></tr></table></pre>
+}
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-28T15:05:16.085Z
+                at 2023-08-28T15:24:41.678Z
             </div>
         <script src="../prettify.js"></script>
         <script>
