@@ -129,7 +129,7 @@ describe("Auth APIs", () => {
       const res = await request.get("/auth/me", {
         headers: {
           Authorization: `Bearer ${user.jwt}`,
-        }
+        },
       });
 
       expect(res.status).toBe(200);
@@ -150,6 +150,32 @@ describe("Auth APIs", () => {
       jwt: prepareUserResponse.data.token,
     };
   }
+
+  describe("Tweets APIs", () => {
+    describe("POST to /tweets", () => {
+      it("returns 201 and the created tweet when a tweet text is 3 characters or more", async () => {
+        const text = faker.string.alphanumeric(3);
+        const user = await createNewUserAccount();
+
+        const res = await request.post(
+          "/tweets",
+          {
+            text,
+          },
+          {
+            headers: { Authorization: `Bearer ${user.jwt}` },
+          }
+        );
+
+        expect(res.status).toBe(201);
+        expect(res.data).toMatchObject({
+          name: user.name,
+          username: user.username,
+          text,
+        });
+      });
+    });
+  });
 });
 
 function makeValidUser() {
