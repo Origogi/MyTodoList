@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.83% </span>
+                <span class="strong">82.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>59/81</span>
+                <span class='fraction'>67/81</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/6</span>
+                <span class='fraction'>4/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.83% </span>
+                <span class="strong">82.71% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>59/81</span>
+                <span class='fraction'>67/81</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -185,8 +185,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -200,6 +200,16 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -208,16 +218,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -265,9 +265,9 @@ const ORDER_DESC = {
   order: [['createdAt', 'DESC']],
 };
 &nbsp;
-export <span class="fstat-no" title="function not covered" >async function getAll() {</span>
-<span class="cstat-no" title="statement not covered" >  return Tweet.findAll({ ...INCLUDE_USER, ...ORDER_DESC });</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+export async function getAll() {
+  return Tweet.findAll({ ...INCLUDE_USER, ...ORDER_DESC });
+}
 &nbsp;
 export <span class="fstat-no" title="function not covered" >async function getAllByUsername(username) {</span>
 <span class="cstat-no" title="statement not covered" >  return Tweet.findAll({</span>
@@ -292,13 +292,13 @@ export async function create(text, userId) {
     .then((data) =&gt; this.getById(data.dataValues.id));
 }
 &nbsp;
-export <span class="fstat-no" title="function not covered" >async function update(id, text) {</span>
-<span class="cstat-no" title="statement not covered" >  return Tweet.findByPk(id, INCLUDE_USER) //</span>
-<span class="cstat-no" title="statement not covered" >    .then((tweet) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      tweet.text = text;</span>
-<span class="cstat-no" title="statement not covered" >      return tweet.save();</span>
-<span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+export async function update(id, text) {
+  return Tweet.findByPk(id, INCLUDE_USER) //
+    .then((tweet) =&gt; {
+      tweet.text = text;
+      return tweet.save();
+    });
+}
 &nbsp;
 export <span class="fstat-no" title="function not covered" >async function remove(id) {</span>
 <span class="cstat-no" title="statement not covered" >  return Tweet.findByPk(id) //</span>
@@ -313,7 +313,7 @@ export <span class="fstat-no" title="function not covered" >async function remov
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-31T15:22:50.438Z
+                at 2023-09-01T12:28:39.851Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
