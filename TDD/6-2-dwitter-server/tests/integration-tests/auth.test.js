@@ -337,6 +337,60 @@ describe("Auth APIs", () => {
         expect(res.status).toBe(403);
       });
     });
+
+    describe("DELETE to /tweets/:id", () => {
+      it("returns 404 when tweet id does not exist", async () => {
+        const user = await createNewUserAccount();
+
+        const res = await request.delete(`/tweets/1234567890`, {
+          headers: { Authorization: `Bearer ${user.jwt}` },
+        });
+
+        expect(res.status).toBe(404);
+      });
+
+      it("returns 403 when tweet id exists but the tweet does not belong to the user", async () => {
+        const user1 = await createNewUserAccount();
+        const user2 = await createNewUserAccount();
+
+        const createdTweet = await request.post(
+          "/tweets",
+          { text: faker.string.alphanumeric(3) },
+          { headers: { Authorization: `Bearer ${user1.jwt}` } }
+        );
+
+        const res = await request.delete(`/tweets/${createdTweet.data.id}`, {
+          headers: { Authorization: `Bearer ${user2.jwt}` },
+        });
+
+        expect(res.status).toBe(403);
+      });
+
+      it("returns 204 and the tweet should be deleted when tweet id exists and the tweet belongs to the user", async () => {
+        const user = await createNewUserAccount();
+
+        const createdTweet = await request.post(
+          "/tweets",
+          { text: faker.string.alphanumeric(3) },
+          { headers: { Authorization: `Bearer ${user.jwt}` } }
+        );
+
+        const deleteTweet = await request.delete(
+          `/tweets/${createdTweet.data.id}`,
+          {
+            headers: { Authorization: `Bearer ${user.jwt}` },
+          }
+        );
+
+        expect(deleteTweet.status).toBe(204);
+
+        const res = await request.delete(`/tweets/${createdTweet.data.id}`, {
+          headers: { Authorization: `Bearer ${user.jwt}` },
+        });
+
+        expect(res.status).toBe(404);
+      });
+    });
   });
 });
 

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.7% </span>
+                <span class="strong">98.24% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>46/57</span>
+                <span class='fraction'>56/57</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.9% </span>
+                <span class="strong">92.85% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/11</span>
+                <span class='fraction'>13/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.7% </span>
+                <span class="strong">98.24% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>46/57</span>
+                <span class='fraction'>56/57</span>
             </div>
         
             
@@ -144,10 +144,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -165,16 +165,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export class TweetController {
@@ -221,17 +221,17 @@
     res.status(200).json(updated);
   };
 &nbsp;
-  deleteTweet = <span class="fstat-no" title="function not covered" >async (req, res, next) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const id = req.params.id;</span>
-<span class="cstat-no" title="statement not covered" >    const tweet = await this.tweets.getById(id);</span>
-<span class="cstat-no" title="statement not covered" >    if (!tweet) {</span>
-<span class="cstat-no" title="statement not covered" >      return res.status(404).json({ message: `Tweet not found: ${id}` });</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (tweet.userId !== req.userId) {</span>
-<span class="cstat-no" title="statement not covered" >      return res.sendStatus(403);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    await this.tweets.remove(id);</span>
-<span class="cstat-no" title="statement not covered" >    res.sendStatus(204);</span>
+  deleteTweet = async (req, res, next) =&gt; {
+    const id = req.params.id;
+    const tweet = await this.tweets.getById(id);
+    if (!tweet) {
+      return res.status(404).json({ message: `Tweet not found: ${id}` });
+    }
+    if (tweet.userId !== req.userId) {
+      return res.sendStatus(403);
+    }
+    await this.tweets.remove(id);
+    res.sendStatus(204);
   };
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -241,7 +241,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-01T12:39:13.009Z
+                at 2023-09-03T00:27:20.264Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
