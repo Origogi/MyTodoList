@@ -46,7 +46,7 @@ Node 에 대해서 공부를 하면서 TDD 에 대해서도 학습을 할 것 �
 - [x] TypeScript 인강
 - [ ] Flutter Animation 인강
 - [x] Node 인강
-- [ ] Node 와 TDD 인강
+- [x] Node 와 TDD 인강
 
 - 독서
   - [x] 조엘 온 소프트웨어
@@ -54,7 +54,7 @@ Node 에 대해서 공부를 하면서 TDD 에 대해서도 학습을 할 것 �
   - [x] 개발자 원칙
   - [x] 데일 카네기의 인간 관계론
   - [ ] HTTP 완벽 가이드
-  - [ ] Gof 디자인 패턴
+  - [ ] Gof 디자인 패턴 (진행중)
 
 
 
