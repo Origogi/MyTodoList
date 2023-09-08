@@ -4,7 +4,10 @@
   "description": "Youtube 인강 보면서 실습!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "webpack",
+    "watch": "webpack --watch",
+    "start": "npm run bundle && npm run watch"
   },
   "keywords": [],
   "author": "",
