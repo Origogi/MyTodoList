@@ -2,4 +2,4 @@
 
 Youtube 인강 보면서 실습!
 
-[Link](https://www.youtube.com/watch?v=UgtgJ486CDc)
+[Link](https://www.youtube.com/watch?v=UgtgJ486CDc&list=PLe6NQuuFBu7H3sFnErshsfgNPE9dOZZrx)
