@@ -6,7 +6,9 @@ module.exports = {
   // entry: "./src/iterator/index.ts",
   // entry : "./src/strategy/index.ts",
   // entry : "./src/template/index.ts",
-  entry : "./src/adapter/index.ts",
+  // entry : "./src/adapter/index.ts",
+  entry: "./src/bridge/index.ts",
+
   devtool: "inline-source-map",
   module: {
     rules: [
@@ -24,4 +26,4 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
-}
+};
