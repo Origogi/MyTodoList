@@ -1,0 +1,25 @@
+.unit {
+    font-size: 2rem;
+    padding-left: 2.3rem;
+    background-image: url("./image/file.svg");
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: left 0.5rem;
+    font-weight: normal;
+}
+
+.folder {
+    background-image: url("./image/folder.svg");
+    font-weight: bold;
+}
+
+.unit span:nth-child(2) {
+    color: #999;
+    margin-left: 0.4rem;
+    font-size: 1.4rem;
+}
+
+#list {
+    width: 20rem;
+    margin: 2rem;
+}
