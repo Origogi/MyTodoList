@@ -20,7 +20,8 @@ module.exports = {
   // entry : "./src/chain-of-responsibility/index.ts",
   // entry : "./src/prototype/index.ts",
 
-  entry : "./src/facade/index.ts",
+  // entry : "./src/facade/index.ts",
+  entry : "./src/builder-1/index.ts",
   devtool: "inline-source-map",
   module: {
     rules: [
