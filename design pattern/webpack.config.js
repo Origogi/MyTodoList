@@ -21,7 +21,7 @@ module.exports = {
   // entry : "./src/prototype/index.ts",
 
   // entry : "./src/facade/index.ts",
-  entry : "./src/abstract-factory/index.ts",
+  entry : "./src/state/index.ts",
   devtool: "inline-source-map",
   module: {
     rules: [
