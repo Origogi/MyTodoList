@@ -1,7 +1,8 @@
 import { Maze } from "../maze";
 import { MazeBuilder } from "./maze-builder";
+import { CountingMazeBuilder } from "./counting-maze-builder";
 
-function createMaze(builder : MazeBuilder) : Maze {
+export function createMaze(builder : MazeBuilder) : Maze {
     builder.buildMaze();
 
     builder.buildRoom(1);
@@ -10,3 +11,4 @@ function createMaze(builder : MazeBuilder) : Maze {
 
     return builder.getMaze();
 }
+

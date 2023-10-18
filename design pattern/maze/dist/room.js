@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Room = void 0;
 const map_site_1 = require("./map-site");
 class Room extends map_site_1.MapSite {
     constructor(roomNumber) {
@@ -20,4 +21,5 @@ class Room extends map_site_1.MapSite {
         console.log("You have entered room " + this._roomNumber);
     }
 }
+exports.Room = Room;
 //# sourceMappingURL=room.js.map

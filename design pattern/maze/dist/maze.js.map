@@ -1,1 +1,1 @@
-{"version":3,"file":"maze.js","sourceRoot":"","sources":["../maze.ts"],"names":[],"mappings":""}
+{"version":3,"file":"maze.js","sourceRoot":"","sources":["../maze.ts"],"names":[],"mappings":";;;AAEA,MAAa,IAAI;IAGf;QAFQ,WAAM,GAAW,EAAE,CAAC;IAEb,CAAC;IAEhB,OAAO,CAAC,IAAU;QAChB,IAAI,CAAC,MAAM,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC;IACzB,CAAC;IAED,MAAM,CAAC,MAAc;QACnB,MAAM,IAAI,GAAG,IAAI,CAAC,MAAM,CAAC,IAAI,CAAC,CAAC,IAAI,EAAE,EAAE,CAAC,IAAI,CAAC,aAAa,EAAE,KAAK,MAAM,CAAC,CAAC;QAEzE,IAAI,IAAI,KAAK,SAAS,EAAE;YACtB,OAAO,IAAI,CAAC;SACb;QACD,OAAO,IAAI,CAAC;IACd,CAAC;CACF;AAjBD,oBAiBC"}
