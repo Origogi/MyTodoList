@@ -9,7 +9,12 @@ export class Maze {
     this._rooms.push(room);
   }
 
-  roomNo(number: number): Room | undefined {
-    return this._rooms.find((room) => room.getRoomNumber() === number);
+  roomNo(number: number): Room | null {
+    const room = this._rooms.find((room) => room.getRoomNumber() === number);
+
+    if (room === undefined) {
+      return null;
+    }
+    return room;
   }
 }
