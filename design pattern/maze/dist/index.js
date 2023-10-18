@@ -1,11 +1,19 @@
 "use strict";
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
-const counting_maze_builder_1 = require("./builder/counting-maze-builder");
-const builder_1 = require("./builder");
+const maze_game_1 = require("./abstract-factory/maze-game");
+const enchanted_maze_factory_1 = require("./abstract-factory/enchanted-maze-factory");
 console.log("Maze Game");
-const countingMazeBuilder = new counting_maze_builder_1.CountingMazeBuilder();
-(0, builder_1.createMaze)(countingMazeBuilder);
-console.log(countingMazeBuilder.getCounts());
+// const countingMazeBuilder = new CountingMazeBuilder();
+// createMaze(countingMazeBuilder);
+//
+// console.log(countingMazeBuilder.getCounts());
+// const mazeFactory = new BombedMazeFactory();
+const mazeFactory = new enchanted_maze_factory_1.EnchantedMazeFactory();
+const mazeGame = new maze_game_1.MazeGame();
+const maze = mazeGame.createMaze(mazeFactory);
+console.log(maze);
+(_a = maze.roomNo(1)) === null || _a === void 0 ? void 0 : _a.enter();
 //
 // function createMaze(): Maze {
 //   const maze = new Maze();

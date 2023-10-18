@@ -12,8 +12,7 @@ class CountingMazeBuilder extends maze_builder_1.MazeBuilder {
     buildDoor(roomNumber1, roomNumber2) {
         this._doors++;
     }
-    buildMaze() {
-    }
+    buildMaze() { }
     buildRoom(roomNumber) {
         this._rooms++;
     }

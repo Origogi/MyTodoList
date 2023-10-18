@@ -5,13 +5,26 @@ import { Wall } from "./wall";
 import { Direction } from "./direction";
 import { CountingMazeBuilder } from "./builder/counting-maze-builder";
 import { createMaze } from "./builder";
+import { BombedMazeFactory } from "./abstract-factory/bombed-maze-factory";
+import { MazeGame } from "./abstract-factory/maze-game";
+import { EnchantedMazeFactory } from "./abstract-factory/enchanted-maze-factory";
 
 console.log("Maze Game");
 
-const countingMazeBuilder = new CountingMazeBuilder();
-createMaze(countingMazeBuilder);
+// const countingMazeBuilder = new CountingMazeBuilder();
+// createMaze(countingMazeBuilder);
+//
+// console.log(countingMazeBuilder.getCounts());
 
-console.log(countingMazeBuilder.getCounts());
+// const mazeFactory = new BombedMazeFactory();
+const mazeFactory = new EnchantedMazeFactory();
+
+const mazeGame = new MazeGame();
+const maze = mazeGame.createMaze(mazeFactory);
+
+console.log(maze);
+maze.roomNo(1)?.enter();
+
 //
 // function createMaze(): Maze {
 //   const maze = new Maze();

@@ -1,0 +1,1 @@
+{"version":3,"file":"enchanted-room.js","sourceRoot":"","sources":["../enchanted-room.ts"],"names":[],"mappings":";;;AAAA,iCAA8B;AAG9B,MAAa,aAAc,SAAQ,WAAI;IACrC,YAAY,UAAkB,EAAU,MAAa;QACnD,KAAK,CAAC,UAAU,CAAC,CAAC;QADoB,WAAM,GAAN,MAAM,CAAO;IAErD,CAAC;IAED,KAAK;QACH,OAAO,CAAC,GAAG,CAAC,wBAAwB,GAAG,IAAI,CAAC,aAAa,EAAE,GAAG,qBAAqB,CAAC,CAAC;IACvF,CAAC;CACF;AARD,sCAQC"}
