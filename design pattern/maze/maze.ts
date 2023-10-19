@@ -1,9 +1,7 @@
 import { Room } from "./room";
 
 export class Maze {
-  private _rooms: Room[] = [];
-
-  constructor() {}
+  constructor(private _rooms: Room[] = []) {}
 
   addRoom(room: Room): void {
     this._rooms.push(room);
@@ -16,5 +14,9 @@ export class Maze {
       return null;
     }
     return room;
+  }
+
+  clone(): Maze {
+    return new Maze(this._rooms);
   }
 }

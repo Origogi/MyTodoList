@@ -23,6 +23,10 @@ export class Room extends MapSite {
     return this._sides[direction];
   }
 
+  public clone(): Room {
+    return new Room(this._roomNumber);
+  }
+
   public enter(): void {
     console.log("You have entered room " + this._roomNumber);
   }
