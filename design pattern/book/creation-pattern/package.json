@@ -4,7 +4,6 @@
   "description": "Gof 디자인 패턴에 소개된 Maze Game 예제를 TypeScript 로 구현해보았습니다.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && node dist/index.js",
     "start:watch": "tsc -w && nodemon dist/index.js"
   },
