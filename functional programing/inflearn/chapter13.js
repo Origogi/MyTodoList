@@ -1,4 +1,5 @@
-const _ = require('fxjs');
+const _ = require("fxjs");
+const L = require("fxjs/Lazy");
 
 class Model {
   constructor(attrs = {}) {
@@ -30,7 +31,7 @@ class Collection {
   }
 
   *[Symbol.iterator]() {
-    yield *this._models;
+    yield* this._models;
   }
 }
 
@@ -43,8 +44,28 @@ console.log(coll);
 
 console.log(coll.at(1));
 
+_.go(coll, _.each(console.log));
 
-_.go(
-  coll,
-  _.each(console.log)
-)
+
+const add = (a, b) => a + b;
+const addAll = _.reduce(add);
+
+class Product extends Model {}
+
+class Products extends Collection {
+  getPrices() {
+    return _.map(p => p.get("price"), this);
+  }
+
+  totalPrice() {
+    return addAll(this.getPrices());
+  }
+}
+
+const products = new Products();
+products.add(new Product({ id: 1, price: 10000 }));
+console.log(products.totalPrice());
+products.add(new Product({ id: 2, price: 25000 }));
+console.log(products.totalPrice());
+products.add(new Product({ id: 3, price: 35000 }));
+console.log(products.totalPrice());
