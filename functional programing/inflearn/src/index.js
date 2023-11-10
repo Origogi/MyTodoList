@@ -1,7 +1,7 @@
-const _ = require('fxjs');
-const {Images} = require('./chapter18');
+import {Images} from './chapter18.js';
+import {go} from 'fxjs';
 
-_.go(
+go(
   Images.fetch(),
   Images.tmpl,
   console.log

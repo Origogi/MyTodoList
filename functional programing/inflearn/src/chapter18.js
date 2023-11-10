@@ -1,6 +1,6 @@
-const _ = require('fxjs');
+import { map } from "fxjs/es";
 
-const Images = {};
+export const Images = {};
 
 Images.fetch = () =>
   new Promise((resolve) =>
@@ -374,7 +374,7 @@ Images.fetch = () =>
 
 Images.tmpl = images => `
     <div class="images">
-        ${_.map(img => `
+        ${map(img => `
           <div class="image">
             <div class="box"><img src="${img.url}" alt=""></div>
             <div class="name">${img.name}</div>
@@ -382,5 +382,3 @@ Images.tmpl = images => `
         `, images)}
     </div>
 `
-
-exports.Images = Images;
