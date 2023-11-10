@@ -2,9 +2,9 @@
 
 // 홀수 n개 더하기
 
-import _ from "fxjs/Strict";
-import L from "fxjs/Lazy";
-import { range } from "fxjs";
+const _ = require("fxjs/Strict");
+const L = require("fxjs/Lazy");
+const { range } = require("fxjs");
 
 function f1(limit, list) {
   const ret = _.reduce(

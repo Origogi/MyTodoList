@@ -12,7 +12,6 @@ const Impt = {
       { imp_id: 14, order_id: 4, amount: 4000 },
       { imp_id: 15, order_id: 5, amount: 5000 },
       { imp_id: 16, order_id: 6, amount: 6000 },
-
     ],
     3: [
       { imp_id: 17, order_id: 7, amount: 7000 },
@@ -40,11 +39,29 @@ async function job() {
   const payments = await _.go(
     L.range(1, Infinity),
     L.map(Impt.gatPayments),
-    L.takeUntil(({length}) => length < 3),
-    _.flat,
+    L.takeUntil(({ length }) => length < 3),
+    _.flat
   );
 
-  console.log(payments);
+  const order_Ids = await _.go(
+    payments,
+    _.map(({ order_id }) => order_id),
+    DB.getOrders,
+    _.map(({ id }) => id)
+  );
+
+  // 결제 모듈의 payemnt와 가맹점의 주문서를 비교해서
+  // 결제를 취소해야할 id들을 뽑는다.
+  // 결제 취소 api를 실행한다.
+  await _.go(
+    payments,
+    L.reject(({ order_id }) => order_Ids.includes(order_id)),
+    L.map((p) => p.imp_id),
+    L.map(Impt.cancelPayment),
+    _.each(console.log)
+  );
 }
 
-job();
+(function recur() {
+  Promise.all([_.delay(10000, undefined), job()]).then(recur);
+})();
