@@ -1,5 +1,6 @@
 import * as L from "fxjs/Lazy";
-import {curry, pipe, reduce} from 'fxjs/es/Strict';
+import { curry, pipe, reduce } from "fxjs/es/Strict";
+import {each, isIterable} from 'fxjs';
 
 export const $ = {};
 
@@ -11,12 +12,15 @@ $.el = (html) => {
 
 $.qs = (sel, parent = document) => parent.querySelector(sel);
 $.qsa = (sel, parent = document) => parent.querySelectorAll(sel);
+$.closest = curry((sel, el) => el.closest(sel));
+$.remove = (el) => el.parentNode.removeChild(el);
 
-$.append = curry((parent, child) => {
-  console.log(parent);
-  console.log(child)
-  return parent.appendChild(child);
-});
+$.on = (event, f) => (els) => each((el) => el.addEventListener(event, f), isIterable(els) ? els : [els]);
+
+$.find = curry($.qs);
+$.findAll = curry($.qsa);
+
+$.append = curry((parent, child) => parent.appendChild(child));
 
 export const Images = {};
 
