@@ -1,4 +1,22 @@
-import { map } from "fxjs/es";
+import * as L from "fxjs/Lazy";
+import {curry, pipe, reduce} from 'fxjs/es/Strict';
+
+export const $ = {};
+
+$.el = (html) => {
+  const wrap = document.createElement("div");
+  wrap.innerHTML = html;
+  return wrap.children[0];
+};
+
+$.qs = (sel, parent = document) => parent.querySelector(sel);
+$.qsa = (sel, parent = document) => parent.querySelectorAll(sel);
+
+$.append = curry((parent, child) => {
+  console.log(parent);
+  console.log(child)
+  return parent.appendChild(child);
+});
 
 export const Images = {};
 
@@ -372,13 +390,20 @@ Images.fetch = () =>
     )
   );
 
-Images.tmpl = images => `
+const string = (iter) => reduce((a, b) => `${a}${b}`, iter);
+const strMap = pipe(L.map, string);
+
+Images.tmpl = (images) => `
     <div class="images">
-        ${map(img => `
+        ${strMap(
+          (img) => `
           <div class="image">
             <div class="box"><img src="${img.url}" alt=""></div>
             <div class="name">${img.name}</div>
+            <div class="remove">X</div>
           </div>
-        `, images)}
+        `,
+          images
+        )}
     </div>
-`
+`;
