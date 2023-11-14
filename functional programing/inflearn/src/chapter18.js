@@ -1,6 +1,7 @@
 import * as L from "fxjs/Lazy";
 import { curry, pipe, reduce } from "fxjs/es/Strict";
-import { each, go, isIterable, tap, map } from "fxjs";
+import { each, go, isIterable, tap, map, groupBy } from "fxjs";
+import * as C from "fxjs/Concurrency";
 
 export const $ = {};
 
@@ -451,6 +452,31 @@ Ui.message = curry(
       )
     )
 );
+
+Images.loader = (limit) =>
+  tap(
+    $.findAll("img"),
+    L.map(
+      (img) => (_) =>
+        new Promise((resolve) => {
+          img.onload = () => resolve(img);
+          img.src = img.getAttribute("lazy-src");
+        })
+    ),
+    C.takeAllWithLimit(4),
+    each(each($.addClass("fade-in")))
+  );
+
+C.takeAllWithLimit = curry((limit, iter) => {
+  let r = L.range(Infinity);
+  return go(
+    iter,
+    groupBy((_) => Math.floor(r.next().value / limit)),
+    L.values,
+    L.map(L.map((f) => f())),
+    L.map(C.takeAll)
+  );
+});
 
 Ui.confirm = Ui.message([
   {
