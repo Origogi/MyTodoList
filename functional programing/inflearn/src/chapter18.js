@@ -1,7 +1,6 @@
 import * as L from "fxjs/Lazy";
 import { curry, pipe, reduce } from "fxjs/es/Strict";
-import { each, go, isIterable, tap } from "fxjs";
-import { resolve } from "promise";
+import { each, go, isIterable, tap, map } from "fxjs";
 
 export const $ = {};
 
@@ -416,36 +415,58 @@ Images.tmpl = (images) => `
 
 export const Ui = {};
 
-Ui.confirm = (msg) =>
-  new Promise((resolve) =>
-    go(
-      `
+Ui.message = curry(
+  (buttons, msg) =>
+    new Promise((resolve) =>
+      go(
+        `
   <div class="confirm">
     <div class="body">
         <div class="msg">${msg}</div>
         <div class="buttons">
-            <button type="button" class="ok">확인</button>
-            <button type="button" class="cancel">취소</button>
+           ${strMap(
+             (btn) =>
+               `<button type="button" class="${btn.type}">${btn.name}</button>`,
+             buttons
+           )}
         </div>
     </div>
   </div>`,
-      $.el,
-      $.append($.qs("body")),
-      tap(
-        $.find(".ok"),
-        $.on("click", (e) =>
-          go(e.currentTarget, $.closest(".confirm"), $.remove, (_) =>
-            resolve(true)
-          )
-        )
-      ),
-      tap(
-        $.find(".cancel"),
-        $.on("click", (e) =>
-          go(e.currentTarget, $.closest(".confirm"), $.remove, (_) =>
-            resolve(false)
-          )
+        $.el,
+        $.append($.qs("body")),
+        ...map(
+          (btn) =>
+            tap(
+              $.find(`.${btn.type}`),
+              $.on("click", (e) =>
+                go(e.currentTarget, $.closest(".confirm"), $.remove, (_) =>
+                  resolve(btn.value)
+                )
+              )
+            ),
+          buttons
         )
       )
     )
-  );
+);
+
+Ui.confirm = Ui.message([
+  {
+    type: "cancel",
+    name: "취소",
+    value: false,
+  },
+  {
+    type: "ok",
+    name: "확인",
+    value: true,
+  },
+]);
+
+Ui.alert = Ui.message([
+  {
+    type: "ok",
+    name: "확인",
+    value: true,
+  },
+]);
