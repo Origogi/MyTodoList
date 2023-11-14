@@ -13,7 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fxjs": "^0.21.3"
+    "fxjs": "^0.21.3",
+    "promise": "^8.3.0"
   },
   "devDependencies": {
     "webpack": "^5.89.0",

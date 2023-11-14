@@ -1,6 +1,7 @@
 import * as L from "fxjs/Lazy";
 import { curry, pipe, reduce } from "fxjs/es/Strict";
-import {each, isIterable} from 'fxjs';
+import { each, go, isIterable, tap } from "fxjs";
+import { resolve } from "promise";
 
 export const $ = {};
 
@@ -15,7 +16,8 @@ $.qsa = (sel, parent = document) => parent.querySelectorAll(sel);
 $.closest = curry((sel, el) => el.closest(sel));
 $.remove = (el) => el.parentNode.removeChild(el);
 
-$.on = (event, f) => (els) => each((el) => el.addEventListener(event, f), isIterable(els) ? els : [els]);
+$.on = (event, f) => (els) =>
+  each((el) => el.addEventListener(event, f), isIterable(els) ? els : [els]);
 
 $.find = curry($.qs);
 $.findAll = curry($.qsa);
@@ -411,3 +413,39 @@ Images.tmpl = (images) => `
         )}
     </div>
 `;
+
+export const Ui = {};
+
+Ui.confirm = (msg) =>
+  new Promise((resolve) =>
+    go(
+      `
+  <div class="confirm">
+    <div class="body">
+        <div class="msg">${msg}</div>
+        <div class="buttons">
+            <button type="button" class="ok">확인</button>
+            <button type="button" class="cancel">취소</button>
+        </div>
+    </div>
+  </div>`,
+      $.el,
+      $.append($.qs("body")),
+      tap(
+        $.find(".ok"),
+        $.on("click", (e) =>
+          go(e.currentTarget, $.closest(".confirm"), $.remove, (_) =>
+            resolve(true)
+          )
+        )
+      ),
+      tap(
+        $.find(".cancel"),
+        $.on("click", (e) =>
+          go(e.currentTarget, $.closest(".confirm"), $.remove, (_) =>
+            resolve(false)
+          )
+        )
+      )
+    )
+  );
