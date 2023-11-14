@@ -18,6 +18,8 @@ $.remove = (el) => el.parentNode.removeChild(el);
 $.on = (event, f) => (els) =>
   each((el) => el.addEventListener(event, f), isIterable(els) ? els : [els]);
 
+$.addClass = curry((className, el) => el.classList.add(className));
+
 $.find = curry($.qs);
 $.findAll = curry($.qsa);
 
@@ -403,7 +405,7 @@ Images.tmpl = (images) => `
         ${strMap(
           (img) => `
           <div class="image">
-            <div class="box"><img src="${img.url}" alt=""></div>
+            <div class="box"><img src="" lazy-src="${img.url}" alt="" class="fade"></div>
             <div class="name">${img.name}</div>
             <div class="remove">X</div>
           </div>
