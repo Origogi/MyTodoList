@@ -463,11 +463,11 @@ Images.loader = (limit) =>
           img.src = img.getAttribute("lazy-src");
         })
     ),
-    C.takeAllWithLimit(4),
+    takeAllWithLimit(limit),
     each(each($.addClass("fade-in")))
   );
 
-C.takeAllWithLimit = curry((limit, iter) => {
+const takeAllWithLimit = curry((limit, iter) => {
   let r = L.range(Infinity);
   return go(
     iter,
@@ -498,3 +498,20 @@ Ui.alert = Ui.message([
     value: true,
   },
 ]);
+
+Ui.remover = (btnSel, targetSel, before = (a) => a, after = (a) => a) =>
+  pipe(
+    $.findAll(btnSel),
+    $.on("click", async ({ currentTarget }) => {
+      if (await Ui.confirm("정말 삭제하시겠습니까?")) {
+        await Ui.alert("삭제되었습니다.");
+        go(
+          currentTarget,
+          $.closest(targetSel),
+          tap(before),
+          $.remove,
+          tap(after)
+        );
+      }
+    })
+  );
