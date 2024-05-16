@@ -23,9 +23,9 @@ Today I Learned
 - [ ] iOS SwiftUI 인강 (진행중)
 - [ ] Android Jetpack Compose 인강
 - [ ] Pokedex 앱 만들어보기
-  - [ ] iOS SwiftUI (1.0 개발 완료하였고 2.0 개발중)
+  - [x] iOS SwiftUI (1.0 개발 완료하였고 2.0 개발중)
     - [x] 1.0 버전 (local assets, local data)
-    - [ ] PokeAPI 연동 (진행중)
+    - [x] PokeAPI 연동 (진행중)
   - [ ] Android Jetpack Compose
   - [ ] Flutter
 
