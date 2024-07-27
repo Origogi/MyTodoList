@@ -13,28 +13,35 @@ Today I Learned
 ## 1. 2024 목표
 
 - iOS SwiftUI 학습
+- iOS UIKit 학습
 - Android Jetpack Compose 심화 학습
 - Flutter 심화 학습
+
+### 진로 변경
+
+24.06.01 기준으로 iOS 개발자로 진로를 변경하였습니다. 따라서 기존 Flutter, Android Jetpack Compose 학습 계획을 변경하여 iOS SwiftUI, UIKit 학습 계획으로 변경하였습니다.
+하지만 Pokedex Flutter 앱은 계획대로 진행할 예정입니다.
 
 ### TODO
 
 #### 개발 분야
 
 - [ ] iOS SwiftUI 인강 (진행중)
-- [ ] Android Jetpack Compose 인강
+- [ ] iOS UIKit & MVVM 디자인 패턴 인강 (진행중)
 - [ ] Pokedex 앱 만들어보기
-  - [x] iOS SwiftUI (1.0 개발 완료하였고 2.0 개발중)
-    - [x] 1.0 버전 (local assets, local data)
-    - [x] PokeAPI 연동 (진행중)
-  - [ ] Android Jetpack Compose
+  - [x] iOS SwiftUI
+  - [x] Android Jetpack Compose
   - [ ] Flutter
 
 #### 독서
 
 - [x] 소프트웨어 아키텍처 101
 - [ ] 디자인 패턴에 띄어들기
-- [ ] 핵심만 골라 배우는 SwiftUI 기반의 iOS 프로그래밍
+- [x] 핵심만 골라 배우는 SwiftUI 기반의 iOS 프로그래밍
 - [ ] Flutter Engineering
+- [x] Android Jetpack Compose
+- [ ] 꼼꼼한 재은 씨의 스위프트 기본편
+
 
 ## 2. 2023년 목표
 
