@@ -40,7 +40,9 @@ Today I Learned
 - [x] 핵심만 골라 배우는 SwiftUI 기반의 iOS 프로그래밍
 - [ ] Flutter Engineering
 - [x] Android Jetpack Compose
-- [ ] 꼼꼼한 재은 씨의 스위프트 기본편
+- [ ] 꼼꼼한 재은 씨의 스위프트 기본편 (진행중)
+- [ ] 꼼꼼한 재은 씨의 스위프트 실전편
+- [ ] 켄트백의 Tidy First (진행중)
 
 
 ## 2. 2023년 목표
