@@ -28,10 +28,10 @@ Today I Learned
 
 - [ ] iOS SwiftUI 인강 (진행중)
 - [ ] iOS UIKit & MVVM 디자인 패턴 인강 (진행중)
-- [ ] Pokedex 앱 만들어보기
+- [x] Pokedex 앱 만들어보기
   - [x] iOS SwiftUI
   - [x] Android Jetpack Compose
-  - [ ] Flutter
+  - [x] Flutter
 
 #### 독서
 
