@@ -36,13 +36,13 @@ Today I Learned
 #### 독서
 
 - [x] 소프트웨어 아키텍처 101
-- [ ] 디자인 패턴에 띄어들기
+- [x] 켄트백의 Tidy First
 - [x] 핵심만 골라 배우는 SwiftUI 기반의 iOS 프로그래밍
-- [ ] Flutter Engineering
 - [x] Android Jetpack Compose
 - [ ] 꼼꼼한 재은 씨의 스위프트 기본편 (진행중)
+- [ ] 디자인 패턴에 띄어들기
+- [ ] Flutter Engineering
 - [ ] 꼼꼼한 재은 씨의 스위프트 실전편
-- [ ] 켄트백의 Tidy First (진행중)
 
 
 ## 2. 2023년 목표
