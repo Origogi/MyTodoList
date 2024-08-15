@@ -28,6 +28,7 @@ Today I Learned
 
 - [ ] iOS SwiftUI 인강 (진행중)
 - [ ] Reactive Programming in iOS Using Combine Framework 인강 (진행중)
+- [ ] iOS Architect Crash Course 인강 (진행중)
 - [x] iOS UIKit & MVVM 디자인 패턴 인강
 - [x] Pokedex 앱 만들어보기
   - [x] iOS SwiftUI
