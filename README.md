@@ -27,8 +27,9 @@ Today I Learned
 #### 개발 분야
 
 - [ ] iOS SwiftUI 인강 (진행중)
-- [ ] Reactive Programming in iOS Using Combine Framework 인강 (진행중)
 - [ ] iOS Architect Crash Course 인강 (진행중)
+- [ ] 앨런 iOS 앱 개발 (15개의 앱을 만들면서 근본원리부터 배우는 UIKit) - MVVM까지 (진행중)
+- [x] Reactive Programming in iOS Using Combine Framework 인강
 - [x] iOS UIKit & MVVM 디자인 패턴 인강
 - [x] Pokedex 앱 만들어보기
   - [x] iOS SwiftUI
