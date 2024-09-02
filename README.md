@@ -19,8 +19,9 @@ Today I Learned
 
 ### 진로 변경
 
-24.06.01 기준으로 iOS 개발자로 진로를 변경하였습니다. 따라서 기존 Flutter, Android Jetpack Compose 학습 계획을 변경하여 iOS SwiftUI, UIKit 학습 계획으로 변경하였습니다.
-하지만 Pokedex Flutter 앱은 계획대로 진행할 예정입니다.
+24.06.01 기준으로 iOS 개발자로 진로를 변경하였습니다. 
+따라서 기존 Flutter, Android Jetpack Compose 학습 계획을 변경하여 iOS SwiftUI, UIKit 학습 계획으로 변경하였습니다.
+하지만 Pokedex Flutter 앱은 계획대로 진행할 예정입니다. 
 
 ### TODO
 
@@ -43,6 +44,7 @@ Today I Learned
 - [x] 핵심만 골라 배우는 SwiftUI 기반의 iOS 프로그래밍
 - [x] Android Jetpack Compose
 - [ ] 꼼꼼한 재은 씨의 스위프트 기본편 (진행중)
+- [ ] 도메인 주도 설계 철저 입문 (진행중)
 - [ ] 디자인 패턴에 띄어들기
 - [ ] Flutter Engineering
 - [ ] 꼼꼼한 재은 씨의 스위프트 실전편
