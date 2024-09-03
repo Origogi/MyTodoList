@@ -30,6 +30,7 @@ Today I Learned
 - [ ] iOS SwiftUI 인강 (진행중)
 - [ ] iOS Architect Crash Course 인강 (진행중)
 - [ ] 앨런 iOS 앱 개발 (15개의 앱을 만들면서 근본원리부터 배우는 UIKit) - MVVM까지 (진행중)
+- [ ] iOS TCA 인강 ([Link](https://www.pointfree.co/episodes/ep243-tour-of-the-composable-architecture-1-0-the-basics))
 - [x] Reactive Programming in iOS Using Combine Framework 인강
 - [x] iOS UIKit & MVVM 디자인 패턴 인강
 - [x] Pokedex 앱 만들어보기
