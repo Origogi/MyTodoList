@@ -15,3 +15,10 @@ Today I Learned
 - [2024년 정리](./2024/README.md)
 - [2023년 정리](./2023/README.md)
 - [2022년 정리](./2022/README.md)
+
+## 3. 주 개발 스택
+
+블로그에 올리지 않는 짤막한 개발 지식들이나 목표들을 정리합니다.
+
+- [Android](./android/README.md)
+- [iOS](./ios/README.md)
