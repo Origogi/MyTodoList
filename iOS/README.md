@@ -5,3 +5,4 @@
 - [ ] SwiftData
 - [ ] TCA 심화학습
 - [ ] Concurrency
+- [ ] SwiftUI 뷰 생명 주기
