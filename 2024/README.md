@@ -39,6 +39,12 @@
 - [x] 핵심만 골라 배우는 SwiftUI 기반의 iOS 프로그래밍
 - [x] Android Jetpack Compose
 - [x] 애플에서는 단순하게 일합니다 
+- [ ] [Big mountain studio](https://www.bigmountainstudio.com/) 시리즈
+  - [ ] SwiftUI Essentials
+  - [ ] SwiftUI Views Mastery
+  - [ ] SwiftUI Animations Mastery
+  - [ ] SwiftData Mastery in SwiftUI
+  - [ ] Combine Mastery in SwiftUI
 - [ ] 꼼꼼한 재은 씨의 스위프트 기본편 (진행중)
 - [ ] 도메인 주도 설계 철저 입문 (진행중)
 - [ ] 디자인 패턴에 띄어들기
