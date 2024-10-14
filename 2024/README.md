@@ -38,7 +38,8 @@
 - [x] 켄트백의 Tidy First
 - [x] 핵심만 골라 배우는 SwiftUI 기반의 iOS 프로그래밍
 - [x] Android Jetpack Compose
-- [x] 애플에서는 단순하게 일합니다 
+- [x] 애플에서는 단순하게 일합니다
+- [ ] 이펙티브 소프트웨어 테스팅 (진행중)
 - [ ] [Big mountain studio](https://www.bigmountainstudio.com/) 시리즈
   - [ ] SwiftUI Essentials
   - [ ] SwiftUI Views Mastery
