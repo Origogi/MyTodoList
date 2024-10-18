@@ -23,7 +23,8 @@
 - [ ] 앨런 iOS 앱 개발 (15개의 앱을 만들면서 근본원리부터 배우는 UIKit) - MVVM까지 (진행중)
 - [ ] iOS TCA 인강 ([Link](https://www.pointfree.co/episodes/ep243-tour-of-the-composable-architecture-1-0-the-basics))
 - [ ] iOS SwiftUI 인강
-- [ ] iOS Architect Crash Course 인강
+- [ ] 앨런 iOS Concurrency(동시성) - 디스패치큐와 오퍼레이션큐의 이해
+- [ ] 앨런 Swift Concurrency for Swift 6 (Part-1)
 
 ### Side Project
 
